@@ -1,5 +1,5 @@
-# Basic_tutorial      
-----------------
+# Pico_basic_tutorial      
+---------------------
 This tutorial is based on the [C1K0001 4in1 basic learning kit](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md).     
 
 Learn simple programming syntax based on the Pico board, and learn the most comprehensive Python basics in the fastest way.     

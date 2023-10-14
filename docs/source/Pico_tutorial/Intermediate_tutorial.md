@@ -1,5 +1,5 @@
-# Intermediate_tutorial      
------------------------
+# Pico_intermediate_tutorial      
+----------------------------
 This tutorial is based on the [C1K0001 4in1 basic learning kit](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md).     
 
 Learn common programming syntax based on "Pico board + expansion board + peripheral module", and learn the most comprehensive MicroPython syntax and application with the lowest cost.     

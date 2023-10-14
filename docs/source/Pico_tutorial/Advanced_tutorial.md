@@ -1,5 +1,5 @@
-# Advanced tutorial     
--------------------
+# Pico_advanced_tutorial    
+------------------------
 Learn the communication protocol, driver programming and MicroPyhotn module based on the "Pico board + expansion board" to learn MicroPython programming at the lowest cost.         
 
 ## Previous preparation    
