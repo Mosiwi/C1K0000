@@ -10,33 +10,18 @@ Welcome to Mosiwi Wiki's documentation!
  | Welcome to the Mosiwi Wiki.  We benefit from technology and we are fascinated by it.  We want to present our findings to the world and be recognized by the world.  We are planning, thinking, implementation, is to share with you the convenience and happiness brought by science and technology!
  | E-mail: mosiwi@outlook.com
 
-===========  ============ 
-|Arduino|_   |Raspberry|_  
------------  ------------  
-`Arduino`_   `Raspberry`_ 
-===========  ============ 
 
-.. |Arduino| image:: _static/web_logo/arduino_logo.jpg
-.. _Arduino: arduino/arduino_index/arduino_index.html
+C1K0000_4in1_basic_learing_kit
+==============================
 
-.. |Raspberry| image:: _static/web_logo/raspberry_logo.png
-.. _Raspberry: raspberry/raspberry_index/raspberry_index.html
+This kit is suitable for teaching and learning programming, providing tutorial materials for four development boards, including graphical, Python, and C/C++programming languages.
 
-===========  =========
-|Microbit|_  |Commom|_ 
------------  --------- 
-`Microbit`_  `Commom`_  
-===========  =========  
 
-.. |Microbit| image:: _static/web_logo/microbit_logo.jpg
-.. _Microbit: microbit/microbit_index/microbit_index.html
-
-.. |Commom| image:: _static/web_logo/common_logo.jpg
-.. _Commom: common_product/common_product_index/common_product_index.html
+This kit provides tutorials based on 4 types of motherboards, but only pico motherboards are provided, and the others need to be purchased by yourself.
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: Tutorials:
    
    Microbit_tutorial <Microbit_tutorial/Makecode_tutorial.md>
    

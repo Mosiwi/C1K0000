@@ -21,7 +21,7 @@ If you don't have Raspberry pi4 basics, you can follow the link to learn the bas
 ```   
 git clone https://github.com/Mosiwi/Mosiwi-basic-learning-kit     
 ```    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/1img.png)    
+![Img](../_static/pi4_tutorial/1img.png)    
 
 The file in the "**Mosiwi-basic-learning-kit-for-arduino -> pi4 -> c**" folder is the sample code：           
 ```
@@ -29,10 +29,10 @@ cd ~/Mosiwi-basic-learning-kit/pi4/c
 
 ls
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/3img.png)    
+![Img](../_static/pi4_tutorial/3img.png)    
 
 Document architecture:   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/2img.png)      
+![Img](../_static/pi4_tutorial/2img.png)      
 1. If you are a newbie, the files in the "**src**" folder are not recommended to modify them, which may cause the code in the "**examples**" folder to compile incorrectly.    
 2. Each example folder contains a "Makefile", "xxx.o", and "xxx.c" files, as well as an execution file.     
 3. The "xxx.o" and execution files are generated from the "Makefile" file.    
@@ -64,7 +64,7 @@ Permission to view execution files:
 ```
 ls -al   
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/4img.png)      
+![Img](../_static/pi4_tutorial/4img.png)      
 r: Read permission. &ensp;&ensp; w: Write permission. &ensp;&ensp; x: Execute permission.     
 
 If the file does not have execution permissions as shown in the figure above, you need to add execution permissions:    
@@ -72,13 +72,13 @@ If the file does not have execution permissions as shown in the figure above, yo
 chmod 777 terminal   
 ls -al   
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/5img.png)     
+![Img](../_static/pi4_tutorial/5img.png)     
 
 Run the compiled sample code:     
 ```
 sudo ./terminal     
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/6img.png)      
+![Img](../_static/pi4_tutorial/6img.png)      
 
 **Objective_2:**       
 Delete the latest executable file and then view the files in the folder:     
@@ -86,21 +86,21 @@ Delete the latest executable file and then view the files in the folder:
 rm terminal   
 ls   
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/7img.png)     
+![Img](../_static/pi4_tutorial/7img.png)     
 
 The "terminal" executable is no longer visible from the image above, now re-run the "Makefile" file to generate the executable "terminal" file.    
 ```
 sudo make  
 ls   
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/8img.png)      
+![Img](../_static/pi4_tutorial/8img.png)      
 
 **Objective_3:**    
 Edit the sample code using the [nano tool](https://www.nano-editor.org/) that comes with the Raspberry PI system:  
 ```
 sudo nano terminal.c   
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/39img.png)      
+![Img](../_static/pi4_tutorial/39img.png)      
 
 When the editing is complete, save the file by typing the following command on the keyboard and exit the nano editor:  
 ```terminal
@@ -112,13 +112,13 @@ Recompile the "terminal.c" source file:
 sudo make  
 ls
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/8img.png)      
+![Img](../_static/pi4_tutorial/8img.png)      
 
 
 ## Wiring diagram     
 -----------------
 Turn off the Raspberry PI and connect the Raspberry PI to the expansion board with a 40P color cable:    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/0img.jpg)      
+![Img](../_static/pi4_tutorial/0img.jpg)      
 Then restart Raspberry PI and TUTTY.     
 
 ## Example1: Arithmetic operator    
@@ -129,7 +129,7 @@ cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.0.1_Arithmetic_operation/
 chmod 777 arithmetic_operation     
 sudo ./arithmetic_operation
 ```
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/9img.png)     
+![Img](../_static/pi4_tutorial/9img.png)     
 
 ## Example2 Blink       
 ----------------- 
@@ -137,7 +137,7 @@ sudo ./arithmetic_operation
 1. Red RGB LED: 23(Wiringpi) or 13(BCM)  
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/25img.png)    
+![Img](../_static/pi4_tutorial/25img.png)    
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -147,7 +147,7 @@ chmod 777 blink
 sudo ./blink
 ```
 The red LED lights on the expansion board are lit at one-second intervals.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/10img.png)     
+![Img](../_static/pi4_tutorial/10img.png)     
 
 ## Example3 Button   
 ------------------ 
@@ -156,7 +156,7 @@ The red LED lights on the expansion board are lit at one-second intervals.
 2. Button: 22(Wiringpi) or 6(BCM)  
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/26img.png)    
+![Img](../_static/pi4_tutorial/26img.png)    
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -166,7 +166,7 @@ chmod 777 button
 sudo ./button
 ```
 After uploads the code, the green RGB led on the expansion board is always off, and if the "Button" on the extension board is pressed, the LED is turned on.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/11img.png)     
+![Img](../_static/pi4_tutorial/11img.png)     
 
 
 ## Example4 Buzzer   
@@ -175,7 +175,7 @@ After uploads the code, the green RGB led on the expansion board is always off, 
 1. Buzzer: 1(Wiringpi) or 18(BCM) 
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/27img.png)    
+![Img](../_static/pi4_tutorial/27img.png)    
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -185,7 +185,7 @@ chmod 777 buzzer
 sudo ./buzzer
 ```
 After uploading the code, the buzzer on the expansion board will keep beeping with a fixed frequency and different volumes.       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/12img.png)     
+![Img](../_static/pi4_tutorial/12img.png)     
 
 
 ## Example5 RGB LED   
@@ -196,7 +196,7 @@ After uploading the code, the buzzer on the expansion board will keep beeping wi
 3. Blue RGB LED: 26(Wiringpi) or 12(BCM)  
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/28img.png)    
+![Img](../_static/pi4_tutorial/28img.png)    
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -206,7 +206,7 @@ chmod 777 buzzer
 sudo ./buzzer
 ```
 After uploading the code, the buzzer on the expansion board will keep beeping with a fixed frequency and different volumes.       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/12img.png)     
+![Img](../_static/pi4_tutorial/12img.png)     
 
 
 ## Example6 Fan   
@@ -216,10 +216,10 @@ After uploading the code, the buzzer on the expansion board will keep beeping wi
 2. S2(INA): 24(Wiringpi) or 19(BCM)  
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/29img.png)    
+![Img](../_static/pi4_tutorial/29img.png)    
 
 **Wiring diagram:**   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/13img.jpg)     
+![Img](../_static/pi4_tutorial/13img.jpg)     
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -229,7 +229,7 @@ chmod 777 fan_pwm
 sudo ./fan_pwm
 ```
 The fan rotates clockwise and counterclockwise, and the speed changes from small to large, and then from large to small.       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/14img.png)     
+![Img](../_static/pi4_tutorial/14img.png)     
 More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_module.md)    
 
 ## Example7 Potentiometer      
@@ -239,7 +239,7 @@ More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_modu
 2. SCL: 9(Wiringpi) or 3(BCM)   
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/30img.png)    
+![Img](../_static/pi4_tutorial/30img.png)    
 Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the potentiometer.      
 
 **Demonstration:**       
@@ -250,7 +250,7 @@ chmod 777 analog_sr
 sudo ./analog_sr
 ```
 Push the potentiometer up and down, and the terminal prints the corresponding analog value and voltage value.          
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/15img.jpg)     
+![Img](../_static/pi4_tutorial/15img.jpg)     
 <span style="color: rgb(255, 76, 65);">Note: Raspberry Pi4 reads the analog value of the potentiometer through the I2C expansion chip on the "3in1_basic_learning_shield".</span>         
 
 ## Example8 Microphone      
@@ -260,7 +260,7 @@ Push the potentiometer up and down, and the terminal prints the corresponding an
 2. SCL: 9(Wiringpi) or 3(BCM)   
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/31img.png)    
+![Img](../_static/pi4_tutorial/31img.png)    
 Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the microphone.      
 
 **Demonstration:**       
@@ -271,7 +271,7 @@ chmod 777 microphone
 sudo ./microphone
 ```
 After running the code, the terminal prints the analog value of the amplified sound and the voltage value.        
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/16img.png)     
+![Img](../_static/pi4_tutorial/16img.png)     
 <span style="color: rgb(255, 76, 65);">Note: Raspberry Pi4 reads the analog value of the microphone through the I2C expansion chip on the "3in1_basic_learning_shield".</span>        
 
 
@@ -282,10 +282,10 @@ After running the code, the terminal prints the analog value of the amplified so
 2. S2(trig of ultrasonic): 24(Wiringpi) or 19(BCM)  
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/32img.png)    
+![Img](../_static/pi4_tutorial/32img.png)    
 
 **Wiring diagram:**   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/17img.jpg)     
+![Img](../_static/pi4_tutorial/17img.jpg)     
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -295,7 +295,7 @@ chmod 777 ultrasonic
 sudo ./ultrasonic
 ```
 After the code is uploaded, the obstacle is placed in front of the ultrasonic sensor, and the distance measured by the ultrasonic sensor is printed at the terminal.         
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/18img.png)     
+![Img](../_static/pi4_tutorial/18img.png)     
 More info: [Ultrasonic sensor](../../../outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.md)      
 
 
@@ -313,10 +313,10 @@ Microphone
 
 **Wiring diagram:**      
 Led-strip
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/33img.png)     
+![Img](../_static/pi4_tutorial/33img.png)     
 
 Microphone
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/31img.png)    
+![Img](../_static/pi4_tutorial/31img.png)    
 Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the microphone.      
 
 
@@ -328,7 +328,7 @@ chmod 777 led_strip
 sudo ./led_strip
 ```
 The more you push the slide resistor up, the more LEDs are turned on; the more you push the slide resistor down, the more LEDs are turned off.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/19img.png)     
+![Img](../_static/pi4_tutorial/19img.png)     
 
 
 ## Example11 Thread    
@@ -344,7 +344,7 @@ chmod 777 thread
 sudo ./thread
 ```
 The red LED lights on the expansion board are lit at one-second intervals.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/10img.png)     
+![Img](../_static/pi4_tutorial/10img.png)     
 
 
 ## Example12 Digital_tube_Keyboard     
@@ -356,7 +356,7 @@ The red LED lights on the expansion board are lit at one-second intervals.
 4. KEY-INT: 21(Wiringpi) or 5(BCM)
 
 **Wiring diagram:**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/34img.png)     
+![Img](../_static/pi4_tutorial/34img.png)     
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -366,7 +366,7 @@ chmod 777 digital_tube_button_spi
 sudo ./ldigital_tube_button_spi
 ```
 The 4-bit digital display tube displays "16.0" when the "U" key is pressed; "8.0" is displayed when the "D" key is pressed; "4.0" is displayed when the "L" key is pressed; "2.0" is displayed when the "R" key is pressed. Displays "1.0" when the "OK" key is pressed.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/20img.png)     
+![Img](../_static/pi4_tutorial/20img.png)     
 
 | U | D | L | R | OK |    
 | :--: | :--: | :--: | :--: | :--: |    
@@ -382,7 +382,7 @@ The 4-bit digital display tube displays "16.0" when the "U" key is pressed; "8.0
 2. SCL: 9(Wiringpi) or 3(BCM)   
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/35img.png)            
+![Img](../_static/pi4_tutorial/35img.png)            
 Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the infrared receiving sensor.      
 
 **Demonstration:**       
@@ -393,10 +393,10 @@ chmod 777 ir_recvDemo
 sudo ./ir_recvDemo
 ```
 When the infrared remote controller presses the button, point to the infrared receiver on the expansion board, and the terminal will print the button value.        
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/21img.jpg)     
+![Img](../_static/pi4_tutorial/21img.jpg)     
 
 Pi4 will get 2 bytes of data, the first byte is the inverse code of the address of the infrared remote control device, and the second byte is the command code of the infrared remote control device.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/38img.png)    
+![Img](../_static/pi4_tutorial/38img.png)    
 ```   
 data: 65432 = 0xff98
 
@@ -425,10 +425,10 @@ Display
 
 **Schematic diagram:**       
 AHT20     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/36img.png)            
+![Img](../_static/pi4_tutorial/36img.png)            
 
 Display
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/34img.png)     
+![Img](../_static/pi4_tutorial/34img.png)     
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -438,7 +438,7 @@ chmod 777 thermohygrometer
 sudo ./thermohygrometer
 ```
 The 4-digit digital tube displays the temperature and humidity in a cycle with a period of 10 seconds.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/22img.jpg)     
+![Img](../_static/pi4_tutorial/22img.jpg)     
 
 
 
@@ -448,7 +448,7 @@ The 4-digit digital tube displays the temperature and humidity in a cycle with a
 1. EEPROM: 27(Wiringpi) or 16(BCM)   
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/37img.png)            
+![Img](../_static/pi4_tutorial/37img.png)            
 
 **Demonstration:**       
 Run the following command on the terminal:       
@@ -462,7 +462,7 @@ sudo ./eeprom_ReadWriteSkip
 3. Read 128 bytes of EEPROM data.       
 4. The 8-byte data written to EEPROM is read back and converted to the character: \<Mosiwi\>     
 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/23img.png)     
+![Img](../_static/pi4_tutorial/23img.png)     
 
 
 
@@ -476,7 +476,7 @@ chmod 777 intelligent_fan
 sudo ./intelligent_fan
 ```
 This is an intelligent fan with temperature control mode and remote control mode.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/pi4_tutorial/24img.png)     
+![Img](../_static/pi4_tutorial/24img.png)     
 
 Function of infrared remote control button:    
 1. 2: Turn on and off temperature control mode    

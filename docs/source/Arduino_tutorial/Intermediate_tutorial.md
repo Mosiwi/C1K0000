@@ -17,51 +17,51 @@ Learn common programming syntax based on "UNO board + expansion board + peripher
 3. What is a preprocessing directive: #define     
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/72img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/72img.png)            
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/1img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/1img.png)    
 
 **Connect control board to your computer with USB cable:**          
 ![Img](../../../_static/common_product//C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/71img.jpg)   
 
 **Open the example code: "2.0.0_RGB_led"**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/2img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/2img.png)    
 Upload the code to the UNO board.     
 <span style="color: rgb(255, 76, 65);">Note: All the sample code in the following sections is opened in the same way as in the figure above.</span>     
 
 **Example code phenomena:**   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/3img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/3img.png)    
 RGB LED lights flash red, green, blue, yellow, cyan, mauve and white.   
 
 **FAQ:** 
 (1) What is resistance?   
 The resistance of a conductor to the current is called its resistance. The greater the resistance of the conductor, the greater the obstruction effect of the conductor on the current. The resistance of a conductor is usually represented by the R symbol, the unit of resistance is ohms, and the symbol is Ω.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/85img.png)
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/85img.png)
 
 Resistance is defined by the ratio of the voltage U at the two ends of the conductor to the current I passing through the conductor:      
 $$R=U/I$$     
 
 3-bit digital SMD resistor:(5%): 
 Its resistance value can be obtained by calculating the code of the surface.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/86img.jpg)
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/86img.jpg)
 
 4-bit digital SMD resistor:(1%): 
 Its resistance value can be obtained by calculating the code of the surface.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/87img.jpg)
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/87img.jpg)
 
 Code precision SMD resistors(1%):    
 Read the code on its surface and look up the table to get its resistance value.       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/88img.jpg)
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/89img.jpg)
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/88img.jpg)
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/89img.jpg)
 
 Plug-in resistors:     
 Color ring resistor uses different colors to show the resistance and accuracy, as shown below:    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/4img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/4img.png)    
 
 (2) How to control R, G, B LED?      
 RGB LED is a combination of red, green and blue LEDs. By controlling the intensity of the light emitted by the LEDs of 3 colors and fusing the 3 lights together, various light sources can be produced.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/70img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/70img.png)    
 
 When the expansion board is directly inserted into the UNO board, the R, G, and B leds on the expansion board are controlled by the 5, 6, and 9 pins of the UNO board. These three pins can be set to digital output mode, by output high or low level to control the LED on and off.             
 Set pin mode:    
@@ -103,11 +103,11 @@ More information: <https://www.arduino.cc/reference/en/language/structure/furthe
 1. How to control the LED strip of the expansion board?      
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/73img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/73img.png)            
 [74HC595 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/74HC595.pdf)
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/5img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/5img.png)    
 
 **Open the example code: "2.1.0_Waterfall_light"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -115,12 +115,12 @@ More information: <https://www.arduino.cc/reference/en/language/structure/furthe
 
 **Example code phenomena:**  
 The LED strip on the expansion board turns on and off in cycles.   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/6img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/6img.png)    
 
 **FAQ:** 
 (1) How to control the LED strip of the expansion board?     
 There is one LED strip on the expansion board, which is controlled by the 74HC595 chip on the expansion board. 74HC595 is a widely used serial input and parallel output chip.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/7img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/7img.png)    
 
 Because the 74HC595 chip is controlled by pin 8, A0, and A1 of the UNO, the LED strip on the expansion board is ultimately controlled by the UNO board. For ease of use, the control methods have been written as functions and integrated into the library file, which must include the relevant headers:   
 ```
@@ -159,11 +159,11 @@ delay(500);
 5. How to control all leds of the LED strip at the same time?   
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/74img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/74img.png)            
 [74HC595 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/74HC595.pdf)
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/8img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/8img.png)    
 
 **Open the example code: "2.1.1_Led_strip"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -171,7 +171,7 @@ delay(500);
 
 **Example code phenomena:**  
 The more you push the slide resistor up, the more LEDs are turned on; the more you push the slide resistor down, the more LEDs are turned off.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/9img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/9img.png)    
 
 **FAQ:**
 (1) How is the map() function used?   
@@ -196,7 +196,7 @@ More info: <https://www.arduino.cc/reference/en/language/functions/math/map/>
 
 (2) How is the break statement used?   
 The "break" statement is used to exit the "for", "while" and "do...while" loop. It is also used to exit the "switch case" statement.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/10img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/10img.png)    
 More info: <https://www.arduino.cc/reference/en/language/structure/control-structure/break/>    
 
 (3) How is the switch statement used?  
@@ -291,7 +291,7 @@ Hexadecimal number：0xFFFD
 Decimal number：16*16*16*15+16*16*15+16*15+13=65533
 ```
 You can open the PC calculator to verify the above calculation, first switch to the binary mode input "11111111"; You will get the decimal number "255" and the hexadecimal number "FF".    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/11img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/11img.png)    
 
 (5) How to control all leds of the LED strip at the same time?   
 In the previous chapter, we learned how to control a single LED, so we'll use another function that allows us to control the state of eight leds from bits of data.      
@@ -313,11 +313,11 @@ Relationship between the LED state and the value of "**num**":
 1. How to use the bit operations: &, |, ~, ^, < <, > >        
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/75img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/75img.png)            
 [74HC595 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/74HC595.pdf)
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/12img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/12img.png)    
 
 **Open the example code: "2.1.2_Bitwise_operation"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -325,7 +325,7 @@ Relationship between the LED state and the value of "**num**":
 
 **Example code phenomena:**  
 Every time you press "Button" on the expansion board, the LED strip on the expansion board will be lit in the order shown below.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/13img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/13img.png)    
 
 **FAQ:**
 (1) How to use the bit operations: &, |, ~, ^, < <, > >     
@@ -409,10 +409,10 @@ Examples:
 2. How do you use the tone() and notone() functions?       
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/76img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/76img.png)            
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/14img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/14img.png)    
 
 **Open the example code: "2.2.0_Buzzer"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -420,20 +420,20 @@ Examples:
 
 **Example code phenomena:**  
 The buzzer cycle produced 440 Hz and 880 Hz sounds.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/15img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/15img.png)    
 <span style="color: rgb(255, 76, 65);">Note: A passive buzzer is used on the extension board.</span>        
 
 **FAQ:**
 (1) What is buzzer?    
 The piezoelectric buzzer consists of internal piezoelectric elements and has two pins, one for the power positive and the other for the negative.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/16img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/16img.png)    
 When the buzzer is energized, an electric charge is applied to the ceramic disk of its internal piezoelectric element, resulting in vibration. The ceramic disc is attached to a vibrating disc, which vibrates along with it, producing an audible sound.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/17img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/17img.png)    
 
 Passive buzzer VS active buzzer:   
 Active buzzers use DC power and buzzers emit sound at a fixed frequency.      
 As for the passive buzzer, additional drive circuits are required. The frequency of the sound will vary with the frequency of the square wave signal. If the frequency signal is not added, the passive buzzer does not sound.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/18img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/18img.png)    
 The extension board integrates a patch passive buzzer that is controlled by the 9 pins of the UNO board when the extension board is directly inserted into the UNO board.    
 
 (2) How do you use the tone() and notone() functions?   
@@ -485,14 +485,14 @@ More info: <https://www.arduino.cc/reference/en/language/functions/advanced-io/n
 
 **Schematic diagram:**           
 Buzzer and Slider resistor
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/76img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/76img.png)            
 
 4-bit digital tube
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/77img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/77img.png)            
 [BC7278 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/22img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/22img.png)    
 
 **Open the example code: "2.2.1_Frequency_Tone"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -500,12 +500,12 @@ Buzzer and Slider resistor
 
 **Example code phenomena:**  
 When the slider resistor is pushed, the buzzer produces the sound of "DO", "RE", "MI", "FA", "SO", "LA", "SI", and the frequency of the sound is displayed by the 4-bit digital tube.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/23img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/23img.png)    
 
 **FAQ:**
 (1) What is the relationship between the frequency and the tone of the buzzer?      
 Various tones are produced by sounds of different frequencies. Because buzzers can produce sounds of different frequencies, buzzers can also produce a variety of tones.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/24img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/24img.png)    
 
 
 ## Chapter7 Music       
@@ -516,10 +516,10 @@ Various tones are produced by sounds of different frequencies. Because buzzers c
 3. How to use the store statements: PROGMEM, pgm_read_word_near(), pgm_read_float_near()       
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/78img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/78img.png)            
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/25img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/25img.png)    
 
 **Open the example code: "2.2.2_Jingle_bells"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -527,12 +527,12 @@ Various tones are produced by sounds of different frequencies. Because buzzers c
 
 **Example code phenomena:**    
 The buzzer keeps playing the song "Jingle bells" on a loop.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/15img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/15img.png)    
   
 **FAQ:**
 (1) What is music?    
 Music is the art of arranging sound in time through elements such as melody, harmony, rhythm, and timbre.   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/26img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/26img.png)    
 
 Analysis of musical notation:     
 Note rhythm is divided into one beat, half beat, 1/4 beat and 1/8 beat. We stipulate that the time of a beat note is 1, so half beat is 0.5, and 1/4 beat is 0.25. 1/8 is 0.125... For each note to be given such a time to play out, the whole tone of the music comes out.    
@@ -545,7 +545,7 @@ Note type description: Take note 5 3 2 1 5 0 5 5 in the first short section of J
 3. Note followed by a decimal point, indicating that the note beat +0.5 beat (if the note is underlined, +0.5 beat on the basis of the underlined beat); Note is followed by -, indicating note +1 beat (+1 beat on top of the underlined beat).    
 4. Two consecutive notes with an arc above, indicating the connection, you can slightly change the frequency of the following note, such as reducing or increasing the frequency, so that the sound will be smoother.    
 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/27img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/27img.png)    
 In this case, the Jingle Bells are in the key of F, so the notes corresponding to the key of F are marked in red in the table. Please see the code in the example for the implementation of the music code!     
 
 (2) How do you use sizeof()?    
@@ -592,10 +592,10 @@ More info: <https://www.arduino.cc/reference/en/language/variables/utilities/pro
 1. How do you use a timer to make a buzzer sound?       
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/78img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/78img.png)            
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/28img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/28img.png)    
 
 **Open the example code: "2.2.3_Buzzer_Timer"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -603,7 +603,7 @@ More info: <https://www.arduino.cc/reference/en/language/variables/utilities/pro
 
 **Example code phenomena:**  
 The buzzer on the extension board emits 50Hz sound all the time.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/15img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/15img.png)    
 
 **FAQ:**      
 (1) How do you use a timer to make a buzzer sound?     
@@ -615,7 +615,7 @@ T: Period in seconds
 
 For example, if we want to generate a square wave with a frequency of 500Hz, the formula is: T=1/500=0.002 seconds =2 milliseconds      
 In this case, we only need to execute the interrupt function once every 1 millisecond, and then change the level of the buzzer driver pin in the interrupt function, so that the following square wave can be generated:    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/29img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/29img.png)    
 Example code:
 ```  
 byte BuzzerPin   = 9; 
@@ -640,10 +640,10 @@ void loop() {
 1. What is a microphone?   
 
 **Schematic diagram:**           
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/79img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/79img.png)            
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/30img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/30img.png)    
 
 **Open the example code: "2.3.0_Microphone"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -651,15 +651,15 @@ void loop() {
 
 **Example code phenomena:**  
 When powered on, the microphone will always obtain the sound data of the current environment. Open the serial port monitor and adjust the baud rate to 9600. The serial port monitor has been printing the analog value of the amplified sound and the voltage value calculated by the program.             
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/31img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/31img.png)    
 
 **FAQ:**
 (1) What is a microphone?  
 Microphone is an energy conversion device that converts sound signals into electrical signals. It is classified as capacitive and electret. An electret microphone is used on the expansion board and a preamplifier circuit is integrated; when the expansion board is directly plugged into the UNO board, the A2 pin is used to receive the analog signal from the microphone.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/32img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/32img.png)    
 The microphone on the expansion board integrates a preamplifier circuit, which reads the analog voltage value of pin A2 as 2.5V when there is no sound, and fluctuates the voltage value on pin A2 up and down at 2.5V when there is sound.       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/33img.png)    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/34img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/33img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/34img.png)    
 
 An example of reading an analog value for a sound:      
 ```
@@ -677,14 +677,14 @@ voiceAnalogValue = analogRead(A6);
 
 **Schematic diagram:**           
 Microphone    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/79img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/79img.png)            
 
 LED strip    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/73img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/73img.png)            
 [74HC595 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/74HC595.pdf)
 
 **Program flow diagram:** 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/35img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/35img.png)    
 
 **Open the example code: "2.3.1_Music_LED"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -692,7 +692,7 @@ LED strip
 
 **Example code phenomena:**  
 Speaking into the microphone on the extension or playing music (at a higher volume), eight leds on the extension board will light up a different number of leds depending on the volume of the sound.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/36img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/36img.png)    
 
 **FAQ:**          
 (1) What is logical and: &&    
@@ -713,7 +713,7 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 
 (2) What is a jump statement: goto   
 Jump the program flow to a marked point in the program.      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/37img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/37img.png)    
 
 ```
 Syntax:
@@ -780,10 +780,10 @@ More info: <https://www.arduino.cc/reference/en/language/functions/math/min/>
 4. class   
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/80img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/80img.png)            
 
 **Program flow diagram:**          
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/38img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/38img.png)    
 
 **Open the example code: "2.4.0_EEPROM_ReadWriteSkip"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -795,14 +795,14 @@ More info: <https://www.arduino.cc/reference/en/language/functions/math/min/>
 3. Read 128 bytes of EEPROM data.       
 4. The 8-byte data written to EEPROM is read back and converted to the character: \<Mosiwi\>     
 
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/40img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/40img.png)    
 
 **FAQ:**          
 (1) EEPROM (Electrically Erasable Programmable Read-Only Memory)
 It is a kind of memory chip that does not lose data after power failure.    
 
 The board integrates a 128-byte EEPROM chip using the 1-wire protocol, and when plugged directly into the UNO board, the EEPROM is controlled by pin 7 of the UNO board.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/39img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/39img.png)    
 
 (2) 1-Wire protocol     
 1-Wire technology is a serial protocol that uses one data wire and one ground wire to communicate. The 1-Wire master can initialize and control one or more 1-Wire slaves on the 1-Wire. Each 1-Wire slave device has a unique, immutable, factory programmed 64-bit ID as the device address on the 1-Wire. Eight bits of the 64-bit ID are family codes that identify the device type and function. Generally, the operating voltage range of the 1-Wire slave machine is 2.8V (min) to 5.25V (max). Most 1-Wire devices are not pin-powered and they harvest energy from 1-wire (parasitic power supply).     
@@ -895,15 +895,15 @@ int Power = BMW.power;
 
 **Schematic diagram:**       
 AHT20
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/81img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/81img.png)            
 [AHT20 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/AHT20.pdf)   
 
 4-bit digital tube
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/77img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/77img.png)            
 [BC7278 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)  
 
 **Program flow diagram:**         
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/42img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/42img.png)    
 
 **Open the example code: "2.5.0_Thermohygrometer"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -911,7 +911,7 @@ AHT20
 
 **Example code phenomena:**  
 The 4-bit digital tube on the expansion board displays the current ambient temperature for 5 seconds, then the current ambient humidity for 5 seconds, and so on.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/43img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/43img.png)    
 
 **FAQ:**         
 (1) What is a Thermohygrometer?   
@@ -1005,10 +1005,10 @@ void displayHumidity(float H){
 1. What is an infrared receiving sensor?      
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/82img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/82img.png)            
 
 **Program flow diagram:**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/44img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/44img.png)    
 
 
 **Open the example code: "2.6.0_IRrecvDemo"**      
@@ -1017,17 +1017,17 @@ void displayHumidity(float H){
 
 **Example code phenomena:**  
 Open the serial port monitor, adjust the baud rate to 9600, press "OK" on the [infrared remote control](../../../outsourcing/nec_ir_remote_control/nec_ir_remote_control.md) against the infrared receiver, and the serial port will print "FF38C7".     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/48img.png)    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/45img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/48img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/45img.png)    
 <span style="color: rgb(255, 76, 65);">Note: If you keep pressing the button, the serial port will always print "FFFFFFFF".</span>     
 
 Please refer to the table below for other keys:      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/46img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/46img.png)    
 
 **FAQ:**              
 (1) What is an infrared receiving sensor?    
 The internal circuit of the infrared receiver includes infrared monitoring diode, amplifier, limiter, band pass filter, integral circuit, comparator and so on. The infrared monitoring diode detects the infrared signal and sends it to the amplifier and limiter, which controls the pulse amplitude at a certain level regardless of the distance between the infrared transmitter and the receiver. The AC signal enters the bandpass filter, which can pass through the negative carrier of 30khz to 60khz and enter the comparator through the demodulation circuit and the integral circuit, and the comparator outputs high and low levels to restore the signal waveform of the transmitter. Note that the high and low levels of the output signal and the transmitter are reversed in order to improve the sensitivity of the reception.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/47img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/47img.png)    
 
 An infrared receiving sensor is integrated on the extension board, and pin 4 can receive data from the infrared receiving sensor when directly plugged into the UNO board.    
 
@@ -1102,7 +1102,7 @@ Serial.println(IR.value, HEX);
 1. How to realize infrared remote control?     
 
 **Program flow diagram:**        
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/49img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/49img.png)    
 
 **Open the example code: "2.6.1_IRremote"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1110,7 +1110,7 @@ Serial.println(IR.value, HEX);
 
 **Example code phenomena:**  
 Use the [infrared remote control](../../../outsourcing/nec_ir_remote_control/nec_ir_remote_control.md) to repeatedly press the "OK" key in front of the infrared receiver on the expansion board to turn on and off the red LED light on the expansion board.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/50img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/50img.png)    
 <span style="color: rgb(255, 76, 65);">Note: Button batteries must be installed when using the infrared remote control. If the infrared remote control has been allocated with button batteries, the separator at the bottom of the remote control must be pulled out.</span>      
 
 See: [Ir-receiver module](../../../common_product/C1S0001_ir_receiver/C1S0001_ir_receiver.md)       
@@ -1128,10 +1128,10 @@ For example, we can program the UNO board to turn on the LED when it receives th
 3. How do you use the pulseIn() function?     
 
 **Schematic diagram:**       
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/83img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/83img.png)            
 
 **Wiring diagram**
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/51img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/51img.png)    
 | Ultrasonic module interface | Interface on the Extend board | Pins of UNO board|     
 | :--: | :--: | :--: |   
 | Vcc | V | 5V |  
@@ -1140,7 +1140,7 @@ For example, we can program the UNO board to turn on the LED when it receives th
 | Gnd | GND | GND |  
 
 **Program flow diagram:**         
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/52img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/52img.png)    
 
 **Open the example code: "2.7.0_Ultrasonic"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1148,17 +1148,17 @@ For example, we can program the UNO board to turn on the LED when it receives th
 
 **Example code phenomena:**  
 Turn on the serial port monitor, adjust the baud rate to 9600, put the obstacle in front of the ultrasonic sensor, and the serial port monitor prints the distance measured by the ultrasonic sensor every 0.5 seconds.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/53img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/53img.png)    
 
 **FAQ:**                
 (1) What is Ultrasonic module?         
 An ultrasonic module is provided in this kit. The distance test can be performed after the module is inserted into the interface of the expansion board according to the cable connection requirements.          
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/56img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/56img.png)    
 More info: [Ultrasonic module](../../../outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.md)        
 
 (2) What is pulse?   
 A pulse is an electrical impulse (voltage or current) that usually rises and falls like a pulse in electronics. The main features are waveform, amplitude, width and repetition rate. The pulses occur for a short time over the whole signal period relative to the continuous signal, and there is no signal during most of the signal period.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/59img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/59img.png)    
 
 (3) How do you use the pulseIn() function?   
 Reads a pulse (either HIGH or LOW) on a pin. 
@@ -1185,17 +1185,17 @@ More info: <https://www.arduino.cc/reference/en/language/functions/advanced-io/p
 
 **Schematic diagram:**         
 Ultrasonic
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/83img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/83img.png)            
 
 4-bit digital tube
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/77img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/77img.png)            
 
 **Wiring diagram:**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/51img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/51img.png)    
 [BC7278 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)      
 
 **Program flow diagram:**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/60img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/60img.png)    
 
 **Open the example code: "2.7.1_Range-measurement"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1203,7 +1203,7 @@ Ultrasonic
 
 **Example code phenomena:**     
 After uploads the code, unplug the USB, and then connect the battery box, press any of the U, D, L, R and OK keys on the expansion board to start the ultrasonic ranging; Pressing any of them will turn off ultrasonic ranging. After turning on ultrasonic ranging, the 4-digit digital tube will display the distance measured by ultrasonic in real time.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/61img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/61img.png)    
 
 **FAQ:**            
 (1) What is a function that returns a value?    
@@ -1263,10 +1263,10 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 2. How to control the fan?          
 
 **Schematic diagram:**         
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/84img.png)            
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/84img.png)            
 
 **Wiring diagram**      
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/62img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/62img.png)    
 | Fan module interface | Interface on the Extend board | Pins of UNO board|   
 | :--: | :--: | :--: |   
 | GND | G | GND |  
@@ -1275,7 +1275,7 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 | INB | S1 | 5 |     
 
 **Program flow diagram:**     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/63img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/63img.png)    
 
 **Open the example code: "2.8.0_Fan_PWM"**      
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1283,12 +1283,12 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 
 **Example code phenomena:**     
 After uploading the code, the fan speed will change from small to large forward rotation, and then from large to small reverse, and so on.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/64img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/64img.png)    
 
 **FAQ:**             
 (1) What is a fan?    
 There is a fan module in the kit, with two directional control pins, can control the fan forward and reverse, directly into the interface on the expansion board can be used.     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/65img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/65img.png)    
 More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_module.md)      
 
 **Extended chapter1:**      
@@ -1351,7 +1351,7 @@ MswFan::stop();
 We also have an example of controlling a fan through a sliding resistor.    
 
 **Program flow diagram:**     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/66img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/66img.png)    
 
 **Open the example code: "2.8.1_Fan_timer"**        
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1359,7 +1359,7 @@ We also have an example of controlling a fan through a sliding resistor.
 
 **Example code phenomena:**      
 After power on, the more up push the potentiometer on the expansion board, the faster the fan turns, the more down push, the slower the fan turns.   
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/67img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/67img.png)    
 
 
 ## Chapter17 Smart fan       
@@ -1368,7 +1368,7 @@ After power on, the more up push the potentiometer on the expansion board, the f
 1. How to Improve your programming skills?   
 
 **Program flow diagram:**     
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/68img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/68img.png)    
 
 **Open the example code: "2.8.3_Intelligent_fan"**        
 1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
@@ -1376,7 +1376,7 @@ After power on, the more up push the potentiometer on the expansion board, the f
 
 **Example code phenomena:**     
 This is an intelligent fan with temperature control mode and remote control mode.    
-![Img](../../../_static/common_product/C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Intermediate_tutorial/69img.png)    
+![Img](../_static/Arduino_tutorial/Intermediate_tutorial/69img.png)    
 
 Function of [infrared remote control](../../../outsourcing/nec_ir_remote_control/nec_ir_remote_control.md) button:    
 1. 2: Turn on and off temperature control mode    
