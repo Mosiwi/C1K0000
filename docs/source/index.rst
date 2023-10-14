@@ -35,13 +35,21 @@ Welcome to Mosiwi Wiki's documentation!
 .. _Commom: common_product/common_product_index/common_product_index.html
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
    
-   Arduino <arduino/arduino_index/arduino_index.md>
-   Raspberry <raspberry/raspberry_index/raspberry_index.md>
-   Micro:bit <microbit/microbit_index/microbit_index.md>
-   Common <common_product/common_product_index/common_product_index.md>
+   Microbit_tutorial <Microbit_tutorial/Makecode_tutorial.md>
    
-   All <index_rst/all_index.rst>
+   Arduino_zero-based_tutorial <Arduino_tutorial/Zero-based_tutorial.md>
+   Arduino_basic_tutorial <Arduino_tutorial/Basic_tutorial.md>
+   Arduino_intermediate_tutorial <Arduino_tutorial/Intermediate_tutorial.md>
+   Arduino_advanced_tutorial <Arduino_tutorial/Advanced_tutorial.md>
+   
+   Pico_zero-based_tutorial <Pico_tutorial/Zero-based_tutorial.md>  
+   Pico_basic_tutorial <Pico_tutorial/Basic_tutorial.md> 
+   Pico_intermediate_tutorial <Pico_tutorial/Intermediate_tutorial.md> 
+   Pico_advanced_tutorial <Pico_tutorial/Advanced_tutorial.md> 
+   
+   Pi4_tutorial <Rpi4_tutorial/C_tutorial.md>
+   
 
