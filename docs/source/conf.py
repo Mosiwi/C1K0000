@@ -9,7 +9,7 @@ current_year = datetime.datetime.now().year
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Mosiwi Wiki'
+project = 'Mosiwi Wiki Subproject'
 copyright = '2022 - {}, Shenzhen Mosiwi Technology Co., Ltd'.format(current_year)
 author = 'Mosiwi'
 release = 'v1.0'

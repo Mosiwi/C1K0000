@@ -1,21 +1,17 @@
-.. Mosiwi Wiki documentation master file, created by
-   sphinx-quickstart on Sun Mar 19 01:29:09 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Mosiwi Wiki's documentation!
-=======================================
-
-**Mosiwi  --- Plan, think, act.**
- | Welcome to the Mosiwi Wiki.  We benefit from technology and we are fascinated by it.  We want to present our findings to the world and be recognized by the world.  We are planning, thinking, implementation, is to share with you the convenience and happiness brought by science and technology!
- | E-mail: mosiwi@outlook.com
-
-
 C1K0000_4in1_basic_learing_kit
 ==============================
-
 This kit is suitable for teaching and learning programming, providing tutorial materials for four development boards, including graphical, Python, and C/C++programming languages.
 
+.. list-table::  
+	* - 1
+	  - 2
+	  - 3
+	* - 4
+	  - 5
+	  - 6
+	* - 7
+	  - 8
+	  - 9
 
 This kit provides tutorials based on 4 types of motherboards, but only pico motherboards are provided, and the others need to be purchased by yourself.
 
