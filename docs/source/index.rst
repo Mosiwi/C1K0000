@@ -1,10 +1,7 @@
-C1K0000_4in1_basic_learing_kit
-==============================
 
 .. toctree::
-   C1K0000_4in1_basic_learing_kit
    :maxdepth: 3
-   :caption: Contents:
+   :caption: C1K0000_4in1_basic_learing_kit:
    
    Overview <Overview.md> 
    
