@@ -4,7 +4,7 @@ This tutorial only focuses on practical operation, without the need to understan
 
 ## Previous preparation       
 -----------------------        
-1. Install the [**Arduino IDE**](../../../arduino/arduino_ide/arduino_ide.md).  
+1. Install the [**Arduino IDE**](../../../arduino/arduino_ide/arduino_ide.md){target="_blank"}.  
 2. Install the [**Mosiwi basic learning kit**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library) library.    
 3. Basic operation of the [**Arduino UNO R3**](../../../arduino/A1D0000_uno_r3/A1D0000_uno_r3.md) motherboard.    
 
