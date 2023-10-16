@@ -40,6 +40,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_logo = '_static/web_logo/logo_mosiwi.png'
 html_favicon = '_static/web_logo/my_favicon.png'
+html_show_sphinx = False
 
 source_suffix = ['.rst', '.md']
 
