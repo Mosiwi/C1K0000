@@ -17,9 +17,25 @@ release = 'v1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
+# https://myst-parser.readthedocs.io/en/latest/
 extensions = [
-    'myst_parser',
+    # https://myst-parser.readthedocs.io/en/latest/intro.html
+    "myst_parser",         
+    "sphinx_design",
+    "sphinx_copybutton",   # Add a copy button to your code blocks
+    # "sphinx_tippy",      # Add tooltips to your documentation
+]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
+
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-extensions
+myst_enable_extensions = [
+    "colon_fence",
+    "dollarmath",        # Displays mathematical formulas
 ]
 
 templates_path = ['_templates']
@@ -37,12 +53,17 @@ html_search_language = 'en'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+
 html_static_path = ['_static']
+# set font
+html_css_files = [
+    '_static/css_style/my_css-style.css',
+]
+
 html_logo = '_static/web_logo/logo_mosiwi.png'
 html_favicon = '_static/web_logo/my_favicon.png'
 html_show_sphinx = False
 
-source_suffix = ['.rst', '.md']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
