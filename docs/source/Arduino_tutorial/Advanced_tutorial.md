@@ -4,9 +4,9 @@ Learn communication protocol, driver programming and Arduino library development
 
 ## Previous preparation           
 -----------------------
-1. Install the [**Arduino IDE**](../../../arduino/arduino_ide/arduino_ide.md).  
-2. Install the [**Mosiwi basic learning kit**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#Integration-library) library.    
-3. Basic operation of the [**Arduino UNO R3**](../../../arduino/A1D0000_uno_r3/A1D0000_uno_r3.md) motherboard.    
+1. Install the [**Arduino IDE**](https://docs.mosiwi.com/en/latest/arduino/arduino_ide/arduino_ide.html).     
+2. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html) motherboard.       
+3. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.  
 
 ## Chapter1 Arduino          
 -------------------
@@ -29,7 +29,7 @@ When creating an empty project, press **Ctrl+s** on the keyboard to save it.
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/4img.png)       
 
 At this time, a dialog box pops up, name the project. Suppose it is named **"LED_blink"** and saved in my own Arduino working directory **"E:\\Arduino_workspace\\"**. So the IDE will automatically help us create a folder under Arduino_workspace, and put the main file in it, and the main file has the same name as the folder.    
-```
+```c++
  E:\Arduino_workspace\
     LED_blink\
       LED_blink.ino
@@ -76,7 +76,7 @@ For example, we want to package the LED control into a module. We need to create
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/14img.png)       
 
 First we think about how to control the LED, then we first write the content of the header file, then write the function implementation in the source file, and finally use this module in the main file. Include the header file using the **#include "LED.h"** preprocessing directive in the main file.       
-```
+```c++
 /*******************
 LED.h
 *******************/
@@ -100,7 +100,7 @@ class LED {
 
 #endif
 ```
-```
+```c++
 /*****************
 LED.cpp
 ******************/
@@ -128,7 +128,7 @@ void LED::disattach() {
     pinMode(pin,INPUT);
 }
 ```
-```
+```c++
 /**********************
 LED_blink：
 Instantiate an LED object, control it with pin 10, let it flash 10 times, 
@@ -161,7 +161,7 @@ void loop() {
 }
 ```
 Note: If the header file and the main file are in the same folder, use double quotation marks **"xx.h"** to include the library file into the main file, as follows:
-```
+```c++
 #include"LED.h"
 ```
 
@@ -179,7 +179,7 @@ Then copy the written ".cpp" and ".h" files into the src file. Create a new fold
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/18img.png)       
 
 In this way, our main file becomes a sample program in the library file. In the sample, we need to use angle brackets **< >** to include standard files, as follows:       
-```
+```c++
 #include<LED.h>    
 LED led(10);
 byte count =0;
@@ -206,14 +206,14 @@ void loop() {
 ```
 
 Note: Since the LED control module is already a standard library, use angle brackets **< >** to include library files, as follows:    
-```
+```c++
 #include<LED.h>
 ```
 There is a "keywords.txt" file in the LED folder, which is used to configure syntax highlighting for custom libraries. If not configured, the Arduino IDE cannot render highlighted colors.      
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/19img.png)       
 
 The following is the analysis of keywords.txt:     
-```
+```c++
 Format: word Tab Description
 
 Word: It is the keyword you want to highlight.
@@ -226,7 +226,7 @@ KEYWORD3 --> highlight library file name
 LITERAL1 --> highlight constant name
 ```
 The beginning of "#" is a comment and can be omitted.     
-```
+```c++
 # Library (KEYWORD3)
 LED  KEYWORD3
 
@@ -237,7 +237,7 @@ getState  KEYWORD2
 disattach  KEYWORD2
 ```
 There is also a library.properties file in the "LED" folder, which is a configuration library that can display the library name in the Arduino IDE. The contents are as follows:     
-```
+```c++
 name=LED
 version=*
 author=*
@@ -387,19 +387,19 @@ In this example, we use the way of software simulation to realize a TTL serial p
 
 code analysis:       
 1\. Define a soft serial port class.    
-```
+```c++
 class SoftwareSerial { ... }
 ```
 
 2\. The constructor of the SoftwareSerial class initializes the receive pin as input mode and the transmit pin as output mode, and initializes the private variables of the class (after the colon and before the curly braces).    
-```
+```c++
 SoftwareSerial::SoftwareSerial(uint8_t receivePin, uint8_t transmitPin) : ...{
   ...
 }
 ```
 
 3\. Set the baud rate of the serial port.   
-```
+```c++
 void SoftwareSerial::begin(long speed){ ... }    
 ```
 The baud rate is used to calculate the time it takes to transfer a data bit:   
@@ -415,17 +415,17 @@ In order to obtain the accurate delay of various transmitting bits and receiving
 Using the PCINT function of MEGA328p, the interrupt can be generated when the level of each pin changes. The user needs to read the relevant register to determine which PCINT port has changed, and then jump into a specified program.    
 
 5\. Then the object of soft serial port class enters the listening state.     
-```
+```c++
 bool SoftwareSerial::listen(){ ... }  
 ```
 
 6\. Enable the receiving pin of the serial port to interrupt when the level changes.    
-```
+```c++
 void SoftwareSerial::setRxIntMsk(bool enable){ ... }
 ```
 
 7\. Set interrupt vectors and functions: Interrupts generated by PCINT0--PCINT3 all call the recv() function.     
-```
+```c++
 inline void SoftwareSerial::handle_interrupt(){
   if (active_object){
     active_object->recv();
@@ -453,14 +453,14 @@ ISR(PCINT3_vect, ISR_ALIASOF(PCINT0_vect));
 More info: <http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html>    
 
 8\. The receive function of the soft serial port that is executed if the level of the receive pin is changed.    
-```
+```c++
 void SoftwareSerial::recv(){ ... } 
 ```
 A 64-byte receive cache number is set and two Pointers, the receive cache header and the receive cache tail, are created. The two Pointers can point to any address in the array, and the cache tail pointer is incremented by 1 for each byte received.    
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/50img.png)        
 
 9\. Count the number of received data in the receive cache array and return the value.     
-```
+```c++
 int SoftwareSerial::available(){ ... }
 ```
 Algorithm:   
@@ -469,14 +469,14 @@ Algorithm:
 The above algorithm can count the number of received data in the receive cache array in both cases tail > head and tail < head.     
 
 10\. Reads all data in the receive buffer array byte by byte.     
-```
+```c++
 int SoftwareSerial::read(){ ... }
 ```
 The cache header pointer is incremented by 1 for each byte read, and the following is used to determine whether the cache is fully read:   
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/51img.png)        
 
 11\. Data is sent byte-by-byte from the send pin, with all interrupts turned off.   
-```
+```c++
 size_t SoftwareSerial::write(uint8_t b){ ... }
 ```
 
@@ -556,17 +556,17 @@ Stop condition:
 When the SDA line has transmitted the required data block, the master switches the SCL line from low to high level, and then the SDA line from low to high level. At this point, the master is disconnected from the slave.    
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/62img.png)        
 
-More info: [I2C](../../../_static/pdf/communication_protocol/UM10204%28I2C_Bus_Specification_and_User_Manual_%29.pdf)
+More info: [I2C](https://docs.mosiwi.com/en/latest/_downloads/e1f7b3d0019abdcae79aa04998fc1beb/UM10204%28I2C_Bus_Specification_and_User_Manual_%29.pdf)
 
 **4. Software I2C communication protocol**      
-This example is based on AHT20 temperature and humidity sensor, if you need specifications, please download here link: [AHT20](../../../_static/pdf/A1E0000_basic_learing_shield/AHT20.pdf)       
+This example is based on AHT20 temperature and humidity sensor, if you need specifications, please download here link: [AHT20](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf)       
 
 AHT20 example code:    
-■ Open the "3.1.0_AHT20_soft_i2c" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+■ Open the "3.1.0_AHT20_soft_i2c" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
 **5. Hardware I2C port**     
 AHT20 example code:    
-■ Open the "3.1.1_AHT20_i2c" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+■ Open the "3.1.1_AHT20_i2c" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 More info: [Wire](https://www.arduino.cc/reference/en/language/functions/communication/wire/)     
 
 ## Chapter5 SPI communication protocol           
@@ -614,10 +614,10 @@ Independent master-slave configuration:
 Daisy chain configuration:   
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/67img.png)        
 
-More info: [SPI](../../../_static/pdf/communication_protocol/SPI_Block_Guide_V03.06.pdf)    
+More info: [SPI](https://docs.mosiwi.com/en/latest/_downloads/58c80cccccdb2b064c5133fef5a99d4d/SPI_Block_Guide_V03.06.pdf)    
 
 **6. Software SPI**      
-This example is based on BC7278 quad digital tube and button chip. If you need specifications, please download from this link: [BC7278](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)      
+This example is based on BC7278 quad digital tube and button chip. If you need specifications, please download from this link: [BC7278](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)      
 
 Because the BC7278 chip does not have SPI chip selection pin (CS), the chip is in the enabled state after power on. So the UNO board (master device) only needs 3 roots to communicate with the BC7278 chip (slave device).     
 
@@ -647,7 +647,7 @@ The 74HC595 has one 8-bit shift register, one memory register, and one 3-state p
 ![Img](../_static/Arduino_tutorial/Advanced_tutorial/71img.png)        
 
 **4. Example code**          
-Open the "3.3.0_74HC595_3wire_soft" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+Open the "3.3.0_74HC595_3wire_soft" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
 Code analysis:       
 Initialize the three IO ports of the 74HC595 chip and set them all to output mode.    
@@ -672,10 +672,10 @@ void SetLed(byte bit, byte OnOff){ ... }
 
 ## Chapter7 Infrared NEC communication protocol       
 -----------------------------------------------  
-Please refer to: [NEC communication protocol](../../../common_resource/nec_communication_protocol/nec_communication_protocol.md)      
+Please refer to: [NEC communication protocol](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html)      
 
 **1. Example code**          
-Open the "3.4.0_IR_NEC" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+Open the "3.4.0_IR_NEC" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
 
 ## Chapter8 OneWire communication protocol    
@@ -723,8 +723,8 @@ Figure 3
 
 
 **1. Example code**         
-Open the "3.5.0_EEPROM_1wire_soft" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+Open the "3.5.0_EEPROM_1wire_soft" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
  
-Datasheet of EEPROM: [EEPROM](../../../_static/pdf/A1E0000_basic_learing_shield/DS2431.pdf)   
+Datasheet of EEPROM: [EEPROM](https://docs.mosiwi.com/en/latest/_downloads/3efa18a7de39b4e6eafecc338d4b2e22/DS2431.pdf)   
 
 **End!**      

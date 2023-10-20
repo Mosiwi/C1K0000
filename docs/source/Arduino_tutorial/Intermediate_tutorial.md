@@ -4,10 +4,10 @@ Learn common programming syntax based on "UNO board + expansion board + peripher
 
 ## Previous preparation      
 -----------------------     
-1. Install the [**Arduino IDE**](../../../arduino/arduino_ide/arduino_ide.md).     
-2. Basic operation of the [**Arduino UNO R3**](../../../arduino/A1D0000_uno_r3/A1D0000_uno_r3.md) motherboard.    
-3. Learn about [**Basic learning shield**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md).  
-4. Install the [**Mosiwi basic learning kit**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library) library.    
+1. Install the [**Arduino IDE**](https://docs.mosiwi.com/en/latest/arduino/arduino_ide/arduino_ide.html).     
+2. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html) motherboard.       
+3. Learn about [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
+4. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.      
 
 ## Chapter1 RGB LED    
 -------------------
@@ -65,7 +65,7 @@ RGB LED is a combination of red, green and blue LEDs. By controlling the intensi
 
 When the expansion board is directly inserted into the UNO board, the R, G, and B leds on the expansion board are controlled by the 5, 6, and 9 pins of the UNO board. These three pins can be set to digital output mode, by output high or low level to control the LED on and off.             
 Set pin mode:    
-```
+```c++ 
 Syntax:
 pinMode(pin, OUTPUT);
 
@@ -84,7 +84,7 @@ state: HIGH or LOW, corresponding to the LED on and off state
 
 (3) What is a preprocessing directive: #define  
 **\#define** allows the programmer to assign a name to a constant before compiling the program, and the compiler will replace references to these constants with defined values at compile time.    
-```
+```c++ 
 Syntax:
 #define name val
 
@@ -123,17 +123,17 @@ There is one LED strip on the expansion board, which is controlled by the 74HC59
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/7img.png)    
 
 Because the 74HC595 chip is controlled by pin 8, A0, and A1 of the UNO, the LED strip on the expansion board is ultimately controlled by the UNO board. For ease of use, the control methods have been written as functions and integrated into the library file, which must include the relevant headers:   
-```
+```c++ 
 #include <MswLed.h>
 ```
 
 Initialize the control pins:   
-```
+```c++ 
 Init_LED_IO(8, A1, A0);
 ```
 
 Control LED strip function:   
-```
+```c++ 
 Syntax:
 SetLed(num, state);
 
@@ -176,7 +176,7 @@ The more you push the slide resistor up, the more LEDs are turned on; the more y
 **FAQ:**
 (1) How is the map() function used?   
 map() is a mapping function that remaps numbers from one range to another, as follows:    
-```
+```c++ 
 Syntax:
 map(value, fromLow, fromHigh, toLow, toHigh)
 
@@ -201,7 +201,7 @@ More info: <https://www.arduino.cc/reference/en/language/structure/control-struc
 
 (3) How is the switch statement used?  
 Like the "if" statement, the "switch case" statement allows the programmer to control the flow of the program by executing different pieces of code under specified conditions.    
-```
+```c++ 
 Description:
 The "switch" statement compares the value of the variable "var" to the value specified in the case statement as "label". When the value of a case statement "label" is found to match the value of the variable "var", the block after the "case" statement is run until the "break" statement is executed, and the switch statement comes out.
 
@@ -249,17 +249,17 @@ The 1 "char" variable is 8 bits, 8 consecutive locations in memory, as shown bel
 | Decimal numbers | 2\*2\*2\*2\*2\*2\*2\*（0 or 1） | 2\*2\*2\*2\*2\*2\*（0 or 1） | 2\*2\*2\*2\*2\*（0 or 1） | 2\*2\*2\*2\*（0 or 1） | 2\*2\*2\*（0 or 1） | 2\*2\*（0 or 1） | 2\*（0 or 1） | 0 or 1 |
 
 From the figure above, we can see that the value range of "char" variable is: 0-255, please see the following calculation:       
-```
+```c++ 
 Binary number ：0b00000001
 Decimal number：0+0+0+0+0+0+0+1=1
 ```
 ...
-```
+```c++ 
 Binary number ：0b10000001
 Decimal number：2*2*2*2*2*2*2*1+0+0+0+0+0+0+1=129
 ```
 ...
-```
+```c++ 
 Binary number ：0b11111111
 Decimal number：2*2*2*2*2*2*2*1+64+32+16+8+4+2+1=255
 ```
@@ -278,15 +278,15 @@ The relationship between hexadecimal numbers and decimal numbers is as follows:
 | Decimal numbers | 16\*16\*16（0 to 15） | 16\*16（0 to 15） | 16（0 to 15） | 0 to 15 |  
 
 Hexadecimal number is usually prefixed with "0x" or "0X" as follows:   
-```
+```c++ 
 Hexadecimal number：0x000F
 Decimal number：0+0+0+15=15
 ```
-```
+```c++ 
 Hexadecimal number：0x00FF
 Decimal number：0+0+16*15+15=255
 ```
-```
+```c++ 
 Hexadecimal number：0xFFFD
 Decimal number：16*16*16*15+16*16*15+16*15+13=65533
 ```
@@ -295,7 +295,7 @@ You can open the PC calculator to verify the above calculation, first switch to 
 
 (5) How to control all leds of the LED strip at the same time?   
 In the previous chapter, we learned how to control a single LED, so we'll use another function that allows us to control the state of eight leds from bits of data.      
-```
+```c++ 
 Syntax:
 SetLedBar(num);
 
@@ -330,7 +330,7 @@ Every time you press "Button" on the expansion board, the LED strip on the expan
 **FAQ:**
 (1) How to use the bit operations: &, |, ~, ^, < <, > >     
 The bit AND operation: &      
-```
+```c++ 
 Description:
 Two data bits AND operations: 1&1 =1, 1&0=0, 0&1=0, 0&0=0    
 
@@ -342,7 +342,7 @@ Examples:
   0b10000000  --> result
 ```
 The bit OR operation: |    
-```
+```c++ 
 Description:
 Two data bits OR operations: 1|1=1，1|0=1，0|1=1，0|0=0
 
@@ -354,7 +354,7 @@ Examples:
   0b10000000  --> result
 ```
 The bit NOT operation: ~    
-```
+```c++ 
 Description:
 Two data bits NOT operations: ~0=1，~1=0  
 
@@ -365,7 +365,7 @@ Examples:
    0b01111110  --> result
 ```
 The bit XOR(Exclusive OR) operation: ^   
-```
+```c++ 
 Description:
 Two data bits XOR operations: 1|1=0，1|0=1，0|1=1，0|0=0
 
@@ -377,7 +377,7 @@ Examples:
   0b01110001  --> result
 ```
 Bit left shift operation: <<
-```
+```c++ 
 Syntax:
 variable << number_of_bits;
 
@@ -389,7 +389,7 @@ Examples:
 0b00000001 << 7 = 0b10000000
 ```
 Bit right shift operation: >>
-```
+```c++ 
 Syntax:
 variable >> number_of_bits;
 
@@ -440,7 +440,7 @@ The extension board integrates a patch passive buzzer that is controlled by the 
 The tone() and notone() functions are built-in libraries in the Arduino IDE that you can call directly.    
 
 The tone() function:     
-```
+```c++ 
 Description:
 Produces a square wave at the specified frequency (50% duty cycle) on the UNO pin. You can specify a duration, otherwise a square wave will be generated until noTone() is called.
 
@@ -465,7 +465,7 @@ tone(BuzzerPin, 440, 1000);
 More info: <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>   
 
 The notone() function:    
-```
+```c++ 
 Description:
 Stops the square wave generated by the tone() trigger.
 
@@ -549,7 +549,7 @@ Note type description: Take note 5 3 2 1 5 0 5 5 in the first short section of J
 In this case, the Jingle Bells are in the key of F, so the notes corresponding to the key of F are marked in red in the table. Please see the code in the example for the implementation of the music code!     
 
 (2) How do you use sizeof()?    
-```
+```c++ 
 Syntax:
 sizeof(variable);
 
@@ -563,7 +563,7 @@ More info <https://www.arduino.cc/reference/en/language/variables/utilities/size
 
 (3) How to use the store statements: PROGMEM, pgm_read_word_near(), pgm_read_float_near()       
 The PROGMEM keyword is a variable modifier that can only be used with data types defined in the "pgmspace.h" header file. It tells the compiler to "put this information in flash memory" instead of the usual SRAM.     
-```
+```c++ 
 Syntax:
 const dataType variableName[] PROGMEM = {data0, data1, data3… };
 
@@ -572,7 +572,7 @@ dataType: Data type; a variable of any data type.
 variableName: The name of the data array
 ```
 Flash memory data requires a specific syntax to read data, as follows:     
-```
+```c++ 
 Syntax:
 pgm_read_dataType_near(address_short);
 
@@ -617,7 +617,7 @@ For example, if we want to generate a square wave with a frequency of 500Hz, the
 In this case, we only need to execute the interrupt function once every 1 millisecond, and then change the level of the buzzer driver pin in the interrupt function, so that the following square wave can be generated:    
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/29img.png)    
 Example code:
-```  
+```c++   
 byte BuzzerPin   = 9; 
 void tone(void) {  
   static boolean output = HIGH;
@@ -662,7 +662,7 @@ The microphone on the expansion board integrates a preamplifier circuit, which r
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/34img.png)    
 
 An example of reading an analog value for a sound:      
-```
+```c++ 
 Example：
 int voiceAnalogValue; 
 voiceAnalogValue = analogRead(A6);
@@ -697,7 +697,7 @@ Speaking into the microphone on the extension or playing music (at a higher volu
 **FAQ:**          
 (1) What is logical and: &&    
 When two numbers "&&" operation, the result is true only if both operands are true; Otherwise, it is false.     
-```
+```c++ 
 Syntax:
 operand1 && operand2 ...
 
@@ -715,7 +715,7 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 Jump the program flow to a marked point in the program.      
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/37img.png)    
 
-```
+```c++ 
 Syntax:
 goto label; // Program flow jumps to "lable"
 //segment
@@ -736,7 +736,7 @@ More info: <https://www.arduino.cc/reference/en/language/structure/control-struc
 
 (3) How do you use the max() and min() functions?   
 max(x,y): Gets the largest of the two numbers.    
-```
+```c++ 
 Syntax:
 max(x, y);
 
@@ -754,7 +754,7 @@ value = max(255,200); //value is 255
 More info: <https://www.arduino.cc/reference/en/language/functions/math/max/>    
 
 min(x,y): Gets the minimum of two numbers.     
-```
+```c++ 
 Syntax:
 min(x, y);
 
@@ -811,20 +811,19 @@ If you are interested in learning more about 1-wire, take a look at this example
 
 (3) variable: word   
 A word can store an unsigned number of at least 16 bits (from 0 to 65535).    
-```
+```c++ 
 Syntax
 word var = val;
 Parameters
 
 var: variable name.
 val: the value to assign to that variable.
-
 ```
 
 (4) Class
 Class is an important part of C++ programming language, which combines data representation and methods to manipulate data into a concise package. The data and functions in the class are called class members.      
 Defining a class:   
-```
+```c++ 
 Syntax:
 class name {
     public:
@@ -841,7 +840,7 @@ name -The name of the class
 Member1, member2... : A member of a class that can be a variable, function, array, and so on.
 ```
 We can think of the class as a custom data type, such as char, int... Define a variable, also called a class implementation, as follows:     
-```
+```c++ 
 Syntax:
 className varName;
 
@@ -851,7 +850,7 @@ varName: This is the implementation name of the class.It can be thought of as a 
 ```
 For example, all cars have wheels, engines, seats, etc. We can define a class to call a car. But the car is divided into BMW, Volkswagen, Benz and so on, these are the object of the car. They may differ in wheel size, engine power, and number of seats. After defining the object, you can assign different values to the member functions and variables of the object to distinguish their differences. Objects of each class do not affect each other, which is a good way to protect their own data.     
 Define a car class:    
-```
+```c++ 
 class car{
   public:
     int wheelSize;
@@ -860,13 +859,13 @@ class car{
 }
 ```
 Create an object of class car:    
-```
+```c++ 
 car Benz;
 car VW;
 car BMW
 ```
 Give the object different parameters:    
-```
+```c++ 
 Benz.wheelSize = 10;
 Benz.power = 150;
 Benz.seat = 4;
@@ -880,7 +879,7 @@ BMW.power = 160;
 BMW.seat = 2;
 ```
 After the class has been created and the members have been assigned values, we can also read their values.For example, we can read the power of the BMW:    
-```
+```c++ 
 int Power = BMW.power;
 ```
 
@@ -925,7 +924,7 @@ specification parameter:
 (2) How to use variables: long, unsigned long   
 Signed long integer variable: **long**    
 Long variables are extended size variables for number storage, and store 32 bits (4 bytes), from -2,147,483,648 to 2,147,483,647.     
-```
+```c++ 
 Syntax:
 signed long var = val;
 
@@ -937,7 +936,7 @@ val -The value assigned to the variable
 
 unsigned long integer variable: **unsigned long**   
 Unsigned long variables are extended size variables for number storage, and store 32 bits (4 bytes). Unlike standard longs unsigned longs won’t store negative numbers, making their range from 0 to 4,294,967,295 (2^32 - 1).    
-```
+```c++ 
 Syntax:
 unsigned long var = val;
 
@@ -952,7 +951,7 @@ unsigned long oldTime = 0;
 (3) How to use the functions: millis(), abs()   
 mills():    
 Returns the number of milliseconds passed since the Arduino board began running the current program. This number will overflow (go back to zero), after approximately 50 days.    
-```
+```c++ 
 Syntax:
 time = millis()
 Parameters
@@ -964,7 +963,7 @@ Number of milliseconds passed since the program started. Data type: unsigned lon
 ```
 abs(): 
 Calculates the absolute value of a number.       
-```
+```c++ 
 Syntax:
 abs(x)
 Parameters
@@ -979,7 +978,7 @@ x: if x is greater than or equal to 0.
 (4) What are function arguments?   
 When we need to transfer some data to the function, we need to use the function parameters. Function parameters are the bridge between the outside and the inside of the function, and it is one-way, that is, from the outside to the inside of the function.    
 Defined function:      
-```
+```c++ 
 Syntax:
 Type function(type val1, type val2 ...) {
     // statement(s)
@@ -1033,7 +1032,7 @@ An infrared receiving sensor is integrated on the extension board, and pin 4 can
 
 For ease of use, we have integrated the related programs used in infrared receiver into the "Mosiwi_Basic_Learning_Kit" library. To use the relevant infrared receiver function, you must first select the timer and then include the relevant header file.     
 Select the timer:    
-```
+```c++ 
 Syntax:
 #define timer
 
@@ -1045,7 +1044,7 @@ In the sample code:
 ```
 
 Include the infrared receiver header file:
-```
+```c++ 
 Syntax:
 #include <xxx.h>
 
@@ -1057,7 +1056,7 @@ In practice:
 ```
 
 Create the object:    
-```
+```c++ 
 Syntax:
 MswIR IR(pin);
 
@@ -1070,12 +1069,12 @@ MswIR IR(RECV_PIN);
 ```
 
 Enable infrared reception:    
-```
+```c++ 
 IR.enable();
 ```
 
 Infrared decoding:   
-```
+```c++ 
 Usage:
 int var = IR.decode();
 
@@ -1093,7 +1092,7 @@ if (IR.decode()) {
 
 Decoding result:  
 If the decoding is successful, the decoding result is stored in the "ir.value" member of the IR receiver object.   
-```
+```c++ 
 In the sample code:
 Serial.println(IR.value, HEX);  
 ```
@@ -1154,7 +1153,7 @@ Turn on the serial port monitor, adjust the baud rate to 9600, put the obstacle 
 (1) What is Ultrasonic module?         
 An ultrasonic module is provided in this kit. The distance test can be performed after the module is inserted into the interface of the expansion board according to the cable connection requirements.          
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/56img.png)    
-More info: [Ultrasonic module](../../../outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.md)        
+More info: [Ultrasonic module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.html)        
 
 (2) What is pulse?   
 A pulse is an electrical impulse (voltage or current) that usually rises and falls like a pulse in electronics. The main features are waveform, amplitude, width and repetition rate. The pulses occur for a short time over the whole signal period relative to the continuous signal, and there is no signal during most of the signal period.    
@@ -1162,7 +1161,7 @@ A pulse is an electrical impulse (voltage or current) that usually rises and fal
 
 (3) How do you use the pulseIn() function?   
 Reads a pulse (either HIGH or LOW) on a pin. 
-```
+```c++
 Syntax: 
 pulseIn(pin, value)
 pulseIn(pin, value, timeout)
@@ -1192,7 +1191,7 @@ Ultrasonic
 
 **Wiring diagram:**      
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/51img.png)    
-[BC7278 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)      
+[BC7278 datasheet](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)      
 
 **Program flow diagram:**      
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/60img.png)    
@@ -1209,7 +1208,7 @@ After uploads the code, unplug the USB, and then connect the battery box, press 
 (1) What is a function that returns a value?    
 When a function is executed, the function returns a value, called a function with a return value.    
 Define a function:   
-```
+```c++
 Syntax: 
 Type function(type val1, type val2 ...) {
     // statement(s)
@@ -1222,7 +1221,7 @@ function: The name of the function
 val1, val2... : parameter name; Empty when type is "void".
 ```
 Call the function and return a value:   
-```
+```c++
 Syntax: 
 Type var = Type function(type val1, type val2 ...) ;
 
@@ -1239,7 +1238,7 @@ distance = Measuring_distance();
 
 (2) how to use the logic statements: ||   
 The result is true if either of the two operands is true.   
-```
+```c++
 Syntax:
 operand1 || operand2 ...
 
@@ -1289,14 +1288,14 @@ After uploading the code, the fan speed will change from small to large forward 
 (1) What is a fan?    
 There is a fan module in the kit, with two directional control pins, can control the fan forward and reverse, directly into the interface on the expansion board can be used.     
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/65img.png)    
-More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_module.md)      
+More info: [Fan module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0001_fan_module/O1M0001_fan_module.html)      
 
 **Extended chapter1:**      
 You can also control the fan using the fan driver function from the "Mosiwi_Basic_Learning_Kit" library. When using the fan driver function in the library, you must select the timer and then include the associated header file.
 
 Timer 1 or timer 2 is needed to drive the fan in the integration library, and the desired timer can be selected according to the requirements.    
 Select the timer: 
-```
+```c++
 Syntax:
 #define timer
 
@@ -1307,15 +1306,15 @@ In the sample code:
 #define FAN_USE_TIMER1
 ```
 Include the fan header file:   
-```
+```c++
 #include <MswFan.h>
 ```
 Initialize the pins that control the motor:   
-```
+```c++
 MswFan::init(5, 6);
 ```
 Control the direction of the fan:    
-```
+```c++
 Syntax:
 MswFan::direction(direction);
 
@@ -1327,7 +1326,7 @@ MswFan::direction(CW);
 MswFan::direction(CCW);
 ```
 Control the speed of the fan:    
-```
+```c++
 Syntax:
 MswFan::speed(S);
 
@@ -1335,11 +1334,11 @@ Parameters:
 S: The speed of the fan, allowing values from 0 to 255.
 ```
 Start the fan:   
-```
+```c++
 MswFan::run();
 ```
 Turn off the fan:   
-```
+```c++
 MswFan::stop();
 ```
 
@@ -1378,7 +1377,7 @@ After power on, the more up push the potentiometer on the expansion board, the f
 This is an intelligent fan with temperature control mode and remote control mode.    
 ![Img](../_static/Arduino_tutorial/Intermediate_tutorial/69img.png)    
 
-Function of [infrared remote control](../../../outsourcing/nec_ir_remote_control/nec_ir_remote_control.md) button:    
+Function of [infrared remote control](https://docs.mosiwi.com/en/latest/outsourcing/nec_ir_remote_control/nec_ir_remote_control.html) button:    
 1. 2: Turn on and off temperature control mode    
 2. ▲: Fan speed plus   
 3. ▼: Fan speed minus    

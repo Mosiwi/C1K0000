@@ -5,7 +5,7 @@ Learn the communication protocol, driver programming and MicroPyhotn module base
 ## Previous preparation    
 -----------------------
 **Pico and Thonny basics:**     
-If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](../../../raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.md)    
+If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
 
 ## Chapter1 Module for Pico    
@@ -16,7 +16,7 @@ When you have multiple xx.py files, you can put them in a single folder to form 
 
 2\. Then create a new file called "test.py" in that folder, and create a function and a class in that file:      
 ![Img](../_static/Pico_tutorial/Advanced_tutorial/2img.png)       
-```
+```python
 def hello():
     print("hello!")
     
@@ -32,7 +32,7 @@ class prt:
 
 4\. Create a new file called "module_test.py" and call the functions and classes from the module:     
 ![Img](../_static/Pico_tutorial/Advanced_tutorial/4img.png)       
-```
+```python
 import time                             # Importing the time class
 from mosiwi_lib.test import hello, prt  #  Import prt class and hello function from the machine module.
 
@@ -276,7 +276,7 @@ Independent master-slave configuration:
 Daisy chain configuration:   
 ![Img](../_static/Pico_tutorial/Advanced_tutorial/67img.png)        
 
-More info: [SPI](../../../_static/pdf/communication_protocol/SPI_Block_Guide_V03.06.pdf)    
+More info: [SPI](https://docs.mosiwi.com/en/latest/_downloads/58c80cccccdb2b064c5133fef5a99d4d/SPI_Block_Guide_V03.06.pdf)    
 
 
 ## Chapter5 3-wire communication          
@@ -299,7 +299,7 @@ The 74HC595 has one 8-bit shift register, one memory register, and one 3-state p
 
 ## Chapter6 Infrared NEC communication protocol     
 -----------------------------------------------            
-Please refer to: [NEC communication protocol](../../../common_resource/nec_communication_protocol/nec_communication_protocol.md)      
+Please refer to: [NEC communication protocol](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html)      
 
 
 ## Chapter7 OneWire communication protocol     
@@ -345,6 +345,6 @@ Figure 2
 Figure 3     
 ![Img](../_static/Pico_tutorial/Advanced_tutorial/80img.png)        
 
-Datasheet of EEPROM: [EEPROM](../../../_static/pdf/A1E0000_basic_learing_shield/DS2431.pdf)   
+Datasheet of EEPROM: [EEPROM](https://docs.mosiwi.com/en/latest/_downloads/3efa18a7de39b4e6eafecc338d4b2e22/DS2431.pdf)   
 
 **End!**      

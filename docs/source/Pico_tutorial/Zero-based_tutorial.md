@@ -1,13 +1,13 @@
 # Pico_zero-based_tutorial          
 --------------------------
-This tutorial is based on the [C1K0001 4in1 basic learning kit](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md).     
+This tutorial is based on the [C1K0001 4in1 basic learning kit](../Overview.md).     
 
 This tutorial only focuses on practical operation, without the need to understand the principles, and understands the simplest Pico programming operation, so that learners can get a sense of achievement and arouse their interest.     
 
 ## Prepared knowledge      
 ---------------------
 **Pico and Thonny basics:**     
-If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](../../../raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.md)    
+If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
 **Download sample code:**    
 Please download the sample code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 

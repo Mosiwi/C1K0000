@@ -1,6 +1,6 @@
 # Pico_intermediate_tutorial      
 ----------------------------
-This tutorial is based on the [C1K0001 4in1 basic learning kit](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md).     
+This tutorial is based on the [C1K0001 4in1 basic learning kit](../Overview.md).     
 
 Learn common programming syntax based on "Pico board + expansion board + peripheral module", and learn the most comprehensive MicroPython syntax and application with the lowest cost.     
 
@@ -13,12 +13,12 @@ MicroPython is a full implementation of the Python 3 programming language that r
 
 ## Prepared knowledge    
 ---------------------           
-**Learn about:** [**Basic learning shield**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md).  
+**Learn about:** [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 
-**Learn about:** [**3in1 basic learning shield**](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md).  
+**Learn about:** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#).  
 
 **Pico and Thonny basics:**     
-If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](../../../raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.md)    
+If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
 **Learn about:** [**MicroPython for Pico**](https://docs.micropython.org/en/latest/rp2/quickref.html).  
 
@@ -121,7 +121,7 @@ The fan rotates clockwise and counterclockwise, and the speed changes from small
 
 **FQA:**   
 (1) What is fan module?       
-See: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_module.md)     
+See: [Fan module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0001_fan_module/O1M0001_fan_module.html)     
 
 
 ## Chapter3 Microphone   
@@ -178,11 +178,11 @@ After the code is uploaded, the obstacle is placed in front of the ultrasonic se
 
 **FQA:**   
 (1) What is ultrasonic module?    
-See: [Ultrasonic module](../../../outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.md)           
+See: [Ultrasonic module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.html)           
 
 **Code analysis:**         
 Greater-than-equal operator: >=    
-```
+```python
 Syntax:
 x >= y   # true if x is greater than or equal to y, false if not.
 
@@ -192,7 +192,7 @@ y: variable or constant.
 ```
 
 Less-than-equal operator: <=  
-```  
+```python
 Syntax:
 x < y   # true if x is less than or equal to y, false if not.
 
@@ -202,7 +202,7 @@ y: variable or constant.
 ```
 
 not equal operator: ==  
-```  
+```python  
 Syntax:   
 x == y   # true if x is equal to y, false if not.
 
@@ -214,7 +214,7 @@ y: variable or constant.
 Here's some additional knowledge:  
 
 equal operator: !=  
-```  
+```python  
 Syntax:
 x == y   # true if x is not equal to y, false if not.  
 
@@ -224,7 +224,7 @@ y: variable or constant.
 ```
 
 Greater-than operator: >    
-```
+```python
 Syntax:
 x > y   # true if x is greater than y, false if not.
 
@@ -234,7 +234,7 @@ y: variable or constant.
 ```
 
 Less-than operator: <    
-```
+```python
 Syntax:
 x < y   # true if x is less than y, false if not.
 
@@ -272,11 +272,11 @@ There is one LED strip on the expansion board, which is controlled by the 74HC59
 ![Img](../_static/Pico_tutorial/Intermediate_tutorial/20img.png)    
 
 (2) What is 74HC595? 
-See: [74HC595](../Arduino_tutorial/Advanced_tutorial.md#chapter6-3-wire-communication)         
+See: [74HC595](https://docs.mosiwi.com/en/latest/_downloads/268f31940c69821d34773f9240acb291/74HC595.pdf)         
 
 **Code analysis:**         
 Defining a class:     
-```
+```python
 Syntax:
 class ClassName:
     VariableName1                        # Define a class variable
@@ -298,7 +298,7 @@ VariableName ClassName(Variable1, ...)
 ```    
 
 The bit AND operation: &      
-```
+```python
 Description:
 Two data bits AND operations: 1&1 =1, 1&0=0, 0&1=0, 0&0=0    
 
@@ -310,7 +310,7 @@ Examples:
   0b10000000  --> result
 ```
 The bit OR operation: |    
-```
+```python
 Description:
 Two data bits OR operations: 1|1=1，1|0=1，0|1=1，0|0=0
 
@@ -322,7 +322,7 @@ Examples:
   0b10000000  --> result
 ```
 The bit NOT operation: ~    
-```
+```python
 Description:
 Two data bits NOT operations: ~0=1，~1=0  
 
@@ -333,7 +333,7 @@ Examples:
    0b01111110  --> result
 ```
 The bit XOR(Exclusive OR) operation: ^   
-```
+```python
 Description:
 Two data bits XOR operations: 1|1=0，1|0=1，0|1=1，0|0=0
 
@@ -345,7 +345,7 @@ Examples:
   0b01110001  --> result
 ```
 Bit left shift operation: <<
-```
+```python
 Syntax:
 variable << number_of_bits
 
@@ -357,7 +357,7 @@ Examples:
 0b00000001 << 7 = 0b10000000
 ```
 Bit right shift operation: >>
-```
+```python
 Syntax:
 variable >> number_of_bits
 
@@ -440,7 +440,7 @@ The 4-bit 8-segment nixie shows 0-9999, then 999.9, and so on.
 See: [4-bit 8-segment digital tube](../Arduino_tutorial/Basic_tutorial.md#chapter-9-digital-tube-button-spi)       
 
 **Data type conversion:**     
-```
+```python
 int(x): This converts x to an integer   
 
 long(x): This converts x to an long integer 
@@ -470,7 +470,7 @@ oct(x): Converts an integer to an octal string
 
 **Schematic diagram:**       
 ![Img](../_static/Pico_tutorial/Intermediate_tutorial/46img.png)      
-Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the infrared receiving sensor.      
+Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](.https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the infrared receiving sensor.      
 
 **Open the example code: "ir-receiver_iic\.py"**     
 1. Open the sample code using the methods in **"[Basic_example](./Intermediate_tutorial.md#basic-chapter-blink)"**.     
@@ -482,7 +482,7 @@ When the infrared remote controller presses the button, point to the infrared re
 
 Pico will get 2 bytes of data, the first byte is the inverse code of the address of the infrared remote control device, and the second byte is the command code of the infrared remote control device.      
 ![Img](../_static/Pico_tutorial/Intermediate_tutorial/48img.png)    
-```   
+```python   
 data: 65432 = 0xff98
 
 Device inverse code:  
@@ -495,13 +495,13 @@ Device code:
 **FQA:**   
 (1) What is Ir-receiver?    
 See: [Ir-receiver](../Arduino_tutorial/Intermediate_tutorial.md#chapter13-ir-receiver)       
-See: [Ir-receiver module](../../../common_product/C1S0001_ir_receiver/C1S0001_ir_receiver.md)       
+See: [Ir-receiver module](https://docs.mosiwi.com/en/latest/common/C1S0001_ir_receiver/C1S0001_ir_receiver.html)       
 
 (2) What is NEC infrared communication protocol?       
-See: [NEC infrared communication protocol](../../../common_resource/nec_communication_protocol/nec_communication_protocol.md)
+See: [NEC infrared communication protocol](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html)
 
 (3) What is I2C communication?    
-There is an I2C slave chip on the [3in1_basic_shield](../../C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand), which integrates the NEC infrared communication protocol, and Pico communicates with it through the I2C protocol to read the data of the infrared receiver.     
+There is an I2C slave chip on the [3in1_basic_shield](.https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand), which integrates the NEC infrared communication protocol, and Pico communicates with it through the I2C protocol to read the data of the infrared receiver.     
 See: [I2C](../Arduino_tutorial/Advanced_tutorial.md#chapter4-i2c-communication-protocol)     
 See: [Pico use I2C](https://docs.micropython.org/en/latest/rp2/quickref.html#hardware-i2c-bus)     
 
@@ -528,7 +528,7 @@ The terminal will print the temperature and humidity values of the current envir
 
 **FQA:**   
 (1) What is Thermohygrometer?    
-A thermohygrometer is a tool that can accurately measure the current ambient temperature and humidity. In the example we used [AHT20](../../../_static/pdf/A1E0000_basic_learing_shield/AHT20.pdf) temperature and humidity sensor and 4 digital control made a temperature and humidity meter, 4 digital tube can display temperature and humidity values.     
+A thermohygrometer is a tool that can accurately measure the current ambient temperature and humidity. In the example we used [AHT20](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf) temperature and humidity sensor and 4 digital control made a temperature and humidity meter, 4 digital tube can display temperature and humidity values.     
 specification parameter: 
 | Name | Measuring range | Resolution | Error range |   
 | :-- | :-- | :-- | :-- |     

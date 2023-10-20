@@ -1,7 +1,7 @@
 # Microbit_tutorial    
 -------------------
 **Makecode and Microbit basics:**    
-If you don't have makecode and microbit basics, you can follow the link to learn the basics: [Click Me](../../../microbit/M1D0000_microbit_mainboard/M1D0000_microbit_mainboard.md)    
+If you don't have makecode and microbit basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/microbit/M1D0000_microbit_mainboard/M1D0000_microbit_mainboard.html)    
 
 ## Wiring diagram        
 -----------------
@@ -109,7 +109,7 @@ Usage:
 The value of the infrared receiver, microphone or sliding resistor on the expansion board is read through the [I2C protocol](../../C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand).        
 
 Usage:   
-Infrared receiver ([NEC](../../../common_resource/nec_communication_protocol/nec_communication_protocol.md))   
+Infrared receiver ([NEC](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html))   
 ![Img](../_static/Micobit_tutorial/33img.png)    
 ![Img](../_static/Micobit_tutorial/34img.jpg)     
 ![Img](../_static/Micobit_tutorial/40img.png)     

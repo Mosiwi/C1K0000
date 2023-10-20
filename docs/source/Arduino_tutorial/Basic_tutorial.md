@@ -4,10 +4,10 @@ Learn simple programming syntax based on the UNO board, and learn the most compr
 
 ## Previous preparation      
 ----------------------- 
-1. Install the [**Arduino IDE**](../../../arduino/arduino_ide/arduino_ide.md).     
-2. Basic operation of the [**Arduino UNO R3**](../../../arduino/A1D0000_uno_r3/A1D0000_uno_r3.md) motherboard.    
-3. Learn about [**Basic learning shield**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md).  
-4. Install the [**Mosiwi basic learning kit**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library) library.    
+1. Install the [**Arduino IDE**](https://docs.mosiwi.com/en/latest/arduino/arduino_ide/arduino_ide.html).     
+2. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html) motherboard.       
+3. Learn about [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
+4. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.      
 
 ## Chapter_1 Blink    
 ------------------
@@ -73,7 +73,7 @@ The inside of the function is shielded from the outside, when we need to transfe
 (5) How to set the I/O port to digital output mode?     
 Pins 2-13，A0-A5 on the UNO board can be set to digital output mode to output logic "0" (low level, 0V) and logic "1" (high level, 5V) on the pin.     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/10img.png)      
-```
+```c++
 Syntax:    
 pinMode(pin, mode);   
 
@@ -87,7 +87,7 @@ INPUT_PULLUP: Digital input mode with pull resistance.
 ```
 
 When mode is set to OUTPUT mode, use the following statement to make the IO port output high or low:    
-```
+```c++
 Syntax:
 digitalWrite(pin, value);
 
@@ -100,7 +100,7 @@ LOW: Low level, digital value is 0, voltage value is 0V.
 ```
 (6) How to use the delay() function?    
 The delay() function is used to pause the program for a period of time, which can be customized.    
-```
+```c++
 Syntax:
 delay(ms);
 
@@ -110,7 +110,7 @@ ms: The value ranges from 0 to 4294967295, in milliseconds.
 
 (7) How to use the comment symbols in the code: //, /\*...\*/
 When we want to parse the function and function of the code with text, we need to use the single-line comment (//) and block comment symbols(/\*...\*/). The text after the comment does not participate in the code running, but is only used to parse the code.     
-```
+```c++
 Syntax:
 // Text content that needs to be commented
 
@@ -161,7 +161,7 @@ Variable naming rules:
 3. Variable names are case-sensitive ("age", "Age", and "AGE" are three different variables).            
 
 **byte** variable is a variable defined by the arduino programming language, and its value ranges from 0 to 255.   
-```  
+```c++  
 Syntax:
 byte var = val;
 
@@ -171,7 +171,7 @@ val: The value assigned to the var.
 ```
 
 **Global variable** applies to the entire program and is defined outside the stup() and loop() functions, and not inside other functions. The "buttonPin", "ledPin", and "buttonState" variables defined in the sample code can be used in stup() and loop() functions, or in other functions.    
-```
+```c++ 
 Syntax: 
 byte buttonPin;          
 byte ledPin;          
@@ -180,7 +180,7 @@ byte buttonState;
 
 (3) How to use the assignment operator?
 The assignment symbol is "=", note that this symbol is not an equal sign, as in the example:    
-```
+```c++ 
 Syntax: 
 buttonPin   = 2;    
 ledPin      = 5;       
@@ -191,7 +191,7 @@ buttonState = 0;
 Pins 2-13, A0-A5 on the UNO board can be set to digital input mode to read the logic "0" (low level, 0V) and "1" (high level, 5V) of the pins.     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/10img.png)      
 Set the pin to digital input mode.      
-```
+```c++ 
 Syntax:    
 pinMode(pin, INPUT);   
 
@@ -199,7 +199,7 @@ Parameters:
 pin: The pin number of the arduino motherboard (2-13, A0-A5 for UNO).           
 ```
 Read the value on the pin:   
-```
+```c++ 
 Syntax:
 digitalRead(pin);
 
@@ -221,14 +221,14 @@ The equal and unequal relation operators are "\==" and "!= ". Commonly used with
 | != | Check whether the values of the two variables are equal. If equal, the condition is true, otherwise the condition is false. | (A != B) is true |     
 
 In the sample code:   
-```
+```c++ 
 buttonState == LOW
 buttonState != LOW
 ```
 
 (6) How to use the judgment statement: if     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/9img.png)    
-```
+```c++ 
 Syntax:
 if (condition) {
 //statement(s)
@@ -273,12 +273,12 @@ The buttonState variable only works in the loop() function, not in other functio
 Variables come from mathematics and are abstract concepts in computer language that can store calculation results or represent values. Variables can be accessed by variable name.    
 
 **Program flow diagram:**  
-```
+```c++ 
 if... else... 
 ``` 
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/13img.png)     
 
-```
+```c++ 
 Syntax:
 if(Condition) {
 // Statement to execute when the Condition is true.
@@ -288,12 +288,12 @@ else {
 }
 ```
 
-```
+```c++ 
 if...else if... ...else...
 ```
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/14img.png)     
 
-```
+```c++ 
 Syntax:
 if(Condition_1) {
 // Statement to execute when the Condition_1 is true.
@@ -351,7 +351,7 @@ Serial monitor:
 
 (3) How to output information to the serial port monitor?   
 When using the Arduino serial port, you must first initialize the serial port and set the baud rate. Generally, the serial port is initialized in the setup() function.   
-```
+```c++ 
 Syntax:
 Serial.begin(speed);
 Serial.begin(speed, config);
@@ -359,7 +359,7 @@ Serial.begin(speed, config);
 Parameters:
 speed: bits per second (baud rate). The allowed data type is long.
 config: Sets the data type, parity check, and stop bit. 
-```
+```c++ 
 config value:  
 | SERIAL_5N1 | SERIAL_6N1 | SERIAL_7N1 | SERIAL_8N1 (default) |   
 | :-- | :-- | :-- | :-- |   
@@ -370,7 +370,7 @@ config value:
 | SERIAL_5O2 | SERIAL_6O2 | SERIAL_7O2 | SERIAL_8O2 |   
 
 Two commonly used serial print functions:   
-```
+```c++ 
 Description:
 No new rows are generated after printing data.
 
@@ -386,7 +386,7 @@ val: The value to be printed. Allowed type: Any data type.
 Format: BIN(binary), OCT(octonary), DEC(Decimal), HEX(hexadecimal), 0(0 decimal), 1(1 decimal) ...
 
 ```
-```
+```c++ 
 Description:
 New rows are generated after printing data.
 
@@ -405,7 +405,7 @@ Format: BIN(binary), OCT(octonary), DEC(Decimal), HEX(hexadecimal), 0(0 decimal)
 
 (4) What are variables: char and String     
 **char** is a character data type with single quotes, for example, 'a'. The value ranges from -128 to 127.  
-```
+```c++ 
 Syntax:
 char var = val;
 
@@ -418,7 +418,7 @@ char a = ‘a’;
 ```
 
 **Sring** is an object of the Arduino custom class. It is used to store strings.    
-```
+```c++ 
 Syntax:
 Sring str = val;
 
@@ -451,7 +451,7 @@ Turn on the serial port monitor and set the baud rate to 9600. The serial port m
 **FAQ:**     
 (1) How to use arithmetic operators: +, -, *, /, %           
 Addition operation (+):    
-```
+```c++ 
 Syntax:
 sum = operand1 + operand2;
 
@@ -465,7 +465,7 @@ num = 10+1;
 ```
 
 Subtraction operation (-):     
-```
+```c++ 
 Syntax:
 difference = operand1 - operand2;
 
@@ -479,7 +479,7 @@ num = 10-1;
 ```
 
 Multiplication (*):    
-```
+```c++ 
 Syntax:
 product = operand1 * operand2;
 
@@ -493,7 +493,7 @@ num = 2*5;
 ```
 
 Division operation (/):   
-```
+```c++ 
 Syntax:
 result = numerator / denominator;
 
@@ -511,7 +511,7 @@ If one of the operands is of type float or double, the result is a floating-poin
 If both operands are of type float or double and the resulting variable is of type integer, only the integer part is stored and the decimal part is lost.    
 
 Remainder operation (%):   
-```
+```c++ 
 Syntax:
 remainder = dividend % divisor;
 
@@ -550,10 +550,14 @@ Turn on the serial port monitor and set the baud rate to 9600. Push the potentio
 **FAQ:**     
 (1) What is voltage?             
 The voltage is called potential difference or potential difference, the international unit is volts (V), and the commonly used units are millivolts (mV), microvolts (μV), and kilovolts (kV).     
-$$1KV = 1000V, 1V = 1000mV, 1mV = 1000uV$$    
+$$
+1KV = 1000V, 1V = 1000mV, 1mV = 1000uV
+$$    
 
 The relationship between voltage, current and resistance:   
-$$I=U/R$$   
+$$
+I=U/R
+$$   
 I: current, unit A.   
 U: voltage, unit V.   
 R: resistance, unit Ω.  
@@ -566,7 +570,7 @@ Sliding potentiometer is a resistance element with adjustable resistance value a
 The analog input pin converts the voltage value to a digital value. The UNO has six analog inputs, which are A0-A5 pins. The input voltage range of the pin is 0-5V, and the mapped digital range is 0-1023. The accuracy is 4.9mV (5V/1024).     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/25img.png)         
 For example, if the read digital value is 100, the analog voltage value is 490mV (100 x 4.9mV).    
-```
+```c++ 
 Syntax:
 analogRead(pin);
 
@@ -587,7 +591,7 @@ voltageValue = 5.0/1024*analogValue;
 
 (4) What are variables: int and float 
 **int** is an integer. The value range is -32768 -- -- 32767.  
-```
+```c++ 
 Syntax:
 int var = val;
 
@@ -600,7 +604,7 @@ int analogValue = 0;
 ```
  
 **Float** variable is a floating point variable and ranges from -3.4028235E+38 to -3.4028235E+38.   
-```
+```c++ 
 Syntax:
 float var = val;
 
@@ -612,7 +616,7 @@ In the sample code:
 float voltageValue = 0;
 ```
 
-## Chapter_5 External interrupt            
+## Chapter_6 External interrupt            
 -------------------------------  
 **Curriculum question:**     
 1. What is an external interrupt?  
@@ -641,7 +645,7 @@ Press the "OK" button and the red LED will light up. Press the "OK" button again
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/27img.png)     
 
 The UNO has two external interrupt pins, pin 2 and pin 3, pin 2 corresponds to external interrupt 0, pin 3 corresponds to external interrupt 1, the priority of external interrupt 0 is higher than that of external interrupt 1. When the task of external interruption 1 is executed, if the signal of external interruption 0 is generated again, the task of external interruption 1 is stopped and the task of external interruption 0 is executed. After the task of external interruption 0 is executed, the task of external interruption 1 is executed. When the task of external interrupt 0 is executed, if the signal of external interrupt 1 is generated again, the task of external interrupt 1 is executed only after the task of external interrupt 0 is executed.     
-```
+```c++ 
 Syntax:
 attachInterrupt(digitalPinToInterrupt(pin), ISR, mode);  (Recommended)
 
@@ -657,7 +661,7 @@ There are four interrupt modes, as follows:
 | Low level | Level change | Rising edge | Falling edge |   
 | ![Img](../_static/Arduino_tutorial/Basic_tutorial/28img.png) | ![Img](../_static/Arduino_tutorial/Basic_tutorial/29img.png) | ![Img](../_static/Arduino_tutorial/Basic_tutorial/30img.png) | ![Img](../_static/Arduino_tutorial/Basic_tutorial/31img.png) |   
 
-```
+```c++ 
 In the sample code:
 const byte interruptPin = 2;
 volatile boolean state = false;
@@ -669,7 +673,7 @@ attachInterrupt(digitalPinToInterrupt(interruptPin), blink, FALLING);
 			
 (2) How to use logical operators:!(not)  
 If the variable was originally false, the not logic will make the variable true. And vice versa.      
-```
+```c++ 
 Syntax:
 !val
 
@@ -682,7 +686,7 @@ state = ! state;
 
 (3) How to use variable modifiers: const and volatile   
 **Const** keyword indicates that the variable is a constant. It is a variable qualifier that makes the variable permission "read-only," meaning that its value cannot be changed. If you try to assign a value to a const variable, the compiler will report an error.     
-```
+```c++ 
 Syntax:
 const type var = val;
 
@@ -699,7 +703,7 @@ const byte interruptPin = 2;
 (4) How to use the loop statement: while   
 First determine whether the expression inside parentheses () is true, if it is true then execute the code inside parentheses {}, then determine whether the expression inside parentheses () is true, and so on.      
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/32img.png)        
-```
+```c++ 
 Syntax:
 while (condition) {
 // statement(s)
@@ -717,7 +721,7 @@ digitalWrite(ledPin, LOW);
 ```
 
 (5) How to write a function without parameters and return value?   
-```
+```c++ 
 Syntax:
 Type function(type val1, type val2 ...) {
 // statement(s)
@@ -754,7 +758,7 @@ After power-on, the red LED on the expansion board is turned off for 0.5 seconds
 (1) How to use the loop statement: do... while  
 First execute the statement inside curly braces{}, then determine whether the expression inside curly braces() is true, if so, then execute the statement inside curly braces{}, then determine whether the expression inside curly braces() is true, and so on.           
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/34img.png)     
-```
+```c++ 
 Syntax:
 do{
 // statement(s)
@@ -772,7 +776,7 @@ digitalWrite(ledPin, LOW);
 ```
 
 
-## Chapter_6 PWM            
+## Chapter_7 PWM            
 ----------------
 **Curriculum question:**     
 1. What is PWM output?     
@@ -805,7 +809,7 @@ Note: T = A + B
 There are 6 PWM output pins on the UNO board, which are 3, 5, 6, 9, 10 and 11 pins:    
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/38img.png)     
 
-```
+```c++ 
 Syntax:
 analogWrite(pin, value);
 
@@ -826,7 +830,7 @@ More information: <https://www.arduino.cc/reference/en/language/functions/analog
 A for loop statement is a conditional loop increment statement that loops the program inside braces {} if the increment condition is satisfied until the condition is not.    
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/40img.png)     
 
-```
+```c++ 
 Syntax:
 for (initialization; condition; increment) {
 // statement(s);
@@ -849,7 +853,7 @@ delay(20);
 
 (3) How to use operators: ++, --       
 Self-adding operation: ++   
-```
+```c++ 
 Description: Increments the value of a variable by 1.
 
 Syntax:
@@ -866,7 +870,7 @@ for(pwmValue = 0; pwmValue <= 255; pwmValue ++){ ... }
 More information: <https://www.arduino.cc/reference/en/language/structure/compound-operators/increment/>      
 
 Self-decrement operation: --
-```
+```c++ 
 Description: Reduces the value of a variable by 1.
 
 Syntax:
@@ -884,7 +888,7 @@ More information: <https://www.arduino.cc/reference/en/language/structure/compou
 
 (4) How to use comparison operators: >, <, >=, <=        
 Greater-than-equal operator: >=    
-```
+```c++ 
 Syntax:
 x >= y; // true if x is greater than or equal to y, false if not.
 
@@ -899,7 +903,7 @@ for(pwmValue = 255; pwmValue >= 0; pwmValue --){ ... }
 More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthanorequalto/>   
 
 Less-than-equal operator: <=  
-```  
+```c++   
 Syntax:
 x < y; // true if x is less than or equal to y, false if not.
 
@@ -914,7 +918,7 @@ for(pwmValue = 0; pwmValue <= 256; pwmValue ++){ ... }
 More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthanorequalto/>     
 
 Greater-than operator: >    
-```
+```c++ 
 Syntax:
 x > y; // true if x is greater than y, false if not.
 
@@ -929,7 +933,7 @@ for(pwmValue = 255; pwmValue > -0; pwmValue --){ ... }
 More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthan/>    
 
 Less-than operator: <    
-```
+```c++ 
 Syntax:
 x < y; // true if x is less than y, false if not.
 
@@ -944,7 +948,7 @@ for(pwmValue = 0; pwmValue < 256; pwmValue ++){ ... }
 More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthan/>      
 
 
-## Chapter_6 Timer1            
+## Chapter_8 Timer1            
 -------------------  
 **Curriculum question:**     
 1. How to use library files?   
@@ -971,7 +975,7 @@ See How to install library files: [Click Me](../../../arduino/A1E0000_basic_lear
 
 After loading the library file, if you want to call the library file in another file, you need to include the library file with the "include<xxx.h>" statement in the beginning line of the file, then you can use the library file. 
 The operation is as follows:    
-```
+```c++ 
 Syntax:
 include<filename.h>
 
@@ -990,7 +994,7 @@ When the timer count reaches the set time, an interrupt signal is generated for 
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/62img.png)     
 
 Initialize timer1:   
-```
+```c++ 
 Syntax:
 Timer1.initialize(us);
 
@@ -1002,7 +1006,7 @@ Timer1.initialize(500000); // Initializes timer 1. The timer is set to 0.5 secon
 ```
 
 Set the timed interrupt function:   
-```
+```c++ 
 Syntax:
 Timer1.attachInterrupt(name);
 
@@ -1024,7 +1028,7 @@ Timer1.attachInterrupt(flash);
 
 (3) How to use variable: bool            
 The bool type has two values: true or false. (Each bool variable takes up one byte of memory.)   
-```
+```c++ 
 Syntax:
 bool var = val;
 
@@ -1054,12 +1058,12 @@ The red LED on the expansion board shines once every 1 seconds.
 **FAQ:**   
 (1) How to use the timer2?    
 Include the timer2 header file integrated in the "**Mosiwi_basic_learning_kit**" library file:    
-```
+```c++ 
 #include <MswTimer2.h>
 ```
 
 Initializes timer2 and timer interrupt function:          
-```
+```c++ 
 Syntax:
 MsTimer2::set(ms, function);   // Set the interrupt time and interrupt function.   
 MsTimer2::start();             // Start timer2
@@ -1073,7 +1077,7 @@ function: The name of the interrupt function.
 
 (2) How to use the variable modifier: static       
 The static keyword is used to create static variables that are visible to only one function. They are created and initialized only the first time a function is called, and they remain after the function is called and take up memory.      
-```
+```c++ 
 Syntax:
 static dataType var = val;
 
@@ -1092,7 +1096,7 @@ output = ! output;
 More information: <https://www.arduino.cc/reference/en/language/variables/variable-scope-qualifiers/static/>    
 
 
-## Chapter_7 Humiture_I2C           
+## Chapter_9 Humiture_I2C           
 -------------------------
 **Curriculum question:**     
 1. What is I2C communication?      
@@ -1134,7 +1138,7 @@ The A4 pin of the UNO board is also the SDA pin, and the A5 pin is the SCL pin, 
 Array is in the program design, in order to deal with convenience, a number of elements with the same type in order to organize a form.     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/47img.png)     
 
-```
+```c++ 
 Syntax:
 Type Name [Num];
 Type Name [Num] = {e1,e2,e3,... eN};
@@ -1150,7 +1154,7 @@ float HT_data[2];
 ```
 
 Get the array value:    
-```
+```c++ 
 Syntax:
 var = array-name[index];
 
@@ -1161,7 +1165,7 @@ index: Array index
 ```
 
 Assign to an array:   
-```
+```c++ 
 Syntax:
 array-name[index] = val;
 
@@ -1173,7 +1177,7 @@ index: Array index
 More information: <https://www.arduino.cc/reference/en/language/variables/data-types/array/>   
 
 
-## Chapter_8 Pointer and Array           
+## Chapter_10 Pointer and Array           
 ------------------------------
 **Curriculum question:**     
 1. What is a pointer?   
@@ -1197,7 +1201,7 @@ A pointer is a type of variable that is assigned a random address when it is def
 As shown in the figure above, define a variable "var", the system assigns an address of 1001 (equivalent to the house number of a room), and the value stored in the address is 50 (equivalent to the value of 50 stored in the room); then a pointer "ptr" is defined, and the system assigns it an address of 2047 (also equivalent to the door number of a room); the value stored in the address is the address 1001 of the variable "var" (equivalent to the house number stored in the room); then you can use "ptr" (2047) --> "var" ( 1001) --> 50, find the value 50 of the "var" variable.     
 
 Define the pointer:   
-```
+```c++ 
 Syntax:
 type *point-name;
 type *point-name = NULL;
@@ -1212,7 +1216,7 @@ byte *p2 = NULL;
 ```
 
 The pointer reference operator: &    
-```
+```c++ 
 Syntax:
 point-name = &var-name;   //& denotes the address to fetch the variable
 
@@ -1222,7 +1226,7 @@ var-name: The variable name
 ```
 
 Take the value of the address pointed to by the pointer: *   
-```
+```c++ 
 Syntax:
 var-name = *point-name; 
 
@@ -1244,14 +1248,14 @@ The addresses of the array in the system memory are continuous, as shown in the 
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/51img.png)     
 The array is named x and has four elements: x[0], x[1], x[2], and x[3]. The array name x is also a pointer variable, and &x[0] has the same address as x because the pointer variable x points to the first element of the array.      
 So:    
-```
+```c++ 
 &x[0] = x，  x[0] = *(x)
 &x[1] = x+1，x[1] = *(x+1)
 ...
 &x[i] = x+i，x[i] = *(x+i)
 ```
 The name of an array is also a pointer variable, so you can assign the name of an array to a pointer variable, like this:   
-```
+```c++ 
 char *p1 = NULL;                  // Define a character pointer
 byte *p2 = NULL;                  // Define a byte pointer
 
@@ -1263,7 +1267,7 @@ p2 = num;
 ```
 
 
-## Chapter_9 Digital_tube-Button-SPI           
+## Chapter_11 Digital_tube-Button-SPI           
 ------------------------------------
 **Curriculum question:**     
 1. What is a 4-bit 8-segment digital tube?  
@@ -1328,7 +1332,7 @@ Turn on the serial port monitor, adjust the baud rate to 9600, and the serial po
 **FAQ:**   
 (1) What is coercion of a variable?      
 In C or C++ language, data or variables of different types cannot be assigned to each other. Coercion is to convert data or variables of the current type into data or variables of other types.     
-```
+```c++ 
 Syntax:
 type(expression)
 (type)expression
@@ -1343,7 +1347,7 @@ Serial. Println (int (97.3));
 
 (2) How do you use "while(1)"?         
 This is an infinite empty loop instruction. When the program executes to this statement, the program will always do an infinite empty loop here.     
-```
+```c++ 
 while(1){} = while(1);
 ```
 

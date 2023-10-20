@@ -1,6 +1,6 @@
 # Pico_basic_tutorial      
 ---------------------
-This tutorial is based on the [C1K0001 4in1 basic learning kit](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md).     
+This tutorial is based on the [C1K0001 4in1 basic learning kit](../Overview.md).     
 
 Learn simple programming syntax based on the Pico board, and learn the most comprehensive Python basics in the fastest way.     
 
@@ -13,12 +13,12 @@ MicroPython is a full implementation of the Python 3 programming language that r
 
 ## Prepared knowledge     
 ---------------------         
-**Learn about:** [**Basic learning shield**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md).  
+**Learn about:** [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 
-**Learn about:** [**3in1 basic learning shield**](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md).  
+**Learn about:** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html).  
 
 **Pico and Thonny basics:**     
-If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](../../../raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.md)    
+If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
 **Learn about:** [**MicroPython for Pico**](https://docs.micropython.org/en/latest/rp2/quickref.html).  
 
@@ -65,7 +65,7 @@ Pins and GPIO: [Click me](https://docs.micropython.org/en/latest/rp2/quickref.ht
 Delay and timing: [Click me](https://docs.micropython.org/en/latest/rp2/quickref.html#delay-and-timing)           
 
 Code comments:      
-```
+```python
 Syntax:    
 code block      # Comment text
 
@@ -74,7 +74,7 @@ import time     # Importing the time class
 ```
 
 import:     
-```
+```python
 Syntax:
 import modulename   
 
@@ -83,7 +83,7 @@ import time     # Importing the time class
 ```
 
 from xxx import xxx:    
-```
+```python
 Syntax:
 from modelname import member     
 
@@ -95,7 +95,7 @@ while loop:
 ![Img](../_static/Pico_tutorial/Basic_tutorial/22img.png)    
 ![Img](../_static/Pico_tutorial/Basic_tutorial/27img.gif)    
 
-```
+```python
 Syntax:
 while (condition):
     conditional code
@@ -181,7 +181,7 @@ Variable naming rules:
 2. Variable names must start with a letter or underscore character Variable names cannot start with numbers.         
 3. Variable names are case-sensitive ("age", "Age", and "AGE" are three different variables).            
 
-```
+```python
 Syntax:    
 VariableName = data 
 
@@ -220,7 +220,7 @@ Judgment statement:
 if ... else ...         
 ![Img](../_static/Pico_tutorial/Basic_tutorial/24img.png)    
 
-```
+```python
 Syntax:
 if condition: 
     conditional code
@@ -239,7 +239,7 @@ else:                          # If the value of the key is not 1, the LED is tu
 Additional knowledge: if    
 ![Img](../_static/Pico_tutorial/Basic_tutorial/28img.jpg)    
 
-```
+```python
 Syntax:
 if condition: 
     conditional code   
@@ -298,7 +298,7 @@ A 2N7002DW1T1G MOS is used to drive the buzzer on the extension board. It is a d
 
 **Code analysis:**          
 range() function:   
-```
+```python
 Syntax:
 range(stop)
 range(start, stop[, step])  
@@ -335,7 +335,7 @@ Range examples:
 for loop:    
 ![Img](../_static/Pico_tutorial/Basic_tutorial/26img.jpg)    
 
-```
+```python
 Syntax:   
 
 for <variable> in <sequence>:
@@ -393,7 +393,7 @@ See: [ADC for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#adc
 print function: [Click me](https://docs.python.org/3/library/functions.html#print)        
 
 Multiplication (*):    
-```
+```python
 Syntax:
 product = operand1 * operand2
 
@@ -408,7 +408,7 @@ The result is 10.
 ```
 
 Division operation (/):   
-```
+```python
 Syntax:
 result = numerator / denominator
 
@@ -422,7 +422,7 @@ num = 2/5
 The result is 2.5.   
 ```
 
-```
+```python
 In the sample code:
 print("Voltage value: %.2fV" %((3.3/65536)*adc))      #  (3.3/65536)*adc
 ```
@@ -430,7 +430,7 @@ print("Voltage value: %.2fV" %((3.3/65536)*adc))      #  (3.3/65536)*adc
 Here's some additional knowledge:
 
 Addition operation (+):    
-```
+```python
 Syntax:
 sum = operand1 + operand2
 
@@ -445,7 +445,7 @@ The result is 11.
 ```
 
 Subtraction operation (-):     
-```
+```python
 Syntax:
 difference = operand1 - operand2
 
@@ -460,7 +460,7 @@ The result is 9.
 ```
 
 Remainder operation (%):   
-```
+```python
 Syntax:
 remainder = dividend % divisor
 
@@ -505,7 +505,7 @@ See: [Timer for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#t
 
 **Code analysis:**    
 To use a global variable in a function:       
-```
+```python
 Syntax:
 global  VariableName  
 
@@ -521,7 +521,7 @@ def mycallback(t):           # Timed interrupt function
 
 pass:    
 Do not do anything, generally used as placeholder statements.     
-```
+```python
 Syntax:   
 loop statement:    
     pass
@@ -532,7 +532,7 @@ while True:                  # Always empty loop
 ```
 
 Define a function:    
-```
+```python
 Syntax:   
 def functionname(parameters1, parameters2, ... ):
     ...

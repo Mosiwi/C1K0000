@@ -1,30 +1,30 @@
 # Pi4_tutorial      
 --------------
-This tutorial is based on [C1K0001 4in1 basic learning kit](../C1K0000_4in1_basic_learning_kit.md) and C language, if you do not have knowledge of the C language, it is recommended to learn the [Arduino tutorial](../../C1K0000_4in1_basic_learning_kit/C1K0000_4in1_basic_learning_kit.md) first.     
+This tutorial is based on [C1K0001 4in1 basic learning kit](../Overview.md) and C language, if you do not have knowledge of the C language, it is recommended to learn the [Arduino tutorial](../Arduino_tutorial/Basic_tutorial.md) first.     
 
 ## Prepared knowledge <span style="color: rgb(255, 76, 65);">(Important)</span>     
 ---------------------              
-**1\. Learn about** [**Basic learning shield**](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md).  
+**1\. Learn about** [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 
-**2\. Learn about** [**3in1 basic learning shield**](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md).  
+**2\. Learn about** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html).  
 
 **3\. Raspberry pi4 basics**     
-If you don't have Raspberry pi4 basics, you can follow the link to learn the basics: [Click Me](../../../raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.md)      
+If you don't have Raspberry pi4 basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.html)      
 
 **4\. Install the GPIO library for Raspberry pi4**           
 
-1. Install the [Wiringpi](../../../raspberry/wiringpi/wiringpi.md)   
-2. Install the [BCM2835](../../../raspberry/bcm2835/bcm2835.md)      
+1. Install the [Wiringpi](https://docs.mosiwi.com/en/latest/raspberry/wiringpi/wiringpi.html)   
+2. Install the [BCM2835](https://docs.mosiwi.com/en/latest/raspberry/bcm2835/bcm2835.html)      
 
 **5\. Download sample code**   
-[Login to Raspberry pi4 using PUTTY](../../../raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.md#remote-access), then use the following command to download the sample code:      
-```   
+[Login to Raspberry pi4 using PUTTY](https://docs.mosiwi.com/en/latest/raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.html#remote-access-to-raspberry-pi-terminal-ssh), then use the following command to download the sample code:      
+```bash   
 git clone https://github.com/Mosiwi/Mosiwi-basic-learning-kit     
 ```    
 ![Img](../_static/pi4_tutorial/1img.png)    
 
 The file in the "**Mosiwi-basic-learning-kit-for-arduino -> pi4 -> c**" folder is the sample code：           
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c
 
 ls
@@ -38,11 +38,11 @@ Document architecture:
 3. The "xxx.o" and execution files are generated from the "Makefile" file.    
 4. If you are a newbie, it is not recommended to modify the contents of the "Makefile" and the name of the "xxx.c" file, which may cause compilation errors.    
 5. If the content of the xxx.c file is modified, you need to compile it again to generate an executable file.    
-```
+```bash 
 sudo make
 ```
-6. Run the execution file with the following command:   
-```
+1. Run the execution file with the following command:   
+```bash 
 sudo ./xxx
 ```
 
@@ -57,39 +57,39 @@ Resource: [GNU Make](https://www.gnu.org/software/make/)(Makefile)
 
 **Objective_1:**       
 Terminal into the **"1.0.0_Terminal"** folder:    
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.0.0_Terminal/    
 ```
 Permission to view execution files:   
-```
+```bash 
 ls -al   
 ```
 ![Img](../_static/pi4_tutorial/4img.png)      
 r: Read permission. &ensp;&ensp; w: Write permission. &ensp;&ensp; x: Execute permission.     
 
 If the file does not have execution permissions as shown in the figure above, you need to add execution permissions:    
-```
+```bash 
 chmod 777 terminal   
 ls -al   
 ```
 ![Img](../_static/pi4_tutorial/5img.png)     
 
 Run the compiled sample code:     
-```
+```bash 
 sudo ./terminal     
 ```
 ![Img](../_static/pi4_tutorial/6img.png)      
 
 **Objective_2:**       
 Delete the latest executable file and then view the files in the folder:     
-```
+```bash 
 rm terminal   
 ls   
 ```
 ![Img](../_static/pi4_tutorial/7img.png)     
 
 The "terminal" executable is no longer visible from the image above, now re-run the "Makefile" file to generate the executable "terminal" file.    
-```
+```bash 
 sudo make  
 ls   
 ```
@@ -97,18 +97,18 @@ ls
 
 **Objective_3:**    
 Edit the sample code using the [nano tool](https://www.nano-editor.org/) that comes with the Raspberry PI system:  
-```
+```bash 
 sudo nano terminal.c   
 ```
 ![Img](../_static/pi4_tutorial/39img.png)      
 
 When the editing is complete, save the file by typing the following command on the keyboard and exit the nano editor:  
-```terminal
+```bash 
 Ctrl+O           // save file
 Ctrl+C           // closed file
 ```
 Recompile the "terminal.c" source file:   
-```
+```bash 
 sudo make  
 ls
 ```
@@ -124,7 +124,7 @@ Then restart Raspberry PI and TUTTY.
 ## Example1: Arithmetic operator    
 --------------------------------         
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.0.1_Arithmetic_operation/     
 chmod 777 arithmetic_operation     
 sudo ./arithmetic_operation
@@ -141,7 +141,7 @@ sudo ./arithmetic_operation
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.1.0_Blink/     
 chmod 777 blink     
 sudo ./blink
@@ -160,7 +160,7 @@ The red LED lights on the expansion board are lit at one-second intervals.
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.2.0_Button/     
 chmod 777 button     
 sudo ./button
@@ -179,7 +179,7 @@ After uploads the code, the green RGB led on the expansion board is always off, 
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.2.0_Buzzer/     
 chmod 777 buzzer     
 sudo ./buzzer
@@ -200,7 +200,7 @@ After uploading the code, the buzzer on the expansion board will keep beeping wi
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.2.0_Buzzer/     
 chmod 777 buzzer     
 sudo ./buzzer
@@ -223,14 +223,14 @@ After uploading the code, the buzzer on the expansion board will keep beeping wi
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.8.0_Fan_PWM/     
 chmod 777 fan_pwm     
 sudo ./fan_pwm
 ```
 The fan rotates clockwise and counterclockwise, and the speed changes from small to large, and then from large to small.       
 ![Img](../_static/pi4_tutorial/14img.png)     
-More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_module.md)    
+More info: [Fan module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0001_fan_module/O1M0001_fan_module.html)    
 
 ## Example7 Potentiometer      
 -------------------------
@@ -240,11 +240,11 @@ More info: [Fan module](../../../outsourcing/O1M0001_fan_module/O1M0001_fan_modu
 
 **Schematic diagram:**       
 ![Img](../_static/pi4_tutorial/30img.png)    
-Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the potentiometer.      
+Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the potentiometer.      
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.3.0_Analog_sr/     
 chmod 777 analog_sr     
 sudo ./analog_sr
@@ -261,11 +261,11 @@ Push the potentiometer up and down, and the terminal prints the corresponding an
 
 **Schematic diagram:**       
 ![Img](../_static/pi4_tutorial/31img.png)    
-Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the microphone.      
+Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the microphone.      
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.3.0_Microphone/     
 chmod 777 microphone     
 sudo ./microphone
@@ -289,14 +289,14 @@ After running the code, the terminal prints the analog value of the amplified so
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.7.0_Ultrasonic/     
 chmod 777 ultrasonic     
 sudo ./ultrasonic
 ```
 After the code is uploaded, the obstacle is placed in front of the ultrasonic sensor, and the distance measured by the ultrasonic sensor is printed at the terminal.         
 ![Img](../_static/pi4_tutorial/18img.png)     
-More info: [Ultrasonic sensor](../../../outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.md)      
+More info: [Ultrasonic sensor](https://docs.mosiwi.com/en/latest/outsourcing/O1M0000_ultrasonic_module/O1M0000_ultrasonic_module.html)      
 
 
 ## Example10 Led-strip      
@@ -317,12 +317,12 @@ Led-strip
 
 Microphone
 ![Img](../_static/pi4_tutorial/31img.png)    
-Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the microphone.      
+Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the microphone.      
 
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.1.2_Led_strip/     
 chmod 777 led_strip     
 sudo ./led_strip
@@ -338,7 +338,7 @@ The more you push the slide resistor up, the more LEDs are turned on; the more y
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.6.0_Thread/     
 chmod 777 thread     
 sudo ./thread
@@ -360,7 +360,7 @@ The red LED lights on the expansion board are lit at one-second intervals.
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/1.8.0_Digital_tube_Button_spi/     
 chmod 777 digital_tube_button_spi     
 sudo ./ldigital_tube_button_spi
@@ -383,11 +383,11 @@ The 4-bit digital display tube displays "16.0" when the "U" key is pressed; "8.0
 
 **Schematic diagram:**       
 ![Img](../_static/pi4_tutorial/35img.png)            
-Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](../../../common_product/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand) board to process the data of the infrared receiving sensor.      
+Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the infrared receiving sensor.      
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.6.0_IRrecvDemo/     
 chmod 777 ir_recvDemo     
 sudo ./ir_recvDemo
@@ -432,7 +432,7 @@ Display
 
 **Demonstration:**       
 Run the following command on the terminal:       
-```
+```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c/examples/2.5.0_Thermohygrometer/     
 chmod 777 thermohygrometer     
 sudo ./thermohygrometer
