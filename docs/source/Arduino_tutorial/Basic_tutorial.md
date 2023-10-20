@@ -971,7 +971,7 @@ The red LED on the expansion board shines once every 0.5 seconds.
 
 **FAQ:**     
 (1) How to use library files?   
-See How to install library files: [Click Me](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)        
+See How to install library files: [Click Me](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)        
 
 After loading the library file, if you want to call the library file in another file, you need to include the library file with the "include<xxx.h>" statement in the beginning line of the file, then you can use the library file. 
 The operation is as follows:    
@@ -1249,10 +1249,10 @@ The addresses of the array in the system memory are continuous, as shown in the 
 The array is named x and has four elements: x[0], x[1], x[2], and x[3]. The array name x is also a pointer variable, and &x[0] has the same address as x because the pointer variable x points to the first element of the array.      
 So:    
 ```c++ 
-&x[0] = x，  x[0] = *(x)
-&x[1] = x+1，x[1] = *(x+1)
+&x[0] = x,   x[0] = *(x)
+&x[1] = x+1, x[1] = *(x+1)
 ...
-&x[i] = x+i，x[i] = *(x+i)
+&x[i] = x+,  x[i] = *(x+i)
 ```
 The name of an array is also a pointer variable, so you can assign the name of an array to a pointer variable, like this:   
 ```c++ 
@@ -1275,7 +1275,7 @@ p2 = num;
 
 **Schematic diagram:**           
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/69img.png)            
-[BC7278 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/BC7278.pdf)        
+[BC7278 datasheet](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)        
 
 **Program flow diagram:**   
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/52img.png)     
@@ -1312,6 +1312,7 @@ The "Basic learning shield" is integrated with a 4-bit 8-segment display digital
 | U | D | L | R | OK |
 | :--: | :--: | :--: | :--: | :--: |
 | 16 | 8 | 4 | 2 | 1 |
+
 <span style="color: rgb(255, 76, 65);">Note: The 4-bit 8-segment digital tube and 5 keys on the "Basic learning shield" occupy pins 3 (key trigger signal output), 11 (MOSI), 12 (MISO) and 13 (CLK) of the UNO board, and the CS control pin is not required.</span>     
 
 **Knowledge expansion:**
