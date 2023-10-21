@@ -27,7 +27,7 @@ Learn simple programming syntax based on the UNO board, and learn the most compr
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/2img.png)     
 
 **Connect control board to your computer with USB cable:**       
-![Img](../../../_static/common_product//C1K0000_4in1_basic_learning_kit/Arduino_tutorial/Basic_tutorial/61img.jpg)
+![Img](../_static/Arduino_tutorial/Basic_tutorial/61img.jpg)
 
 **Open the example code: "1.0.0_Blink"**     
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/1img.png)    
@@ -265,8 +265,28 @@ When the "OK" key is pressed, the red RGB LED lights up, otherwise the RGB LED d
 **FAQ:**     
 (1) What are local variables?
 Local variables are variables that are valid only in a function body or block of code.     
-In the loop() function of the sample code, a "buttonState" local variable is defined and assigned to 0.     
-![Img](../_static/Arduino_tutorial/Basic_tutorial/12img.png)     
+In the loop() function of the sample code, a "buttonState" local variable is defined and assigned to 0.      
+```c++
+...
+void loop() {
+  // local variable
+  byte buttonState = 0;         
+
+  // read the state of the pushbutton value.
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is LOW.
+  if (buttonState == LOW) {
+    // turn LED on.
+    digitalWrite(ledPin, HIGH);
+  } 
+  else {
+    // turn LED off.
+    digitalWrite(ledPin, LOW);
+  }
+}
+```
+
 The buttonState variable only works in the loop() function, not in other functions or code blocks.     
 
 (2) How to use the judgment statement: if... else... , if... else if... else...    
@@ -359,7 +379,7 @@ Serial.begin(speed, config);
 Parameters:
 speed: bits per second (baud rate). The allowed data type is long.
 config: Sets the data type, parity check, and stop bit. 
-```c++ 
+``` 
 config value:  
 | SERIAL_5N1 | SERIAL_6N1 | SERIAL_7N1 | SERIAL_8N1 (default) |   
 | :-- | :-- | :-- | :-- |   
@@ -1104,7 +1124,7 @@ More information: <https://www.arduino.cc/reference/en/language/variables/variab
 
 **Schematic diagram:**           
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/68img.png)            
-[AHT20 datasheet](../../../_static/pdf/A1E0000_basic_learing_shield/AHT20.pdf)      
+[AHT20 datasheet](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf)      
 
 **Program flow diagram:**   
 ![Img](../_static/Arduino_tutorial/Basic_tutorial/42img.png)     

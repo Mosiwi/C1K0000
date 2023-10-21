@@ -15,7 +15,7 @@ MicroPython is a full implementation of the Python 3 programming language that r
 ---------------------           
 **Learn about:** [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 
-**Learn about:** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#).  
+**Learn about:** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html).  
 
 **Pico and Thonny basics:**     
 If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
@@ -461,7 +461,7 @@ oct(x): Converts an integer to an octal string
 -----------------------                
 **Objective:**     
 1. What is Ir-receiver?      
-2. What is NEC infrared communication protocol? 
+2. What is NEC infrared communication protocol?           
 3. What is I2C communication protocol? 
 
 **Pins to be used:**   
