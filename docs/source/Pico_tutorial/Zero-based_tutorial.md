@@ -9,11 +9,11 @@ This tutorial only focuses on practical operation, without the need to understan
 **Pico and Thonny basics:**     
 If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
-**Download sample code:**    
+**Download sample code:**      
+Download the example code: [Mosiwi-basic-learning-kit](../Code/Mosiwi-basic-learning-kit.zip) 
+Download the example code2: [Mosiwi-basic-learning-kit](../Code) 
 Please download the sample code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
-![Img](../_static/Pico_tutorial/Zero-based_tutorial/1img.png)       
-
-1232:[Download](../Code/Mosiwi-basic-learning-kit.zip)      
+![Img](../_static/Pico_tutorial/Zero-based_tutorial/1img.png)         
 
 Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the sample code.       
 ![Img](../_static/Pico_tutorial/Zero-based_tutorial/2img.png)      
