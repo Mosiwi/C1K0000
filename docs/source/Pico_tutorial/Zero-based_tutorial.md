@@ -13,7 +13,7 @@ If you don't have Pico and Thonny basics, you can follow the link to learn the b
 Please download the sample code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
 ![Img](../_static/Pico_tutorial/Zero-based_tutorial/1img.png)       
 
-[download](../Code/Mosiwi-basic-learning-kit.zip)
+1232:[Download](../Code/Mosiwi-basic-learning-kit.zip)      
 
 Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the sample code.       
 ![Img](../_static/Pico_tutorial/Zero-based_tutorial/2img.png)      
