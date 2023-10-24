@@ -27,5 +27,3 @@ This kit provides tutorials based on 4 types of motherboards, but only pico moth
 
 
 
-
-
