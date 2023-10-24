@@ -21,47 +21,47 @@ Learn simple programming syntax based on the UNO board, and learn the most compr
 7. How to use the comment symbols in the code: //, /* ... */    
 
 **Schematic diagram:**           
-![Img](./Basic_img/65img.png)            
+![Img](../_static/arduino_tutorial/basic_img/65img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/2img.png)     
+![Img](../_static/arduino_tutorial/basic_img/2img.png)     
 
 **Connect control board to your computer with USB cable:**       
-![Img](./Basic_img/61img.jpg)
+![Img](../_static/arduino_tutorial/basic_img/61img.jpg)
 
 **Open the example code: "1.0.0_Blink"**     
-![Img](./Basic_img/1img.png)    
+![Img](../_static/arduino_tutorial/basic_img/1img.png)    
 Upload the code to the UNO board.       
 <span style="color: rgb(255, 76, 65);">Note: All the sample code in the following sections is opened in the same way as in the figure above.</span>     
 
 **Example code phenomena:**    
 The RGB LED on the expansion board emits a red light every 1 second.    
-![Img](./Basic_img/4img.png)    
+![Img](../_static/arduino_tutorial/basic_img/4img.png)    
 
 **FAQ:**      
 (1) What is LED light?    
 Leds are also known as light-emitting diodes. It has positive and negative poles, generally the shorter pin or the pin near the gap is the negative pole, and the other end is the positive pole. Only when the forward current is connected, the LED light will be lit. Its current is generally required to be about 5-15ma, so resistors are often used in series with leds to achieve current limiting.     
 
 Plug-in LED:      
-![Img](./Basic_img/3img.png)     
+![Img](../_static/arduino_tutorial/basic_img/3img.png)     
 
 SMD LED:      
-![Img](./Basic_img/74img.png)     
+![Img](../_static/arduino_tutorial/basic_img/74img.png)     
 
 RGB LED:     
 It is a combination of red, green and blue LEDs. By controlling the intensity of the light emitted by the LEDs of 3 colors and fusing the 3 lights together, various light sources can be produced.          
-![Img](./Basic_img/70img.png)     
+![Img](../_static/arduino_tutorial/basic_img/70img.png)     
 
 (2) What is MOS transistor?
 MOS, is MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) abbreviation.      
 Mosfets are four-terminal devices with source (S), gate (G), drain (D), and body (B) terminals. Typically, the B terminal is connected to the S terminal, resulting in a three-terminal device. MOS transistors can be divided into enhanced MOS transistors and depletion MOS transistors, which can be subdivided into N-channel MOS transistors and p-channel MOS transistors. The enhanced MOS transistors are more widely used in the two types.     
-![Img](./Basic_img/71img.png)    
+![Img](../_static/arduino_tutorial/basic_img/71img.png)    
 
 MOS transistors are commonly used as switches. If the voltage between the drain and the source reaches the threshold voltage, the G and S poles are conducted, otherwise they are not conducted. Common circuits are as follows:   
-![Img](./Basic_img/72img.png)    
+![Img](../_static/arduino_tutorial/basic_img/72img.png)    
 
 A 2N7002DW1T1G MOS is used to drive the buzzer on the extension board. It is a dual-body enhanced n-channel MOS transistor that uses one of the MOS to drive the buzzer. When a voltage greater than 2V is applied to its gate, the MOS drain and source are energized and therefore the buzzer is energized. Otherwise the buzzer is on.       
-![Img](./Basic_img/73img.png)     
+![Img](../_static/arduino_tutorial/basic_img/73img.png)     
 
 (3)What are functions and function parameters?
 When we want to program to achieve a function, we need to use a variety of programming language statements, variables, functions, etc., in order to facilitate the maintenance and reading of the code, we need to wrap them together, and then use a name to represent this function, call this name that calls these statements, variables, functions, etc., this is the concept of function.      
@@ -72,7 +72,7 @@ The inside of the function is shielded from the outside, when we need to transfe
 
 (5) How to set the I/O port to digital output mode?     
 Pins 2-13，A0-A5 on the UNO board can be set to digital output mode to output logic "0" (low level, 0V) and logic "1" (high level, 5V) on the pin.     
-![Img](./Basic_img/10img.png)      
+![Img](../_static/arduino_tutorial/basic_img/10img.png)      
 ```c++
 Syntax:    
 pinMode(pin, mode);   
@@ -133,27 +133,27 @@ Text content to be commented
 6. How to use the judgment statement: if        
 
 **Schematic diagram:**           
-![Img](./Basic_img/66img.png)            
+![Img](../_static/arduino_tutorial/basic_img/66img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/5img.png)     
+![Img](../_static/arduino_tutorial/basic_img/5img.png)     
 
 **Open the example code: "1.1.0_Button"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.     
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.     
 2. Upload the code to the UNO board.      
 
 **Example code phenomena:**   
 When the "OK" key is pressed, the red RGB LED lights up, otherwise the RGB LED does not light up.    
-![Img](./Basic_img/6img.png)     
+![Img](../_static/arduino_tutorial/basic_img/6img.png)     
 
 **FAQ:**     
 (1) What is a button?   
 The button is a press switch, as shown in the following figure, A and B, C and D are directly connected inside, when no press, AB and CD are not connected, when the key is pressed, AB and CD are connected.    
-![Img](./Basic_img/7img.png)     
+![Img](../_static/arduino_tutorial/basic_img/7img.png)     
 
 (2) What are variables, byte variables and global variables?   
 Variables come from mathematics and are abstract concepts in computer language that can store calculation results or represent values. Variables can be accessed by variable name.    
-![Img](./Basic_img/8img.png)     
+![Img](../_static/arduino_tutorial/basic_img/8img.png)     
 
 Variable naming rules:      
 1. Variable names can contain only alphanumeric characters and underscores (A-z, 0-9, and _).          
@@ -189,7 +189,7 @@ buttonState = 0;
 
 (4) How to set up and use the digital input port?    
 Pins 2-13, A0-A5 on the UNO board can be set to digital input mode to read the logic "0" (low level, 0V) and "1" (high level, 5V) of the pins.     
-![Img](./Basic_img/10img.png)      
+![Img](../_static/arduino_tutorial/basic_img/10img.png)      
 Set the pin to digital input mode.      
 ```c++ 
 Syntax:    
@@ -227,7 +227,7 @@ buttonState != LOW
 ```
 
 (6) How to use the judgment statement: if     
-![Img](./Basic_img/9img.png)    
+![Img](../_static/arduino_tutorial/basic_img/9img.png)    
 ```c++ 
 Syntax:
 if (condition) {
@@ -252,15 +252,15 @@ digitalWrite(ledPin, LOW);
 (2) How to use the judgment statement: if... else... , if... else if... else...      
 
 **Program flow diagram:**   
-![Img](./Basic_img/11img.png)     
+![Img](../_static/arduino_tutorial/basic_img/11img.png)     
 
 **Open the example code: "1.1.1_Button"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.      
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.      
 2. Upload the code to the UNO board.       
 
 **Example code phenomena:**   
 When the "OK" key is pressed, the red RGB LED lights up, otherwise the RGB LED does not light up.    
-![Img](./Basic_img/6img.png)     
+![Img](../_static/arduino_tutorial/basic_img/6img.png)     
 
 **FAQ:**     
 (1) What are local variables?
@@ -296,7 +296,7 @@ Variables come from mathematics and are abstract concepts in computer language t
 ```c++ 
 if... else... 
 ``` 
-![Img](./Basic_img/13img.png)     
+![Img](../_static/arduino_tutorial/basic_img/13img.png)     
 
 ```c++ 
 Syntax:
@@ -311,7 +311,7 @@ else {
 ```c++ 
 if...else if... ...else...
 ```
-![Img](./Basic_img/14img.png)     
+![Img](../_static/arduino_tutorial/basic_img/14img.png)     
 
 ```c++ 
 Syntax:
@@ -328,7 +328,7 @@ else{
 ```
 
 In the sample code:   
-![Img](./Basic_img/15img.png)     
+![Img](../_static/arduino_tutorial/basic_img/15img.png)     
 
 ## Chapter_3 Serial port monitor       
 --------------------------------
@@ -339,20 +339,20 @@ In the sample code:
 4. What are variables: char and String          
 
 **Program flow diagram:**   
-![Img](./Basic_img/18img.png)     
+![Img](../_static/arduino_tutorial/basic_img/18img.png)     
 
 **Open the example code: "1.2.0_Serial_monitor"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**       
-![Img](./Basic_img/17img.png)     
+![Img](../_static/arduino_tutorial/basic_img/17img.png)     
 The serial port monitor will print the ASCII code value 97 for the character "a". The ASCII code is the numeric value corresponding to the character or symbol in the computer.     
 Details please refer to: <https://en.wikipedia.org/wiki/ASCII>   
 
 **FAQ:**     
 (1) What is a serial port?     
-![Img](./Basic_img/19img.png)     
+![Img](../_static/arduino_tutorial/basic_img/19img.png)     
 The "0" and "1" pins on the UNO board are serial port RX (receive) and TX (transmit) pins. Serial port is a communication interface, which is characterized by a simple line, as long as two lines can achieve two-way communication, but the transmission speed is slow.       
 In the advanced chapter will explain its communication protocol in detail, at this time as long as you understand what is the serial port.       
 More information please refer to: <https://www.arduino.cc/reference/en/language/functions/communication/serial/>          
@@ -360,13 +360,13 @@ More information please refer to: <https://www.arduino.cc/reference/en/language/
 
 (2) What is a serial port monitor?    
 The Arduino IDE has a serial monitor. The UNO can send data to the monitor through the USB-to-serial chip, and the monitor can also send data to the UNO.       
-![Img](./Basic_img/16img.png)     
+![Img](../_static/arduino_tutorial/basic_img/16img.png)     
 
 Open the serial monitor:       
-![Img](./Basic_img/63img.png)     
+![Img](../_static/arduino_tutorial/basic_img/63img.png)     
 
 Serial monitor:      
-![Img](./Basic_img/64img.png)     
+![Img](../_static/arduino_tutorial/basic_img/64img.png)     
 
 
 (3) How to output information to the serial port monitor?   
@@ -458,15 +458,15 @@ More information: <https://www.arduino.cc/reference/en/language/variables/data-t
 (1) How to use arithmetic operators: +, -, *, /, %              
 
 **Program flow diagram:**   
-![Img](./Basic_img/20img.png)     
+![Img](../_static/arduino_tutorial/basic_img/20img.png)     
 
 **Open the example code: "1.2.1_Arithmetic_operation"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Turn on the serial port monitor and set the baud rate to 9600. The serial port monitor prints calculation information every 2 seconds.      
-![Img](./Basic_img/21img.png)     
+![Img](../_static/arduino_tutorial/basic_img/21img.png)     
 
 **FAQ:**     
 (1) How to use arithmetic operators: +, -, *, /, %           
@@ -554,18 +554,18 @@ The result is 1.
 4. What are variables: int and float                 
 
 **Schematic diagram:**           
-![Img](./Basic_img/67img.png)            
+![Img](../_static/arduino_tutorial/basic_img/67img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/22img.png)     
+![Img](../_static/arduino_tutorial/basic_img/22img.png)     
 
 **Open the example code: "1.3.0_Analog_read"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Turn on the serial port monitor and set the baud rate to 9600. Push the potentiometer up and down, and the serial port monitor prints out the corresponding analog value and voltage value.        
-![Img](./Basic_img/23img.png)     
+![Img](../_static/arduino_tutorial/basic_img/23img.png)     
 
 **FAQ:**     
 (1) What is voltage?             
@@ -584,11 +584,11 @@ R: resistance, unit Ω.
 
 (2) What is a sliding potentiometer?   
 Sliding potentiometer is a resistance element with adjustable resistance value and three leading ends. It usually consists of a resistive body and a removable brush. When the brush moves along the resistance body, the resistance value or voltage that is related to the displacement can be obtained at the output end.      
-![Img](./Basic_img/24img.png)     
+![Img](../_static/arduino_tutorial/basic_img/24img.png)     
 
 (3) What is the analog input port?   
 The analog input pin converts the voltage value to a digital value. The UNO has six analog inputs, which are A0-A5 pins. The input voltage range of the pin is 0-5V, and the mapped digital range is 0-1023. The accuracy is 4.9mV (5V/1024).     
-![Img](./Basic_img/25img.png)         
+![Img](../_static/arduino_tutorial/basic_img/25img.png)         
 For example, if the read digital value is 100, the analog voltage value is 490mV (100 x 4.9mV).    
 ```c++ 
 Syntax:
@@ -646,23 +646,23 @@ float voltageValue = 0;
 5. How to write a function without parameters and return value?                   
 
 **Schematic diagram:**           
-![Img](./Basic_img/66img.png)            
+![Img](../_static/arduino_tutorial/basic_img/66img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/26img.png)     
+![Img](../_static/arduino_tutorial/basic_img/26img.png)     
 
 **Open the example code: "1.4.0_External_interrupt"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Press the "OK" button and the red LED will light up. Press the "OK" button again and the red LED will go out.   
-![Img](./Basic_img/6img.png)     
+![Img](../_static/arduino_tutorial/basic_img/6img.png)     
 
 **FAQ:**     
 (1) What is an external interrupt?  
 **External interrupt** means that when the system is performing a task, the outside gives a signal to the system, allowing the system to perform another more important thing, and then comes back to perform the task that was stopped before.     
-![Img](./Basic_img/27img.png)     
+![Img](../_static/arduino_tutorial/basic_img/27img.png)     
 
 The UNO has two external interrupt pins, pin 2 and pin 3, pin 2 corresponds to external interrupt 0, pin 3 corresponds to external interrupt 1, the priority of external interrupt 0 is higher than that of external interrupt 1. When the task of external interruption 1 is executed, if the signal of external interruption 0 is generated again, the task of external interruption 1 is stopped and the task of external interruption 0 is executed. After the task of external interruption 0 is executed, the task of external interruption 1 is executed. When the task of external interrupt 0 is executed, if the signal of external interrupt 1 is generated again, the task of external interrupt 1 is executed only after the task of external interrupt 0 is executed.     
 ```c++ 
@@ -679,7 +679,7 @@ There are four interrupt modes, as follows:
 | LOW | CHANGE | RISING | FALLING |   
 | :--: | :--: | :--: | :--: |
 | Low level | Level change | Rising edge | Falling edge |   
-| ![Img](./Basic_img/28img.png) | ![Img](./Basic_img/29img.png) | ![Img](./Basic_img/30img.png) | ![Img](./Basic_img/31img.png) |   
+| ![Img](../_static/arduino_tutorial/basic_img/28img.png) | ![Img](../_static/arduino_tutorial/basic_img/29img.png) | ![Img](../_static/arduino_tutorial/basic_img/30img.png) | ![Img](../_static/arduino_tutorial/basic_img/31img.png) |   
 
 ```c++ 
 In the sample code:
@@ -722,7 +722,7 @@ const byte interruptPin = 2;
 
 (4) How to use the loop statement: while   
 First determine whether the expression inside parentheses () is true, if it is true then execute the code inside parentheses {}, then determine whether the expression inside parentheses () is true, and so on.      
-![Img](./Basic_img/32img.png)        
+![Img](../_static/arduino_tutorial/basic_img/32img.png)        
 ```c++ 
 Syntax:
 while (condition) {
@@ -764,20 +764,20 @@ state = ! state;
 1. How to use the loop statement: do... while
 
 **Program flow diagram:**   
-![Img](./Basic_img/33img.png)     
+![Img](../_static/arduino_tutorial/basic_img/33img.png)     
 
 **Open the example code: "1.4.1_External_interrupt"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 After power-on, the red LED on the expansion board is turned off for 0.5 seconds and turned on for 0.5 seconds. If you press the "OK" button on the expansion board, the red LED will keep going out; Press the "OK" button again to resume the loop state.     
-![Img](./Basic_img/6img.png)     
+![Img](../_static/arduino_tutorial/basic_img/6img.png)     
 
 **FAQ:**   
 (1) How to use the loop statement: do... while  
 First execute the statement inside curly braces{}, then determine whether the expression inside curly braces() is true, if so, then execute the statement inside curly braces{}, then determine whether the expression inside curly braces() is true, and so on.           
-![Img](./Basic_img/34img.png)     
+![Img](../_static/arduino_tutorial/basic_img/34img.png)     
 ```c++ 
 Syntax:
 do{
@@ -805,29 +805,29 @@ digitalWrite(ledPin, LOW);
 4. How to use comparison operators: >, <, >=, <=         
 
 **Schematic diagram:**           
-![Img](./Basic_img/65img.png)            
+![Img](../_static/arduino_tutorial/basic_img/65img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/35img.png)     
+![Img](../_static/arduino_tutorial/basic_img/35img.png)     
 
 **Open the example code: "1.5.0_PWM_output"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Open the serial port monitor, the current output PWM value of pin 5 will be printed, the value from small to large, and then large to small;
 
 The brightness of the red LED on the expansion board is also from small to large, and then large to small, so the cycle.      
-![Img](./Basic_img/36img.png)     
+![Img](../_static/arduino_tutorial/basic_img/36img.png)     
 
 **FAQ:**     
 (1) What is PWM output?     
 PWM, called pulse width modulation signal, is a square wave signal with fixed frequency and variable duty cycle time. In the figure below, T is the cycle time, which is fixed; A is high level (UNO high level is 5V); B is low level (UNO high level is 0V); The level width of A and B in the period T time is changeable, the longer the pulse time of the high level, the larger the average voltage value, and the smaller the vice versa.        
-![Img](./Basic_img/37img.png)     
+![Img](../_static/arduino_tutorial/basic_img/37img.png)     
 Note: T = A + B     
 
 There are 6 PWM output pins on the UNO board, which are 3, 5, 6, 9, 10 and 11 pins:    
-![Img](./Basic_img/38img.png)     
+![Img](../_static/arduino_tutorial/basic_img/38img.png)     
 
 ```c++ 
 Syntax:
@@ -842,13 +842,13 @@ const byte pwmOutPin = 5;
 int pwmValue = 0;
 analogWrite(pwmOutPin, pwmValue);
 ```
-![Img](./Basic_img/39img.png)     
+![Img](../_static/arduino_tutorial/basic_img/39img.png)     
 <span style="color: rgb(255, 76, 65);">Note: Because pin 5 and 6 use timer 0 to generate PWM signal, pin 9 and 10 use timer 1 to generate PWM signal, pin 3 and 11 use timer 2 to generate PWM signal; Therefore, when using PWM signal output, it will interfere with the use of relevant timers.</span>      
 More information: <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>	
 
 (2) How to use the for statement?      
 A for loop statement is a conditional loop increment statement that loops the program inside braces {} if the increment condition is satisfied until the condition is not.    
-![Img](./Basic_img/40img.png)     
+![Img](../_static/arduino_tutorial/basic_img/40img.png)     
 
 ```c++ 
 Syntax:
@@ -976,18 +976,18 @@ More information: <https://www.arduino.cc/reference/en/language/structure/compar
 3. How to use variable: bool                    
 
 **Schematic diagram:**           
-![Img](./Basic_img/65img.png)            
+![Img](../_static/arduino_tutorial/basic_img/65img.png)            
 
 **Program flow diagram:**   
-![Img](./Basic_img/41img.png)     
+![Img](../_static/arduino_tutorial/basic_img/41img.png)     
 
 **Open the example code: "1.6.0_Timer1"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 The red LED on the expansion board shines once every 0.5 seconds.       
-![Img](./Basic_img/4img.png)     
+![Img](../_static/arduino_tutorial/basic_img/4img.png)     
 
 **FAQ:**     
 (1) How to use library files?   
@@ -1011,7 +1011,7 @@ In the sample code:
 A timer is equivalent to an alarm clock, which can set a time, generate a signal (equivalent to an interrupt) at every set time, and perform another thing when the signal is generated.     
 
 When the timer count reaches the set time, an interrupt signal is generated for the processor to execute a short program.       
-![Img](./Basic_img/62img.png)     
+![Img](../_static/arduino_tutorial/basic_img/62img.png)     
 
 Initialize timer1:   
 ```c++ 
@@ -1065,15 +1065,15 @@ bool output = true;
 2. How to use the variable modifier: static
 
 **Program flow diagram:**   
-![Img](./Basic_img/33img.png)     
+![Img](../_static/arduino_tutorial/basic_img/33img.png)     
 
 **Open the example code: "1.6.1_Timer2"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 The red LED on the expansion board shines once every 1 seconds.    
-![Img](./Basic_img/4img.png)     
+![Img](../_static/arduino_tutorial/basic_img/4img.png)     
 
 **FAQ:**   
 (1) How to use the timer2?    
@@ -1123,24 +1123,24 @@ More information: <https://www.arduino.cc/reference/en/language/variables/variab
 2. What is an array?                         
 
 **Schematic diagram:**           
-![Img](./Basic_img/68img.png)            
-[AHT20 datasheet](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf)      
+![Img](../_static/arduino_tutorial/basic_img/68img.png)            
+[AHT20 datasheet](../_static/pdf/AHT20.pdf)      
 
 **Program flow diagram:**   
-![Img](./Basic_img/42img.png)     
+![Img](../_static/arduino_tutorial/basic_img/42img.png)     
 
 **Open the example code: "1.7.0_Humiture_i2c"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Start the serial port monitor and set the baud rate to 9600. The serial port monitor prints the temperature and humidity of the current environment every 1 second.      
-![Img](./Basic_img/43img.png)     
+![Img](../_static/arduino_tutorial/basic_img/43img.png)     
 
 **FAQ:**     
 (1) What is I2C communication?     
 The I²C (Inter-Integrated Circuit) bus is a two-wire serial synchronous communication interface developed by PHILIPS, which can realize serial synchronous communication between a master device and multiple slave devices. I²C only needs two lines, namely SDA (serial data line) and SCL (serial clock line), both of which are two-way I/O lines.    
-![Img](./Basic_img/44img.png)     
+![Img](../_static/arduino_tutorial/basic_img/44img.png)     
 
 The advantages of the I²C bus are as follows:     
 1. No matter how many I²C devices are on the bus, the two lines can communicate.    
@@ -1149,14 +1149,14 @@ The advantages of the I²C bus are as follows:
 4. Serial 8-bit bidirectional data, transmission bit rate can reach 100kbit/s in standard mode, 400kbit/s in fast mode, and 3.4Mbit/s in high-speed mode.   
 
 The A4 pin of the UNO board is also the SDA pin, and the A5 pin is the SCL pin, which can be used to communicate with other I2C devices.    
-![Img](./Basic_img/45img.png)     
+![Img](../_static/arduino_tutorial/basic_img/45img.png)     
 
 "Basic learning shield" has an I2C interface, but also integrated a temperature and humidity sensor, it and UNO board communication is through the I2C, directly plugged in the UNO board can be used.    
-![Img](./Basic_img/46img.png)     
+![Img](../_static/arduino_tutorial/basic_img/46img.png)     
 
 (2)  What is an array?               
 Array is in the program design, in order to deal with convenience, a number of elements with the same type in order to organize a form.     
-![Img](./Basic_img/47img.png)     
+![Img](../_static/arduino_tutorial/basic_img/47img.png)     
 
 ```c++ 
 Syntax:
@@ -1204,20 +1204,20 @@ More information: <https://www.arduino.cc/reference/en/language/variables/data-t
 2. How are Pointers related to arrays?                            
 
 **Program flow diagram:**   
-![Img](./Basic_img/48img.png)     
+![Img](../_static/arduino_tutorial/basic_img/48img.png)     
 
 **Open the example code: "1.7.1_Pointer_Array"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Open the serial port monitor, set the baud rate to 9600, and the serial port monitor prints the array name, array index, pointer name and the data of the index every 2 seconds.    
-![Img](./Basic_img/49img.png)     
+![Img](../_static/arduino_tutorial/basic_img/49img.png)     
 
 **FAQ:**     
 (1) What is a pointer?       
 A pointer is a type of variable that is assigned a random address when it is defined, and then the pointer can be used to point to the address of the variable and the value of the variable can be obtained from the address of the variable.    
-![Img](./Basic_img/50img.png)     
+![Img](../_static/arduino_tutorial/basic_img/50img.png)     
 As shown in the figure above, define a variable "var", the system assigns an address of 1001 (equivalent to the house number of a room), and the value stored in the address is 50 (equivalent to the value of 50 stored in the room); then a pointer "ptr" is defined, and the system assigns it an address of 2047 (also equivalent to the door number of a room); the value stored in the address is the address 1001 of the variable "var" (equivalent to the house number stored in the room); then you can use "ptr" (2047) --> "var" ( 1001) --> 50, find the value 50 of the "var" variable.     
 
 Define the pointer:   
@@ -1265,7 +1265,7 @@ More information: <https://www.arduino.cc/reference/en/language/structure/pointe
 
 (2) How are Pointers related to arrays?                   
 The addresses of the array in the system memory are continuous, as shown in the following figure:    
-![Img](./Basic_img/51img.png)     
+![Img](../_static/arduino_tutorial/basic_img/51img.png)     
 The array is named x and has four elements: x[0], x[1], x[2], and x[3]. The array name x is also a pointer variable, and &x[0] has the same address as x because the pointer variable x points to the first element of the array.      
 So:    
 ```c++ 
@@ -1294,41 +1294,41 @@ p2 = num;
 2. What is SPI communication?
 
 **Schematic diagram:**           
-![Img](./Basic_img/69img.png)            
-[BC7278 datasheet](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)        
+![Img](../_static/arduino_tutorial/basic_img/69img.png)            
+[BC7278 datasheet](../_static/pdf/BC7278.pdf)        
 
 **Program flow diagram:**   
-![Img](./Basic_img/52img.png)     
+![Img](../_static/arduino_tutorial/basic_img/52img.png)     
 
 **Open the example code: "1.8.0_Digital_tube_Button_spi"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 The 4-bit digital display tube displays "16.0" when the "U" key is pressed; "8.0" is displayed when the "D" key is pressed; "4.0" is displayed when the "L" key is pressed; "2.0" is displayed when the "R" key is pressed. Displays "1.0" when the "OK" key is pressed.    
-![Img](./Basic_img/53img.png)     
+![Img](../_static/arduino_tutorial/basic_img/53img.png)     
 
 **FAQ:**     
 (1) What is a 4-bit 8-segment digital tube?     
 Digital can be divided into common cathode or common anode digital, all LED cathodes are connected together called common cathode digital tube, all internal LED anodes are connected together is called common anode digital tube.                  
-![Img](./Basic_img/54img.png)     
+![Img](../_static/arduino_tutorial/basic_img/54img.png)     
 
 The 4-bit 8-segment digital tube is internally composed of four 1-bit 8-segment digital tubes. We used a 4-bit 8-segment cocathode digital tube, as shown below:    
-![Img](./Basic_img/55img.png)     
+![Img](../_static/arduino_tutorial/basic_img/55img.png)     
 
 (2) What is SPI communication?     
 SPI(Serial Peripheral interface) is a synchronous serial communication interface specification for short distance communication, which is mainly used in embedded systems. It can realize serial synchronous communication between a master device and multiple slave devices.     
-![Img](./Basic_img/56img.png)     
+![Img](../_static/arduino_tutorial/basic_img/56img.png)     
 SCLK: Serial clock (host generated)  
 MOSI: The master outputs data and the slave inputs data   
 MISO: The master inputs data and the slave outputs data   
 CS /SS: Chip/slave selection (usually low level valid, output by the master)    
 
 The UNO board has a hardware SPI interface with pins 10 (CS), 11 (MOSI), 12 (MISO), 13 (CLK).
-![Img](./Basic_img/57img.png)     
+![Img](../_static/arduino_tutorial/basic_img/57img.png)     
 
 The "Basic learning shield" is integrated with a 4-bit 8-segment display digital tube and five keys. They are controlled by the BC7278 chip, which has a slave SPI interface and a key trigger signal output. The extension board is directly inserted into the UNO board, you can control the display of the digital tube and read the key value of the 4-bit key.     
-![Img](./Basic_img/58img.png)     
+![Img](../_static/arduino_tutorial/basic_img/58img.png)     
 | U | D | L | R | OK |
 | :--: | :--: | :--: | :--: | :--: |
 | 16 | 8 | 4 | 2 | 1 |
@@ -1340,15 +1340,15 @@ The "Basic learning shield" is integrated with a 4-bit 8-segment display digital
 2. How do you use "while(1)"?   
 
 **Program flow diagram:**   
-![Img](./Basic_img/59img.png)     
+![Img](../_static/arduino_tutorial/basic_img/59img.png)     
 
 **Open the example code: "1.8.1_Forced_variable_conversion"**     
-1. Open the sample code using the methods in **"[Chapter_1](./Basic_tutorial.md#chapter-1-blink)"**.   
+1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
 Turn on the serial port monitor, adjust the baud rate to 9600, and the serial port monitor prints the data information after forced conversion every 2 seconds.     
-![Img](./Basic_img/60img.png)     
+![Img](../_static/arduino_tutorial/basic_img/60img.png)     
 
 **FAQ:**   
 (1) What is coercion of a variable?      
@@ -1373,4 +1373,4 @@ while(1){} = while(1);
 ```
 
 **End!**    
-For more exciting tutorials, check out the [intermediate tutorial](./Intermediate_tutorial.md)!    
+For more exciting tutorials, check out the [intermediate tutorial](./intermediate_tutorial.md)!    

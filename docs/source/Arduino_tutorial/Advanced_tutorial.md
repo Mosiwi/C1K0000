@@ -259,119 +259,9 @@ More info: <https://docs.arduino.cc/learn/contributions/arduino-creating-library
 
 ## Chapter3 Serial port        
 -----------------------   
-**1. Puzzled**    
-There are many serial port products on the market, such as RS232, RS485, TTL, which can be divided into simplex, half-duplex and full-duplex communication, but they cannot be used together, which can easily confuse everyone. This is because people don't know the difference between them. Now let's study them in detail and divide them into protocol layer, physical layer and communication to explain.       
+What is a serial port? [Click me](https://docs.mosiwi.com/en/latest/resource/serial_port/serial_port.html)      
 
-**2. Protocol layer**      
-The serial port communication protocol mentioned here is based on UART (Universal Asynchronous Receiver-Transmitter), which specifies the format of sending and receiving data between two devices. The device has two hardware units, one is the transmitter (TX) and the other is the receiver (RX). The connection between the two devices is as follows:     
-![Img](./Advanced_img/21img.png)       
-
-The main purpose of each device's transmitter and receiver is to send and receive data on the serial data line.    
-![Img](./Advanced_img/22img.png)       
-The transmitting UART is connected to the control data bus that transmits data in parallel, and the parallel data is serially transferred bit by bit on the transmission line to the receiving UART. The receiver converts the serial data to parallel data and transmits it to the parallel device.     
-
-For UART and most serial communications, the same baud rate needs to be set on the sending and receiving devices. In serial port communications, the baud rate determines the maximum number of bits transferred per second.    
-
-UART summary:    
-1. Number of wires: 2   
-2. Baud rate: 9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600, 1000000, 1500000    
-3. Transmission method: asynchronous     
-4. Maximum number of hosts: 1     
-5. Maximum number of slaves: 1      
-
-A UART device does not use a clock signal to synchronize the transmitter and receiver devices, it transmits data asynchronously. While the receiver uses its internal clock signal to sample the incoming data, the transmitter also generates the bit stream based on its internal clock signal, and no clock signal is required between the receiver and transmitter to synchronize the data. Use the same baud rate on both devices to manage the synchronization point, failure to do so may affect the time to send and receive data, resulting in discrepancies in data processing. Under the premise that the timing of the bits does not deviate too much, the maximum allowable difference in the baud rate is 10%.       
-
-In UART devices, data is transferred in packets. The transmitter and receiver need to create serial data packets and control these physical hardware lines for data transfer. A data packet consists of start bits, data frames, parity bits, and stop bits.     
-![Img](./Advanced_img/23img.png)       
-
-Start bit:    
-The data line of a UART device is normally held high when not transmitting data. To start a data transfer, the transmitting UART pulls the transmission line from high to low for 1 clock cycle. When the receiving UART detects a high-to-low transition, it starts reading the bits in the data frame at the set baud rate.    
-![Img](./Advanced_img/24img.png)       
-
-Data frame:     
-The data frame contains the actual data being transmitted. If parity bits are used, it can be 5 and up to 8 bits. If parity bits are not used, the data frame can be 9 bits. In most cases, the lowest bit of the data is sent first.     
-![Img](./Advanced_img/25img.png)       
-
-Parity bits:    
-The parity bit describes whether a number is even or odd. The parity bit is a way for the receiving UART to determine whether the data has changed during transmission. Bits can be altered by electromagnetic radiation or mismatched baud rates.     
-After the receiving UART reads the data frame, it calculates the sum of the values of the bits in the data frame that are 1 and checks whether the sum is even or odd.  If the parity bit is 0, the sum of bits that are 1 in the data frame should be even. If the parity bit is 1, the sum of bits that are 1 in the data frame should be odd.    
-![Img](./Advanced_img/26img.png)       
-
-To signal the end of a data packet, the transmitting UART drives the data transmission line from low voltage to high voltage for a duration of 1 to 2 bits.    
-![Img](./Advanced_img/27img.png)       
-
-
-**UART transmission steps:**      
-1\. The sending UART receives data from the data bus in parallel.   
-![Img](./Advanced_img/28img.png)       
-
-2\. The sending UART adds the start, parity and stop bits to the data frame.    
-![Img](./Advanced_img/29img.png)       
-
-3\. The entire data packet is sent serially to the receiving UART, which samples the data line at a preconfigured internal baud rate.   
-![Img](./Advanced_img/30img.png)       
-
-4\. After verifying the received data successfully, the receiving UART discards the start bit, parity bit and stop bit of the data frame.     
-![Img](./Advanced_img/31img.png)       
-
-5\. The receiving UART converts the serial data back to parallel data and transmits it to the parallel data bus on the receiving end.     
-![Img](./Advanced_img/32img.png)       
-
-**3. physical layer**      
-The physical layer is to optimize the interface shape or communication data level voltage, so that the transmission distance is longer, and the data transmission is faster and more accurate.       
-
-1\. RS232    
-The RS-232 interface conforms to the serial data communication interface standard formulated by the Electronic Industry Alliance (EIA) of the United States, and its full name is EIA-RS-232. It defines the interface between DTE (data terminal devices such as computers) and DCE (data communication devices such as modems) devices using serial binary data exchange.     
-![Img](./Advanced_img/33img.png)       
-
-The line voltage range of RS232 is -25V to +25V. They are divided into signal voltage and control voltage.      
-The signal voltage between +3V and +25V represents logic "1", and the signal voltage between -3V and -25V represents logic "0". However, the control voltage signal uses negative logic, that is, logic "1" represents -3 to -25 volts and logic "0" represents +3V to +25V. The voltage from -3V to +3V is considered as an uncertain state.     
-![Img](./Advanced_img/34img.png)       
-
-DB9 interface:     
-![Img](./Advanced_img/35img.png)       
-
-2\. RS485     
-The RS-485 standard name is TIA/EIA-485-A, RS-485 makes up for the shortcomings of RS-232 short communication distance and low rate. RS-485 is differential transmission and uses A pair of twisted pair wires where one wire is defined as A and the other as B with R receiver and D transmitter inside. It is recommended to add pull-up and pull-down resistors to the terminals of the bus to eliminate interference signals generated externally when the bus is idle.      
-![Img](./Advanced_img/36img.png)       
-
-Pin Description:      
-![Img](./Advanced_img/37img.png)       
-
-Calculate the resistance formula (assuming that the terminal resistance Rt = 120 Ω, 200mV is the minimum threshold voltage of R receiver) :     
-![Img](./Advanced_img/38img.png)       
-
-Truth table:     
-![Img](./Advanced_img/39img.png)       
-
-Wiring:     
-![Img](./Advanced_img/40img.png)       
-![Img](./Advanced_img/41img.png)       
-
-3\. TTL Serial      
-TTL (Transistor-Transistor Logic) is composed of three wires, which are the data transmitting line (TXD), the data receiving line (RXD), and the common ground (GND).     
-![Img](./Advanced_img/42img.png)       
-
-TTL level:      
-| Output low (0) | Output high (1) | Input low (0) | Input high (1) |  
-| :--: | :--: | :--: | :--: |  
-| <0.8V | >2.4V	| <1.2V	| >2.0V |   
-
-**4. Communication direction**       
-With only one data line, data can only be transmitted in one direction.    
-![Img](./Advanced_img/43img.png)        
-With only one data line, two devices can send data to each other, but data can only be sent from one device to the other at the same time.       
-![Img](./Advanced_img/44img.png)     
-There are two data lines, two devices can send data to each other, and the data of two devices can be sent to each other at the same time.           
-![Img](./Advanced_img/45img.png)       
-
-**5. Overview**     
-The serial port we are talking about is an overview. The interface that can send data or receive data serially in a piece of data can be called a serial port.      
-1. RS232, RS485, TTL serial ports, etc. can also send data or receive data serially in one piece of data, so they can all be called serial ports. It's just that they specify the electrical properties on the data line, and they don't specify how the data is transmitted.     
-2. We can run different data transmission protocols on RS232, RS485, and TTL serial ports, such as the Universal Asynchronous Receiver-Transmitter (UART) protocol explained in the protocol layer above, and you can also run your own defined protocols.     
-3. Simplex, half-duplex, and full-duplex communication only stipulate the direction of data transmission at the same time, and do not involve any data transmission protocol and electrical properties.      
-
-Now returning to the serial port on the UNO board, it is a TTL serial port, running the Universal Asynchronous Receiver-Transmitter (UART) protocol, the communication format is XXX-8-N-1 (xxx special rate, 8 bit data, no parity bit, 1 stop bit), and it is a full-duplex serial port.     
+The serial port on the UNO board, it is a TTL serial port, running the Universal Asynchronous Receiver-Transmitter (UART) protocol, the communication format is XXX-8-N-1 (xxx special rate, 8 bit data, no parity bit, 1 stop bit), and it is a full-duplex serial port.     
 ![Img](./Advanced_img/46img.png)       
 
 USB port of PC can not communicate with TTL serial port of Mega328 chip directly, because their communication protocol is different, so USB to TTL serial port chip needs to be used to convert USB signal to TTL signal.    
@@ -492,131 +382,24 @@ For the use of hardware serial port based on arduino, please refer to:
 
 ## Chapter4 I2C communication protocol          
 --------------------------------------
-**1. Overview**      
-I2C is a communication protocol developed by Philips Semiconductor for data transfer between a host and multiple slaves on the same circuit board using two common wires.    
-This is a synchronous serial communication protocol where the data bits are transmitted one after the other according to a pulse signal set by a clock line.    
+I2C communication protocol: [Click me](https://docs.mosiwi.com/en/latest/resource/iic/iic.html)        
 
-Here are some important features of the I2C communication protocol:     
-1. Only two common buses are needed to control any device on the I2C network.   
-2. I2C networks are easily extensible. The new device can simply be connected to two generic I2C bus lines.    
-3. There is no need to agree on the data transmission rate in advance as in UART communication. Therefore, the data transfer speed can be adjusted at any time.     
-4. Use 7-bit addressing to find a specific device on the I2C bus.      
-
-**2. Wiring**       
-The I2C bus consists of only two lines, called Serial Clock Line (SCL) and Serial Data line (SDA). The data to be transmitted is sent through the SDA line, and the clock signal of SCL is used to synchronize the data. All devices on the I2C network are connected to the same SCL and SDA lines as follows:    
-![Img](./Advanced_img/52img.png)        
-
-Both I2C buses (SDA, SCL) operate as open-drain drivers. This means that any device on the I2C network can drive SDA and SCL to low, but cannot drive them to high. Therefore, a pull-up resistor is used for each bus to keep them high by default.    
-
-Master and slave devices:     
-1. Devices connected to the I2C bus are classified as master or slave. At any instant, only one host remains active on the I2C bus. It controls the SCL clock line and decides what operation to do on the SDA data line.    
-2. To distinguish between multiple slaves connected to the same I2C bus, each slave is physically assigned a permanent 7-bit address.    
-3. When a master device wants to transfer data to or read data from a slave device, it specifies this specific slave address on the SDA line and proceeds to transfer or read data. All other slave devices do not respond unless their address is the same as the address specified by the master device on the SDA line.   
-![Img](./Advanced_img/53img.png)        
-
-**3. Data stream**      
-The I2C data is transmitted as a data stream. The data stream is decomposed into multiple data frames. Each data stream has an address frame containing the binary address of the slave device, and one or more data frames containing the data being transferred. The data stream also includes start and stop conditions, read/write bits, and ACK/NACK bits between each data frame:    
-![Img](./Advanced_img/54img.png)        
-
-Validity analysis of data:    
-In the protocol, there is a special requirement for the SDA line and SCL line to transfer data bits. When the SCL line is HIGH, the state (level) on the SDA line is stable. The state (level) of the data line can be changed only if the SCL line is LOW (low level). Each data bit needs to generate a clock pulse.      
-![Img](./Advanced_img/55img.png)        
-
-Starting condition:     
-Whenever the master starts communication, it switches the SDA line from high to low before switching the SCL line from high to low. Once the master sends the start condition, all slave devices are activated even if they are in sleep mode and wait to receive the address bit.      
-![Img](./Advanced_img/56img.png)        
-
-Address frame:    
-It consists of 7 bits and fills in the address of the slave device where the master device needs to send/receive data. All slave devices on the I2C bus compare these address bits to their addresses.    
-
-Read/write bits:   
-This bit specifies the direction of data transmission. This bit is set to "0" if the master device needs to send data to the slave device. Set to "1" if the master device needs to read data from the slave device.    
-
-ACK/NACK bits:     
-When the receiving device has successfully received the correct address or data frame and can send another byte, the bit is set to 0 (ACK).     
-
-There are five cases in which the bit is NACK set by the receiving device:    
-1. The receiving device received the wrong address.     
-2. The receiver is busy.     
-3. The receiving device receives commands or data it does not understand.    
-4. The host has sent more bytes than the receiving device allows.    
-5. When the host is reading a data frame (in read mode), it should generate a stop signal.   
-
-![Img](./Advanced_img/57img.png)        
-![Img](./Advanced_img/58img.png)        
-
-| Master sends an ACK signal | Master sends a NACK signal | Master reads ACK/NACK signal |
-| :--: | :--: | :--: |
-| ![Img](./Advanced_img/59img.png) | ![Img](./Advanced_img/60img.png) | ![Img](./Advanced_img/61img.png) |
-
-Data frames:     
-It consists of 8 bits, which are generated by the master or slave device. This frame is followed by an ACK/NACK bit that is set to "0" if the next data frame is to be received; Otherwise, it is set to "1". Data frames are in a format followed by ACK/NACK bits so that multiple data frames can be sent or received repeatedly.     
-
-Stop condition:    
-When the SDA line has transmitted the required data block, the master switches the SCL line from low to high level, and then the SDA line from low to high level. At this point, the master is disconnected from the slave.    
-![Img](./Advanced_img/62img.png)        
-
-More info: [I2C](https://docs.mosiwi.com/en/latest/_downloads/e1f7b3d0019abdcae79aa04998fc1beb/UM10204%28I2C_Bus_Specification_and_User_Manual_%29.pdf)
-
-**4. Software I2C communication protocol**      
+**Software I2C communication protocol**      
 This example is based on AHT20 temperature and humidity sensor, if you need specifications, please download here link: [AHT20](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf)       
 
 AHT20 example code:    
 ■ Open the "3.1.0_AHT20_soft_i2c" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
-**5. Hardware I2C port**     
+**Hardware I2C port**     
 AHT20 example code:    
 ■ Open the "3.1.1_AHT20_i2c" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 More info: [Wire](https://www.arduino.cc/reference/en/language/functions/communication/wire/)     
 
 ## Chapter5 SPI communication protocol           
 --------------------------------------  
-**1. Overview**       
-The Serial Peripheral Interface (SPI), developed by MOTOROLA in the 1980s, is a master-slave synchronous serial communication protocol. The interface of this protocol enables full-duplex communication at a very high speed, providing a simple and low-cost interface between the microcontroller and peripheral devices.     
+SPI communication protocol: [Click me](https://docs.mosiwi.com/en/latest/resource/spi/spi.html)      
 
-**2. Interface**     
-The SPI bus has four signal lines:   
-1. Master–Out/Slave–In (MOSI)
-2. Master–In/Slave–Out (MISO)
-3. Serial Clock (SCLK)
-4. Chip Select (CS) or Slave Select (SS)
-
-The following diagram depicts how the SPI bus master (processor) is connected to the slave (peripheral):     
-![Img](./Advanced_img/63img.png)        
-
-**3. Internal principle**       
-The hardware requirements for implementing SPI are very simple. For example, a master device and a slave device are connected using the SPI bus. The following figure shows the minimum configuration requirements for both devices.     
-![Img](./Advanced_img/64img.png)          
-As can be seen from the figure above, the master device consists of a shift register, a data latch, and a clock generator. Slave devices consist of similar hardware: shift registers and data latches. Two shift registers are connected to form a loop. It takes 8 clock cycles for the device to transmit one byte of data.       
-During each SPI clock cycle, a full-duplex data transfer occurs. The master sends a bit on the MOSI line and the slave reads it, while the slave sends a bit on the MISO line and the master reads it. This ordering is maintained even if only one-way data transfer is intended.       
-
-**4. Work mode**        
-The job of the master device is to generate clock signals of a specific frequency and assign them to the slave devices in order to synchronize data between the master and slave devices.     
-
-The master and slave must also agree on certain synchronization protocols. Thus, two features of the clock, namely clock polarity (CPOL or CKP) and clock phase (CPHA), enter the picture.     
-■ Clock polarity determines the state of the clock. When CPOL is 0, the clock signal generated by the master device is low when idle. When CPOL is 1, the clock signal is high when idle.      
-■ The clock phase determines at what time on the clock the data is sent. When CPHA is 0, the data is sent at the first edge of the periodic clock. When CPHA is 1, the second edge of the data cycle clock is sent.     
-■ According to the clock polarity (CPOL) and clock phase (CPHA) values. SPI has 4 modes of operation: modes 0 to 3.      
-| SPI mode | Clock polarity(CPOL/CKP) | Clock phase(CPHA) | SCK level at idle time | Sampling time |   
-| :--: | :--: | :--: | :--: | :--: |   
-| 0 | 0 | 0 | Low level | The first edge |  
-| 1 | 0 | 1 | Low level | The second edge |  
-| 2 | 1 | 0 | High level | The first edge |  
-| 3 | 1 | 1 | High level | The second edge |   
-
-![Img](./Advanced_img/65img.png)        
-<span style="color: rgb(255, 76, 65);">Note: The master and slave need to work in the same mode to communicate normally.</span>      
-
-**5. Connection mode**     
-Independent master-slave configuration:    
-![Img](./Advanced_img/66img.png)        
-
-Daisy chain configuration:   
-![Img](./Advanced_img/67img.png)        
-
-More info: [SPI](https://docs.mosiwi.com/en/latest/_downloads/58c80cccccdb2b064c5133fef5a99d4d/SPI_Block_Guide_V03.06.pdf)    
-
-**6. Software SPI**      
+**Software SPI**      
 This example is based on BC7278 quad digital tube and button chip. If you need specifications, please download from this link: [BC7278](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)      
 
 Because the BC7278 chip does not have SPI chip selection pin (CS), the chip is in the enabled state after power on. So the UNO board (master device) only needs 3 roots to communicate with the BC7278 chip (slave device).     
@@ -624,7 +407,7 @@ Because the BC7278 chip does not have SPI chip selection pin (CS), the chip is i
 BC7278 example code:       
 ■ Open the "3.2.0_BC7278_spi_soft" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
 
-**7. Hardware SPI port**     
+**Hardware SPI port**     
 BC7278 example code:    
 ■ Open the "3.2.1_BC7278_spi" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
 More info: [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/)        
