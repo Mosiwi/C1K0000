@@ -21,18 +21,18 @@ If you want to download the PDF tutorial, click on "v: latest" at the bottom rig
    
    Overview <Overview/Overview.md> 
    
-   Microbit_tutorial <Microbit_tutorial/Makecode_tutorial.md>
+   Microbit_tutorial <microbit_tutorial/makecode_tutorial.md>
    
-   Arduino_zero-based_tutorial <Arduino_tutorial/Zero-based_tutorial.md>
-   Arduino_basic_tutorial <Arduino_tutorial/Basic_tutorial.md>
-   Arduino_intermediate_tutorial <Arduino_tutorial/Intermediate_tutorial.md>
-   Arduino_advanced_tutorial <Arduino_tutorial/Advanced_tutorial.md>
+   Arduino_zero-based_tutorial <arduino_tutorial/zero-based_tutorial.md>
+   Arduino_basic_tutorial <arduino_tutorial/basic_tutorial.md>
+   Arduino_intermediate_tutorial <arduino_tutorial/intermediate_tutorial.md>
+   Arduino_advanced_tutorial <arduino_tutorial/advanced_tutorial.md>
    
-   Pico_zero-based_tutorial <Pico_tutorial/Zero-based_tutorial.md>  
-   Pico_basic_tutorial <Pico_tutorial/Basic_tutorial.md> 
-   Pico_intermediate_tutorial <Pico_tutorial/Intermediate_tutorial.md> 
-   Pico_advanced_tutorial <Pico_tutorial/Advanced_tutorial.md> 
+   Pico_zero-based_tutorial <pico_tutorial/zero-based_tutorial.md>  
+   Pico_basic_tutorial <pico_tutorial/basic_tutorial.md> 
+   Pico_intermediate_tutorial <pico_tutorial/intermediate_tutorial.md> 
+   Pico_advanced_tutorial <pico_tutorial/advanced_tutorial.md> 
    
-   Pi4_tutorial <Rpi4_tutorial/C_tutorial.md>
+   Pi4_tutorial <rpi4_tutorial/c_tutorial.md>
    
 
