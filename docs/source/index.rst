@@ -21,7 +21,7 @@ If you want to download the PDF tutorial, click on "v: latest" at the bottom rig
    
    Overview <Overview/Overview.md>
    
-   Microbit_tutorial <Microbit_tutorial/Makecode_tutorial.md>
+   Microbit_tutorial <microbit_tutorial/makecode_tutorial.md>
    
    Arduino_zero-based_tutorial <arduino_tutorial/zero-based_tutorial.md>
    Arduino_basic_tutorial <arduino_tutorial/basic_tutorial.md>
