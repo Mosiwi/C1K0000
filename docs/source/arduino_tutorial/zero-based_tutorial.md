@@ -4,9 +4,9 @@ This tutorial only focuses on practical operation, without the need to understan
 
 ## Previous preparation       
 -----------------------        
-1. Install the [**Arduino IDE**](https://docs.mosiwi.com/en/latest/arduino/arduino_ide/arduino_ide.html).  
+1. Install the [**Arduino IDE**](https://docs.mosiwi.com/en/latest/arduino/resources/arduino_ide/arduino_ide.html).  
 2. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.    
-3. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html) motherboard.    
+3. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html).    
 
 ## Chapter1 RGB LED     
 -------------------         

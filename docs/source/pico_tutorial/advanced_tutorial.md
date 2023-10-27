@@ -49,16 +49,16 @@ while True:                      # Always empty loop
 
 ## Chapter2 Serial port      
 ----------------------- 
-What is a serial port? [Click me](https://docs.mosiwi.com/en/latest/resource/serial_port/serial_port.html)     
+What is a serial port? [Click me](https://docs.mosiwi.com/en/latest/various_resources/serial_port/serial_port.html)     
 
 
 ## Chapter3 I2C communication protocol      
 --------------------------------------
-I2C communication protocol: [Click me](https://docs.mosiwi.com/en/latest/resource/iic/iic.html)     
+I2C communication protocol: [Click me](https://docs.mosiwi.com/en/latest/various_resources/iic/iic.html)     
 
 ## Chapter4 SPI communication protocol   
 --------------------------------------            
-SPI communication protocol: [Click me](https://docs.mosiwi.com/en/latest/resource/spi/spi.html)    
+SPI communication protocol: [Click me](https://docs.mosiwi.com/en/latest/various_resources/spi/spi.html)    
 
 ## Chapter5 3-wire communication          
 --------------------------------             
@@ -80,7 +80,7 @@ The 74HC595 has one 8-bit shift register, one memory register, and one 3-state p
 
 ## Chapter6 Infrared NEC communication protocol     
 -----------------------------------------------            
-Please refer to: [NEC communication protocol](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html)      
+Please refer to: [NEC communication protocol](https://docs.mosiwi.com/en/latest/various_resources/nec/nec.html)      
 
 
 ## Chapter7 OneWire communication protocol     
