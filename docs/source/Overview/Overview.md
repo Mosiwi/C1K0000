@@ -11,8 +11,14 @@ This kit is suitable for teaching and learning programming, providing tutorial m
 | ![Img](../_static/Overview/img/4img.jpg) | ![Img](../_static/Overview/img/5img.jpg) | ![Img](../_static/Overview/img/6img.png) |
 | 7: 4 cell battery box| 8: Micro USB cable | 9: 40P cables |
 | ![Img](../_static/Overview/img/7img.png) | ![Img](../_static/Overview/img/8img.png) | ![Img](../_static/Overview/img/10img.jpg) |  
-  
-<span style="color: rgb(255, 76, 65);">Note: The Arduino Uno, Microbit, and Rasoberry pi 4 motherboards are not included in this kit.</span>  
+
+```{note}  
+The Arduino Uno, Microbit, and Rasoberry pi4 boards are not included in this kit!
+```     
+
+```{tip}
+Click on the name in the list to get detailed specifications!   
+```
 
 ## Course    
 ---------   

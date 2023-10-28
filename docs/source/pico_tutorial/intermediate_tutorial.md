@@ -22,10 +22,14 @@ If you don't have Pico and Thonny basics, you can follow the link to learn the b
 
 **Learn about:** [**MicroPython for Pico**](https://docs.micropython.org/en/latest/rp2/quickref.html).  
 
-**Download sample code:**    
-Please download the sample code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
+**Download example code:**    
+Please download the example code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
 ![Img](../_static/pico_tutorial/intermediate_img/1img.png)    
-Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the sample code.       
+Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the example code.       
+
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.    
+```   
 
 ## Wiring diagram      
 -----------------              
@@ -43,7 +47,7 @@ Open the "**blink\.py**" file as follows:
 ![Img](../_static/pico_tutorial/intermediate_img/3img.png)    
 
 Run the code online: (The code is not saved in pico and is not executed after repowering.)       
-Make sure your Raspberry PI Pico's USB is plugged into your computer's USB via a usb cable, then click on "Python" and the version number in the bottom right corner of the Thonny window, then select "**MicroPython(Raspberry PI Pico)". COMx** ".      
+Make sure your Raspberry PI Pico's USB is plugged into your computer's USB via a usb cable, then click on "Python" and the version number in the bottom right corner of the Thonny window, then select **"MicroPython(Raspberry PI Pico). COMx"**.      
 ![Img](../_static/pico_tutorial/intermediate_img/4img.png)    
 
 After running the code, the LED on the pico board lights up every 1 second:      
@@ -55,10 +59,9 @@ Enter the code in the main panel, then click on the "**Save**" or "**File->Save 
 ![Img](../_static/pico_tutorial/intermediate_img/7img.png)    
 ![Img](../_static/pico_tutorial/intermediate_img/8img.png)    
 
-| <span style="color: rgb(255, 76, 65);">Note</span>|  
-|  :-- |
-|If you "save a file to the device" and give it the special name **main\.py**, then MicroPython starts running that script as soon as power is supplied to Raspberry Pi Pico in the future. |    
-
+```{note}  
+If you "save a file to the device" and give it the special name **main.py**, then MicroPython starts running that script as soon as power is supplied to Raspberry Pi Pico in the future.
+```     
 
 
 ## Chapter1 RGB LED   
@@ -76,7 +79,7 @@ Enter the code in the main panel, then click on the "**Save**" or "**File->Save 
 ![Img](../_static/pico_tutorial/intermediate_img/39img.png)    
 
 **Open the example code: "rgb-led_pwm\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -108,16 +111,16 @@ It is a combination of red, green and blue LEDs. By controlling the intensity of
 **Schematic diagram:**       
 ![Img](../_static/pico_tutorial/intermediate_img/40img.png)    
 
-**Wiring diagram:** 
+**Wiring diagram:**   
 ![Img](../_static/pico_tutorial/intermediate_img/12img.jpg)    
 
 **Open the example code: "fan_pwm\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
-The fan rotates clockwise and counterclockwise, and the speed changes from small to large, and then from large to small.       
-![Img](../_static/pico_tutorial/intermediate_img/14img.png)    
+The fan rotates clockwise and counterclockwise, and the speed changes from small to large, and then from large to small.    
+<img src="../_static/pico_tutorial/intermediate_img/14img.png" width=60% height=60%>         
 
 **FQA:**   
 (1) What is fan module?       
@@ -136,7 +139,7 @@ See: [Fan module](https://docs.mosiwi.com/en/latest/outsourcing/O1M0001_fan_modu
 ![Img](../_static/pico_tutorial/intermediate_img/32img.png)    
 
 **Open the example code: "microphone\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -148,8 +151,7 @@ After running the code, the terminal prints the analog value of the amplified so
 Microphone is an energy conversion device that converts sound signals into electrical signals. It is classified as capacitive and electret. An electret microphone is used on the expansion board and a preamplifier circuit is integrated. The GP27 of Pico is used to receive the analog signal from the microphone.      
 ![Img](../_static/pico_tutorial/intermediate_img/31img.png)    
 
-The microphone on the expansion board integrates a preamplifier circuit, which reads the analog voltage value of GP27 as 1.65V when there is no sound, and fluctuates the voltage value on Pin27 up and down at 1.65V when there is sound.      
-![Img](../_static/pico_tutorial/intermediate_img/32img.png)    
+The microphone on the expansion board integrates a preamplifier circuit, which reads the analog voltage value of GP27 as 1.65V when there is no sound, and fluctuates the voltage value on Pin27 up and down at 1.65V when there is sound.            
 ![Img](../_static/pico_tutorial/intermediate_img/33img.png)    
 
 
@@ -165,11 +167,11 @@ The microphone on the expansion board integrates a preamplifier circuit, which r
 1. S1(echo of ultrasonic): GP8    
 2. S2(trig of ultrasonic): GP9         
 
-**Wiring diagram:** 
+**Wiring diagram:**      
 ![Img](../_static/pico_tutorial/intermediate_img/23img.jpg)    
 
 **Open the example code: "ultrasonic\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -259,7 +261,7 @@ y: variable or constant.
 ![Img](../_static/pico_tutorial/intermediate_img/43img.png)    
 
 **Open the example code: "led-strip_tw\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -271,7 +273,7 @@ The LED strip on the expansion board turns on and off in cycles.
 There is one LED strip on the expansion board, which is controlled by the 74HC595 chip on the expansion board. 74HC595 is a widely used serial input and parallel output chip.      
 ![Img](../_static/pico_tutorial/intermediate_img/20img.png)    
 
-(2) What is 74HC595? 
+(2) What is 74HC595?       
 See: [74HC595](../_static/pdf/74HC595.pdf)         
 
 **Code analysis:**         
@@ -381,13 +383,16 @@ Examples:
 2. MOSI: GP19     
 3. CLK: GP18      
 4. KEY-INT: GP20     
-<span style="color: rgb(255, 76, 65);">Note: The 5 keys on the "Basic learning shield" occupy GP20 (key trigger signal output), GP19 (MOSI), GP16 (MISO) and GP18 (CLK) of the Pico board, and the CS control pin is not required.</span>     
+
+```{note}    
+The 5 keys on the "Basic learning shield" occupy GP20 (key trigger signal output), GP19 (MOSI), GP16 (MISO) and GP18 (CLK) of the Pico board, and the CS control pin is not required.
+```  
 
 **Schematic diagram:**       
 ![Img](../_static/pico_tutorial/intermediate_img/45img.png)    
 
 **Open the example code: "keyboard_spi\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -401,7 +406,7 @@ Press the keyboard on the expansion board, and the terminal will print the value
 (1) What is Keyboard and SPI communication?  
 The "Basic learning shield" is integrated with a 4-bit 8-segment display digital tube and five keys. They are controlled by the BC7278 chip, which has a slave SPI interface and a key trigger signal output.       
           
-See: [SPI communication protocol](../Arduino_tutorial/Advanced_tutorial.md#chapter5-spi-communication-protocol)       
+See: [SPI communication protocol](https://docs.mosiwi.com/en/latest/various_resources/spi/spi.html)       
 See: [SPI for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#hardware-spi-bus)    
 
 **Code analysis:**
@@ -418,13 +423,15 @@ See: [SPI for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#har
 2. MOSI: GP19     
 3. CLK: GP18       
 
-<span style="color: rgb(255, 76, 65);">Note: The 4-bit 8-segment digital tube on the "Basic learning shield" occupy GP19 (MOSI), GP16 (MISO) and GP18 (CLK) of the Pico board, and the CS control pin is not required.</span>     
+```{note}  
+The 4-bit 8-segment digital tube on the "Basic learning shield" occupy GP19 (MOSI), GP16 (MISO) and GP18 (CLK) of the Pico board, and the CS control pin is not required.
+```        
 
 **Schematic diagram:**       
 ![Img](../_static/pico_tutorial/intermediate_img/45img.png)    
 
 **Open the example code: "tube_spi\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -437,7 +444,7 @@ The 4-bit 8-segment nixie shows 0-9999, then 999.9, and so on.
 
 **FQA:**   
 (1) What is 4-bit 8-segment digital tube?    
-See: [4-bit 8-segment digital tube](../Arduino_tutorial/Basic_tutorial.md#chapter-9-digital-tube-button-spi)       
+See: [4-bit 8-segment digital tube](../Arduino_tutorial/Basic_tutorial.md#chapter_11-digital_tube-button-spi)       
 
 **Data type conversion:**     
 ```python
@@ -473,7 +480,7 @@ oct(x): Converts an integer to an octal string
 Note: The I2C slave chip is integrated on the [3in1 Basic learning shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand) board to process the data of the infrared receiving sensor.      
 
 **Open the example code: "ir-receiver_iic\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -493,16 +500,15 @@ Device code:
 ```
 
 **FQA:**   
-(1) What is Ir-receiver?    
-See: [Ir-receiver](../Arduino_tutorial/Intermediate_tutorial.md#chapter13-ir-receiver)       
+(1) What is Ir-receiver?          
 See: [Ir-receiver module](https://docs.mosiwi.com/en/latest/common/C1S0001_ir_receiver/C1S0001_ir_receiver.html)       
 
 (2) What is NEC infrared communication protocol?       
-See: [NEC infrared communication protocol](https://docs.mosiwi.com/en/latest/resource/nec_communication_protocol/nec_communication_protocol.html)
+See: [NEC infrared communication protocol](https://docs.mosiwi.com/en/latest/various_resources/nec/nec.html)
 
 (3) What is I2C communication?    
-There is an I2C slave chip on the [3in1_basic_shield](.https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand), which integrates the NEC infrared communication protocol, and Pico communicates with it through the I2C protocol to read the data of the infrared receiver.     
-See: [I2C](../Arduino_tutorial/Advanced_tutorial.md#chapter4-i2c-communication-protocol)     
+There is an I2C slave chip on the [3in1_basic_shield](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand), which integrates the NEC infrared communication protocol, and Pico communicates with it through the I2C protocol to read the data of the infrared receiver.     
+See: [I2C](https://docs.mosiwi.com/en/latest/various_resources/iic/iic.html)     
 See: [Pico use I2C](https://docs.micropython.org/en/latest/rp2/quickref.html#hardware-i2c-bus)     
 
 
@@ -519,7 +525,7 @@ See: [Pico use I2C](https://docs.micropython.org/en/latest/rp2/quickref.html#har
 ![Img](../_static/pico_tutorial/intermediate_img/47img.png)      
 
 **Open the example code: "humiture_i2c\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -528,7 +534,7 @@ The terminal will print the temperature and humidity values of the current envir
 
 **FQA:**   
 (1) What is Thermohygrometer?    
-A thermohygrometer is a tool that can accurately measure the current ambient temperature and humidity. In the example we used [AHT20](https://docs.mosiwi.com/en/latest/_downloads/c4aca48f8f8278cbf6820afb05e027ee/AHT20.pdf) temperature and humidity sensor and 4 digital control made a temperature and humidity meter, 4 digital tube can display temperature and humidity values.     
+A thermohygrometer is a tool that can accurately measure the current ambient temperature and humidity. In the example we used [AHT20](../_static/pdf/AHT20.pdf) temperature and humidity sensor and 4 digital control made a temperature and humidity meter, 4 digital tube can display temperature and humidity values.     
 specification parameter: 
 | Name | Measuring range | Resolution | Error range |   
 | :-- | :-- | :-- | :-- |     
@@ -549,7 +555,7 @@ specification parameter:
 ![Img](../_static/pico_tutorial/intermediate_img/49img.png)      
 
 **Open the example code: "memory_ow\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -579,13 +585,16 @@ It is a kind of memory chip that does not lose data after power failure.
 1. TX: GP0    
 2. RX: GP1     
 
-**Wiring diagram:** 
+**Wiring diagram:**        
 ![Img](../_static/pico_tutorial/intermediate_img/25img.png)    
-Connect these two pins through a jumper wire or a metal wire.     
-<span style="color: rgb(255, 76, 65);">Note: This wiring is equivalent to Pico's RX pin sending data to Pico's TX pin.</span>           
+Connect these two pins through a jumper wire or a metal wire.    
+
+```{note}  
+This wiring is equivalent to Pico's RX pin sending data to Pico's TX pin.    
+```             
 
 **Open the example code: "uart\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -593,8 +602,7 @@ Pico's serial port TX pin keeps sending data to Pico's RX pin, and the terminal 
 ![Img](../_static/pico_tutorial/intermediate_img/26img.png)    
 
 **FQA:**   
-(1) What is uart?    
-See: [Uart](https://docs.mosiwi.com/en/latest/resource/serial_port/serial_port.html)    
+(1) What is uart?        
 See: [Uart for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#uart-serial-bus)       
 
 

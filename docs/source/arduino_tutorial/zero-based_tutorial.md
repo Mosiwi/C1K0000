@@ -8,6 +8,10 @@ This tutorial only focuses on practical operation, without the need to understan
 2. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.    
 3. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html).    
 
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.    
+```   
+
 ## Chapter1 RGB LED     
 -------------------         
 Connect control board to your computer with USB cable：    
@@ -84,8 +88,11 @@ When you sing into a microphone or play music on your device, LED lights pulsate
 
 4. Experimental result:      
 Use the infrared remote control to repeatedly press the "OK" key in front of the infrared receiver on the expansion board to turn on and off the red LED light on the expansion board.     
-![Img](../_static/arduino_tutorial/zero-based_img/20img.png)      
-<span style="color: rgb(255, 76, 65);">Note: Button batteries must be installed when using the infrared remote control. If the infrared remote control has been allocated with button batteries, the separator at the bottom of the remote control must be pulled out.</span>      
+![Img](../_static/arduino_tutorial/zero-based_img/20img.png)    
+
+```{note}   
+Button batteries must be installed when using the infrared remote control. If the infrared remote control has been allocated with button batteries, the separator at the bottom of the remote control must be pulled out.  
+```       
 
 ## Chapter6 button   
 ------------------
@@ -115,7 +122,11 @@ Press and hold the OK button on the expansion pad to light up the red LED light.
 
 4. Experimental result:      
 ![Img](../_static/arduino_tutorial/zero-based_img/28img.png)    
-When pressing the <span style="color: rgb(255, 76, 65);">"U"</span> key, the 4-digit digital tube displays "16.0";  When pressing the <span style="color: rgb(255, 76, 65);">"D"</span> key, the 4-digit digital tube displays "8.0";  When pressing the <span style="color: rgb(255, 76, 65);">"L"</span> key, the 4-digit digital tube displays "4.0";  When pressing the <span style="color: rgb(255, 76, 65);">"R"</span> key, the 4-digit digital tube displays "2.0";  When pressing the <span style="color: rgb(255, 76, 65);">"OK"</span> key, the 4-digit digital tube displays "1.0".    
+When pressing the <span style="color: rgb(255, 76, 65);">"U"</span> key, the 4-digit digital tube displays "16.0";           
+When pressing the <span style="color: rgb(255, 76, 65);">"D"</span> key, the 4-digit digital tube displays "8.0";       
+When pressing the <span style="color: rgb(255, 76, 65);">"L"</span> key, the 4-digit digital tube displays "4.0";        
+When pressing the <span style="color: rgb(255, 76, 65);">"R"</span> key, the 4-digit digital tube displays "2.0";     
+When pressing the <span style="color: rgb(255, 76, 65);">"OK"</span> key, the 4-digit digital tube displays "1.0".       
 
 ## Chapter8 thermohygrometer   
 ----------------------------
@@ -151,8 +162,11 @@ Open the serial port monitor as shown in the following figure, press the <span s
 ![Img](../_static/arduino_tutorial/zero-based_img/37img.png)    
 
 If you are using an IDE above 2.0, you can also display the data as a temperature graph as follows:    
-![Img](../_static/arduino_tutorial/zero-based_img/38img.png)    
-<span style="color: rgb(255, 76, 65);">Note: After following steps 1 and 2, click the "OK" key on the expansion board, multiple curves will be displayed. Then, select "value 1" according to step 3.</span>    
+![Img](../_static/arduino_tutorial/zero-based_img/38img.png)       
+
+```{note}   
+After following steps 1 and 2, click the "OK" key on the expansion board, multiple curves will be displayed. Then, select "value 1" according to step 3.   
+```    
 
 ## Chapter10 jingle bells     
 -------------------------
@@ -169,6 +183,7 @@ If you are using an IDE above 2.0, you can also display the data as a temperatur
 ![Img](../_static/arduino_tutorial/zero-based_img/42img.png)    
 The buzzer on the expansion board will play the "Jingle_bells" song all the time.       
 
+--------
 **End!**    
 For more exciting tutorials, check out the [basic tutorial](./basic_tutorial.md)!    
 

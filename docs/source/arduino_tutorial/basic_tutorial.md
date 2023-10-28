@@ -9,6 +9,10 @@ Learn simple programming syntax based on the UNO board, and learn the most compr
 3. Learn about [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 4. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.      
 
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.   
+```   
+
 ## Chapter_1 Blink    
 ------------------
 **Curriculum question:**     
@@ -31,8 +35,11 @@ Learn simple programming syntax based on the UNO board, and learn the most compr
 
 **Open the example code: "1.0.0_Blink"**     
 ![Img](../_static/arduino_tutorial/basic_img/1img.png)    
-Upload the code to the UNO board.       
-<span style="color: rgb(255, 76, 65);">Note: All the sample code in the following sections is opened in the same way as in the figure above.</span>     
+Upload the code to the UNO board.        
+
+```{note}   
+All the example code in the following sections is opened in the same way as in the figure above.   
+```      
 
 **Example code phenomena:**    
 The RGB LED on the expansion board emits a red light every 1 second.    
@@ -139,7 +146,7 @@ Text content to be commented
 ![Img](../_static/arduino_tutorial/basic_img/5img.png)     
 
 **Open the example code: "1.1.0_Button"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.     
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.     
 2. Upload the code to the UNO board.      
 
 **Example code phenomena:**   
@@ -170,7 +177,7 @@ var: Parameter name.
 val: The value assigned to the var.
 ```
 
-**Global variable** applies to the entire program and is defined outside the stup() and loop() functions, and not inside other functions. The "buttonPin", "ledPin", and "buttonState" variables defined in the sample code can be used in stup() and loop() functions, or in other functions.    
+**Global variable** applies to the entire program and is defined outside the stup() and loop() functions, and not inside other functions. The "buttonPin", "ledPin", and "buttonState" variables defined in the example code can be used in stup() and loop() functions, or in other functions.    
 ```c++ 
 Syntax: 
 byte buttonPin;          
@@ -220,7 +227,7 @@ The equal and unequal relation operators are "\==" and "!= ". Commonly used with
 | == | Check whether the values of the two variables are equal. If equal, the condition is true, otherwise the condition is false. | (A == B) is false |   
 | != | Check whether the values of the two variables are equal. If equal, the condition is true, otherwise the condition is false. | (A != B) is true |     
 
-In the sample code:   
+In the example code:   
 ```c++ 
 buttonState == LOW
 buttonState != LOW
@@ -237,7 +244,7 @@ if (condition) {
 Parameters:
 condition: A boolean expression (true or false).
 
-In the sample code:
+In the example code:
 if (buttonState == LOW) {
 digitalWrite(ledPin, HIGH);
 }
@@ -255,7 +262,7 @@ digitalWrite(ledPin, LOW);
 ![Img](../_static/arduino_tutorial/basic_img/11img.png)     
 
 **Open the example code: "1.1.1_Button"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.      
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.      
 2. Upload the code to the UNO board.       
 
 **Example code phenomena:**   
@@ -265,7 +272,7 @@ When the "OK" key is pressed, the red RGB LED lights up, otherwise the RGB LED d
 **FAQ:**     
 (1) What are local variables?
 Local variables are variables that are valid only in a function body or block of code.     
-In the loop() function of the sample code, a "buttonState" local variable is defined and assigned to 0.      
+In the loop() function of the example code, a "buttonState" local variable is defined and assigned to 0.      
 ```c++
 ...
 void loop() {
@@ -327,7 +334,7 @@ else{
 }
 ```
 
-In the sample code:   
+In the example code:   
 ![Img](../_static/arduino_tutorial/basic_img/15img.png)     
 
 ## Chapter_3 Serial port monitor       
@@ -342,7 +349,7 @@ In the sample code:
 ![Img](../_static/arduino_tutorial/basic_img/18img.png)     
 
 **Open the example code: "1.2.0_Serial_monitor"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**       
@@ -355,7 +362,8 @@ Details please refer to: <https://en.wikipedia.org/wiki/ASCII>
 ![Img](../_static/arduino_tutorial/basic_img/19img.png)     
 The "0" and "1" pins on the UNO board are serial port RX (receive) and TX (transmit) pins. Serial port is a communication interface, which is characterized by a simple line, as long as two lines can achieve two-way communication, but the transmission speed is slow.       
 In the advanced chapter will explain its communication protocol in detail, at this time as long as you understand what is the serial port.       
-More information please refer to: <https://www.arduino.cc/reference/en/language/functions/communication/serial/>          
+More information please refer to:       
+<https://www.arduino.cc/reference/en/language/functions/communication/serial/>          
 
 
 (2) What is a serial port monitor?    
@@ -433,7 +441,7 @@ Parameters:
 var: variable name.
 val: The value assigned to the variable.
 
-In the sample code:
+In the example code:
 char a = ‘a’;
 ```
 
@@ -446,10 +454,11 @@ Parameters:
 str: Sring variable name.
 val: Sring.
 
-In the sample code:
+In the example code:
 String Str1=" ASCII-encoded decimal: ";  
 ```
-More information: <https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/>    
+More information:               
+<https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/>    
 
 
 ## Chapter_4 Arithmetic operation            
@@ -461,7 +470,7 @@ More information: <https://www.arduino.cc/reference/en/language/variables/data-t
 ![Img](../_static/arduino_tutorial/basic_img/20img.png)     
 
 **Open the example code: "1.2.1_Arithmetic_operation"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -480,7 +489,7 @@ sum: variable (result).
 operand1: variable or constant (addition).
 operand2: variable or constant (addition).
 
-In the sample code:
+In the example code:
 num = 10+1;
 ```
 
@@ -494,7 +503,7 @@ difference: variable (result).
 operand1: variable or constant (subtraction).
 operand2: variable or constant (subtract).
 
-In the sample code:
+In the example code:
 num = 10-1;
 ```
 
@@ -508,7 +517,7 @@ product: variable (result).
 operand1: variable or constant (multiplicand).
 operand2: variable or constant (multiplier).
 
-In the sample code:
+In the example code:
 num = 2*5;
 ```
 
@@ -522,7 +531,7 @@ result: variable (result).
 numerator: variable or constant (dividend).
 denominator: Variable or constant (divisor), which cannot be 0.
 
-In the sample code:
+In the example code:
 num = 2/5;
 The result is 2.   
 ```
@@ -540,7 +549,7 @@ remainder: variable (result).
 dividend: Variable or constant (dividend).
 divisor: Variable or constant (divisor) that cannot be 0.
 
-In the sample code:
+In the example code:
 num = 2%5;
 The result is 1. 
 ```
@@ -560,7 +569,7 @@ The result is 1.
 ![Img](../_static/arduino_tutorial/basic_img/22img.png)     
 
 **Open the example code: "1.3.0_Analog_read"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -600,7 +609,7 @@ pin: A0-A5
 Return value:
 Analog reading on the pin. The value ranges from 0 to 1023. Data type :int.
 
-In the sample code:
+In the example code:
 byte analogInPin = A3;
 int analogValue = 0;
 float voltageValue = 0;
@@ -619,7 +628,7 @@ Parameters:
 var: variable name.
 val: The value assigned to the variable.
 
-In the sample code:
+In the example code:
 int analogValue = 0;
 ```
  
@@ -632,7 +641,7 @@ Parameters:
 var: variable name.
 val: The value assigned to the variable.
 
-In the sample code:
+In the example code:
 float voltageValue = 0;
 ```
 
@@ -652,7 +661,7 @@ float voltageValue = 0;
 ![Img](../_static/arduino_tutorial/basic_img/26img.png)     
 
 **Open the example code: "1.4.0_External_interrupt"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -682,7 +691,7 @@ There are four interrupt modes, as follows:
 | ![Img](../_static/arduino_tutorial/basic_img/28img.png) | ![Img](../_static/arduino_tutorial/basic_img/29img.png) | ![Img](../_static/arduino_tutorial/basic_img/30img.png) | ![Img](../_static/arduino_tutorial/basic_img/31img.png) |   
 
 ```c++ 
-In the sample code:
+In the example code:
 const byte interruptPin = 2;
 volatile boolean state = false;
 void blink(void) {
@@ -700,7 +709,7 @@ Syntax:
 Parameters:
 val: variable or operand.
 
-In the sample code:
+In the example code:
 state = ! state;
 ```
 
@@ -715,7 +724,7 @@ type: indicates the data type, such as byte, char, int, and flaot.
 var: variable name.
 val: The value assigned to a variable
 
-In the sample code:
+In the example code:
 const byte ledPin = 5;
 const byte interruptPin = 2;
 ```
@@ -732,7 +741,7 @@ while (condition) {
 Parameters:
 condition: Boolean expression whose result is true or false.
 
-In the sample code:  
+In the example code:  
 const byte ledPin = 5;
 volatile boolean state = false;
 while(state == false){
@@ -753,7 +762,7 @@ type: Parameter data type, such as char, int, or float. The value is void if no 
 function: name of a function.
 val1, val2... : Parameter name; Empty when type is "void".
 
-In the sample code:
+In the example code:
 volatile boolean state = false;
 void blink(void) {
 state = ! state;
@@ -767,7 +776,7 @@ state = ! state;
 ![Img](../_static/arduino_tutorial/basic_img/33img.png)     
 
 **Open the example code: "1.4.1_External_interrupt"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -787,7 +796,7 @@ do{
 Parameters:
 condition: Boolean expression whose result is true or false.
 
-In the sample code:  
+In the example code:  
 const byte ledPin = 5;
 volatile boolean state = false;
 do{
@@ -811,7 +820,7 @@ digitalWrite(ledPin, LOW);
 ![Img](../_static/arduino_tutorial/basic_img/35img.png)     
 
 **Open the example code: "1.5.0_PWM_output"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -837,14 +846,19 @@ Parameters:
 pin: The pin number on the motherboard, the UNO is 3, 5, 6, 9, 10, 11.
 value: high duty cycle. The value ranges from 0 to 255. The value is an int type.
 
-In the sample code:
+In the example code:
 const byte pwmOutPin = 5;
 int pwmValue = 0;
 analogWrite(pwmOutPin, pwmValue);
 ```
-![Img](../_static/arduino_tutorial/basic_img/39img.png)     
-<span style="color: rgb(255, 76, 65);">Note: Because pin 5 and 6 use timer 0 to generate PWM signal, pin 9 and 10 use timer 1 to generate PWM signal, pin 3 and 11 use timer 2 to generate PWM signal; Therefore, when using PWM signal output, it will interfere with the use of relevant timers.</span>      
-More information: <https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>	
+![Img](../_static/arduino_tutorial/basic_img/39img.png)      
+
+```{note}   
+Because pin 5 and 6 use timer 0 to generate PWM signal, pin 9 and 10 use timer 1 to generate PWM signal, pin 3 and 11 use timer 2 to generate PWM signal; Therefore, when using PWM signal output, it will interfere with the use of relevant timers.    
+```    
+     
+More information:      
+<https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/>	
 
 (2) How to use the for statement?      
 A for loop statement is a conditional loop increment statement that loops the program inside braces {} if the increment condition is satisfied until the condition is not.    
@@ -861,7 +875,7 @@ initialization: This parameter is performed only once in initial condition.
 condition: The loop determines the condition. If true, execute the program inside curly braces {}. If not, the loop terminates.
 increment: If the condition condition is true, this statement is executed once after executing the program inside curly braces {}.
 
-In the sample code:
+In the example code:
 const byte pwmOutPin = 5;
 int pwmValue = 0;
 
@@ -883,11 +897,12 @@ x++; // Return x value, x plus 1.
 Parameters:
 x: variable, allowed data type :int, long.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 0; pwmValue <= 255; pwmValue ++){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/compound-operators/increment/>      
+More information:          
+<https://www.arduino.cc/reference/en/language/structure/compound-operators/increment/>      
 
 Self-decrement operation: --
 ```c++ 
@@ -900,11 +915,12 @@ x--; // Return x value, x minus 1.
 Parameters:
 x: variable, allowed data type :int, long.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 255; pwmValue >= 0; pwmValue --){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/compound-operators/decrement/>     
+More information:             
+<https://www.arduino.cc/reference/en/language/structure/compound-operators/decrement/>     
 
 (4) How to use comparison operators: >, <, >=, <=        
 Greater-than-equal operator: >=    
@@ -916,11 +932,12 @@ Parameters:
 x: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 y: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 255; pwmValue >= 0; pwmValue --){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthanorequalto/>   
+More information:                    
+<https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthanorequalto/>   
 
 Less-than-equal operator: <=  
 ```c++   
@@ -931,11 +948,12 @@ Parameters:
 x: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 y: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 0; pwmValue <= 256; pwmValue ++){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthanorequalto/>     
+More information:                  
+<https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthanorequalto/>     
 
 Greater-than operator: >    
 ```c++ 
@@ -946,11 +964,12 @@ Parameters:
 x: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 y: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 255; pwmValue > -0; pwmValue --){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthan/>    
+More information:              
+<https://www.arduino.cc/reference/en/language/structure/comparison-operators/greaterthan/>    
 
 Less-than operator: <    
 ```c++ 
@@ -961,11 +980,12 @@ Parameters:
 x: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 y: variable or constant. Data types: int, float, double, byte, short, long are allowed.
 
-In the sample code:
+In the example code:
 int pwmValue = 0;
 for(pwmValue = 0; pwmValue < 256; pwmValue ++){ ... }
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthan/>      
+More information:           
+<https://www.arduino.cc/reference/en/language/structure/comparison-operators/lessthan/>      
 
 
 ## Chapter_8 Timer1            
@@ -982,7 +1002,7 @@ More information: <https://www.arduino.cc/reference/en/language/structure/compar
 ![Img](../_static/arduino_tutorial/basic_img/41img.png)     
 
 **Open the example code: "1.6.0_Timer1"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -997,12 +1017,12 @@ After loading the library file, if you want to call the library file in another 
 The operation is as follows:    
 ```c++ 
 Syntax:
-include<filename.h>
+#include<filename.h>
 
 Parameters:
 filename: Name of the header file in the library file.
 
-In the sample code:
+In the example code:
 // Include timer1, which has been integrated into the Mosiwi_Basic_Learning_Kit library file.
 #include <MswTimer1.h>
 ```
@@ -1021,7 +1041,7 @@ Timer1.initialize(us);
 Parameters:
 us: Time, in microseconds.
 
-In the sample code: 
+In the example code: 
 Timer1.initialize(500000); // Initializes timer 1. The timer is set to 0.5 seconds
 ```
 
@@ -1033,7 +1053,7 @@ Timer1.attachInterrupt(name);
 Parameters:
 name: function name.
 
-In the sample code:
+In the example code:
 const byte ledPin = 5;
 bool output = HIGH;
 
@@ -1044,7 +1064,10 @@ output = ! output;
 
 Timer1.attachInterrupt(flash);
 ```
-<span style="color: rgb(255, 76, 65);">Note: UNO has three timers, namely timer0, timer1 and timer2, among which timer1 and timer2 are often used, while time0 is used by delay(), micros(), millis() functions, so timer0 is generally not used.</span>  
+
+```{note}
+UNO has three timers, namely timer0, timer1 and timer2, among which timer1 and timer2 are often used, while time0 is used by delay(), micros(), millis() functions, so timer0 is generally not used.
+```     
 
 (3) How to use variable: bool            
 The bool type has two values: true or false. (Each bool variable takes up one byte of memory.)   
@@ -1056,7 +1079,7 @@ Parameters:
 var: variable name.
 val: The value assigned to a variable.
 
-In the sample code:
+In the example code:
 bool output = true;
 ```
 
@@ -1068,7 +1091,7 @@ bool output = true;
 ![Img](../_static/arduino_tutorial/basic_img/33img.png)     
 
 **Open the example code: "1.6.1_Timer2"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -1106,14 +1129,15 @@ dataType: Data type, such as bool, char, and int.
 var: variable name.
 val: The value assigned to a variable.
 
-In the sample code:
+In the example code:
 void flash(void) {
 static bool output = HIGH;
 digitalWrite(ledPin, output);
 output = ! output;
 }
 ```
-More information: <https://www.arduino.cc/reference/en/language/variables/variable-scope-qualifiers/static/>    
+More information:            
+<https://www.arduino.cc/reference/en/language/variables/variable-scope-qualifiers/static/>    
 
 
 ## Chapter_9 Humiture_I2C           
@@ -1130,7 +1154,7 @@ More information: <https://www.arduino.cc/reference/en/language/variables/variab
 ![Img](../_static/arduino_tutorial/basic_img/42img.png)     
 
 **Open the example code: "1.7.0_Humiture_i2c"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -1169,7 +1193,7 @@ Name: The name of the array
 Num: the length of the array, e.g., 1,2,3,...
 e1,e2,e3,... eN: Array element
 
-In the sample code:
+In the example code:
 float HT_data[2];
 ```
 
@@ -1194,7 +1218,8 @@ val: The variable name or number
 Array-name: The name of the array
 index: Array index
 ```
-More information: <https://www.arduino.cc/reference/en/language/variables/data-types/array/>   
+More information:            
+<https://www.arduino.cc/reference/en/language/variables/data-types/array/>   
 
 
 ## Chapter_10 Pointer and Array           
@@ -1207,7 +1232,7 @@ More information: <https://www.arduino.cc/reference/en/language/variables/data-t
 ![Img](../_static/arduino_tutorial/basic_img/48img.png)     
 
 **Open the example code: "1.7.1_Pointer_Array"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -1230,7 +1255,7 @@ Parameters:
 type: The data type such as char, int, float, etc.
 point-name: The name of the pointer
 
-In the sample code:
+In the example code:
 char *p1 = NULL;
 byte *p2 = NULL;
 ```
@@ -1261,7 +1286,8 @@ int result = 0;
 p = &i;         // Now 'p' points to the address of 'i'
 result = *p;    // result = 5, 'result' gets 5 of the address pointed to by 'p'.  
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/pointer-access-operators/dereference/>     
+More information:           
+<https://www.arduino.cc/reference/en/language/structure/pointer-access-operators/dereference/>     
 
 (2) How are Pointers related to arrays?                   
 The addresses of the array in the system memory are continuous, as shown in the following figure:    
@@ -1301,7 +1327,7 @@ p2 = num;
 ![Img](../_static/arduino_tutorial/basic_img/52img.png)     
 
 **Open the example code: "1.8.0_Digital_tube_Button_spi"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -1333,7 +1359,9 @@ The "Basic learning shield" is integrated with a 4-bit 8-segment display digital
 | :--: | :--: | :--: | :--: | :--: |
 | 16 | 8 | 4 | 2 | 1 |
 
-<span style="color: rgb(255, 76, 65);">Note: The 4-bit 8-segment digital tube and 5 keys on the "Basic learning shield" occupy pins 3 (key trigger signal output), 11 (MOSI), 12 (MISO) and 13 (CLK) of the UNO board, and the CS control pin is not required.</span>     
+```{note}   
+The 4-bit 8-segment digital tube and 5 keys on the "Basic learning shield" occupy pins 3 (key trigger signal output), 11 (MOSI), 12 (MISO) and 13 (CLK) of the UNO board, and the CS control pin is not required.     
+```         
 
 **Knowledge expansion:**
 1. What is coercion of a variable?    
@@ -1343,7 +1371,7 @@ The "Basic learning shield" is integrated with a 4-bit 8-segment display digital
 ![Img](../_static/arduino_tutorial/basic_img/59img.png)     
 
 **Open the example code: "1.8.1_Forced_variable_conversion"**     
-1. Open the sample code using the methods in **"[Chapter_1](#chapter_1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.   
 
 **Example code phenomena:**     
@@ -1362,7 +1390,7 @@ Parameters:
 type: The cast data type (char, int, float, etc.)
 expression: The data, variable, or arithmetic expression that is coerced.
 
-In the sample code:
+In the example code:
 Serial. Println (int (97.3));
 ```
 
@@ -1372,5 +1400,6 @@ This is an infinite empty loop instruction. When the program executes to this st
 while(1){} = while(1);
 ```
 
+--------
 **End!**    
 For more exciting tutorials, check out the [intermediate tutorial](./intermediate_tutorial.md)!    

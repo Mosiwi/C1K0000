@@ -9,21 +9,21 @@ This tutorial is based on [C1K0001 4in1 basic learning kit](../Overview/Overview
 **2\. Learn about** [**3in1 basic learning shield**](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html).  
 
 **3\. Raspberry pi4 basics**     
-If you don't have Raspberry pi4 basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.html)      
+1. What is Raspberry Pi4?: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.html)      
+2. Get started with raspberry pi4: [Click me](https://docs.mosiwi.com/en/latest/raspberry/resources/get_started_with_raspberry_pi/get_started_with_raspberry_pi.html)       
 
 **4\. Install the GPIO library for Raspberry pi4**           
+1. Install the [Wiringpi](https://docs.mosiwi.com/en/latest/raspberry/resources/wiringpi/wiringpi.html)   
+2. Install the [BCM2835](https://docs.mosiwi.com/en/latest/raspberry/resources/bcm2835/bcm2835.html)      
 
-1. Install the [Wiringpi](https://docs.mosiwi.com/en/latest/raspberry/wiringpi/wiringpi.html)   
-2. Install the [BCM2835](https://docs.mosiwi.com/en/latest/raspberry/bcm2835/bcm2835.html)      
-
-**5\. Download sample code**   
-[Login to Raspberry pi4 using PUTTY](https://docs.mosiwi.com/en/latest/raspberry/R1D0000_raspberry_pi4/R1D0000_raspberry_pi4.html#remote-access-to-raspberry-pi-terminal-ssh), then use the following command to download the sample code:      
+**5\. Download example code**   
+Use the Raspberry PI terminal to download the example code:         
 ```bash   
 git clone https://github.com/Mosiwi/Mosiwi-basic-learning-kit     
 ```    
 ![Img](../_static/rpi4_tutorial/c_tutorial_img/1img.png)    
 
-The file in the "**Mosiwi-basic-learning-kit-for-arduino -> pi4 -> c**" folder is the sample code：           
+The file in the "**Mosiwi-basic-learning-kit-for-arduino -> pi4 -> c**" folder is the example code：           
 ```bash 
 cd ~/Mosiwi-basic-learning-kit/pi4/c
 
@@ -51,9 +51,9 @@ Resource: [GNU Make](https://www.gnu.org/software/make/)(Makefile)
 ## Basic Example <span style="color: rgb(255, 76, 65);">(Important)</span>: Terminal    
 ----------------            
 **Objective:**       
-1. Run the sample code.   
-2. Recompile the sample code. 
-3. Modify and recompile the sample code.      
+1. Run the example code.   
+2. Recompile the example code. 
+3. Modify and recompile the example code.      
 
 **Objective_1:**       
 Terminal into the **"1.0.0_Terminal"** folder:    
@@ -74,7 +74,7 @@ ls -al
 ```
 ![Img](../_static/rpi4_tutorial/c_tutorial_img/5img.png)     
 
-Run the compiled sample code:     
+Run the compiled example code:     
 ```bash 
 sudo ./terminal     
 ```
@@ -96,7 +96,7 @@ ls
 ![Img](../_static/rpi4_tutorial/c_tutorial_img/8img.png)      
 
 **Objective_3:**    
-Edit the sample code using the [nano tool](https://www.nano-editor.org/) that comes with the Raspberry PI system:  
+Edit the example code using the [nano tool](https://www.nano-editor.org/) that comes with the Raspberry PI system:  
 ```bash 
 sudo nano terminal.c   
 ```
@@ -250,8 +250,11 @@ chmod 777 analog_sr
 sudo ./analog_sr
 ```
 Push the potentiometer up and down, and the terminal prints the corresponding analog value and voltage value.          
-![Img](../_static/rpi4_tutorial/c_tutorial_img/15img.jpg)     
-<span style="color: rgb(255, 76, 65);">Note: Raspberry Pi4 reads the analog value of the potentiometer through the I2C expansion chip on the "3in1_basic_learning_shield".</span>         
+![Img](../_static/rpi4_tutorial/c_tutorial_img/15img.jpg)      
+
+```{note}
+Raspberry Pi4 reads the analog value of the potentiometer through the I2C expansion chip on the "3in1_basic_learning_shield".
+```           
 
 ## Example8 Microphone      
 ----------------------
@@ -271,9 +274,11 @@ chmod 777 microphone
 sudo ./microphone
 ```
 After running the code, the terminal prints the analog value of the amplified sound and the voltage value.        
-![Img](../_static/rpi4_tutorial/c_tutorial_img/16img.png)     
-<span style="color: rgb(255, 76, 65);">Note: Raspberry Pi4 reads the analog value of the microphone through the I2C expansion chip on the "3in1_basic_learning_shield".</span>        
+![Img](../_static/rpi4_tutorial/c_tutorial_img/16img.png)        
 
+```{note}
+Raspberry Pi4 reads the analog value of the microphone through the I2C expansion chip on the "3in1_basic_learning_shield".   
+```           
 
 ## Example9 Ultrasonic     
 ----------------------
@@ -372,8 +377,9 @@ The 4-bit digital display tube displays "16.0" when the "U" key is pressed; "8.0
 | :--: | :--: | :--: | :--: | :--: |    
 | 16 | 8 | 4 | 2 | 1 |        
 
-<span style="color: rgb(255, 76, 65);">Note: The 4-bit 8-segment digital tube and 5 keys on the "Basic learning shield" occupy pins 5(key trigger signal output), 10(MOSI), 9(MISO) and 11(CLK) of the Pi4, and the CS control pin is not required.</span>     
-
+```{note}   
+ The 4-bit 8-segment digital tube and 5 keys on the "Basic learning shield" occupy pins 5(key trigger signal output), 10(MOSI), 9(MISO) and 11(CLK) of the Pi4, and the CS control pin is not required.  
+```        
 
 ## Example13 Ir-receiver  
 ------------------------    
@@ -407,8 +413,9 @@ Device code:
 0x00 = 0b00000000 = 0        
 ```
 
-<span style="color: rgb(255, 76, 65);">Note: Raspberry Pi4 reads the value of the Ir-receiver through the I2C expansion chip on the "3in1_basic_learning_shield".</span>        
-
+```{note}  
+Raspberry Pi4 reads the value of the Ir-receiver through the I2C expansion chip on the "3in1_basic_learning_shield".     
+```     
 
 ## Example14 Thermohygrometer    
 ----------------------------- 

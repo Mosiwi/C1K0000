@@ -7,6 +7,9 @@ Learn the communication protocol, driver programming and MicroPyhotn module base
 **Pico and Thonny basics:**     
 If you don't have Pico and Thonny basics, you can follow the link to learn the basics: [Click Me](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html)    
 
+```{tip}
+If you've already done the above step, there's no need to repeat it.       
+```   
 
 ## Chapter1 Module for Pico    
 ---------------------------       

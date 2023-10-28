@@ -22,10 +22,14 @@ If you don't have Pico and Thonny basics, you can follow the link to learn the b
 
 **Learn about:** [**MicroPython for Pico**](https://docs.micropython.org/en/latest/rp2/quickref.html).  
 
-**Download sample code:**    
-Please download the sample code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
+**Download example code:**    
+Please download the example code on Github: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit> 
 ![Img](../_static/pico_tutorial/basic_img/1img.png)    
-Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the sample code.       
+Unzip the file downloaded above, and the file in the "**pico->microPython**" folder is the example code.       
+
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.       
+```   
 
 ## Wiring diagram      
 -----------------        
@@ -44,7 +48,7 @@ Open the "**blink\.py**" file as follows:
 ![Img](../_static/pico_tutorial/basic_img/3img.png)    
 
 Run the code online: (The code is not saved in pico and is not executed after repowering.)       
-Make sure your Raspberry PI Pico's USB is plugged into your computer's USB via a usb cable, then click on "Python" and the version number in the bottom right corner of the Thonny window, then select "**MicroPython(Raspberry PI Pico)". COMx** ".      
+Make sure your Raspberry PI Pico's USB is plugged into your computer's USB via a usb cable, then click on "Python" and the version number in the bottom right corner of the Thonny window, then select "**MicroPython(Raspberry PI Pico). COMx** ".      
 ![Img](../_static/pico_tutorial/basic_img/4img.png)    
 
 After running the code, the LED on the pico board lights up every 1 second:      
@@ -56,9 +60,10 @@ Enter the code in the main panel, then click on the "**Save**" or "**File->Save 
 ![Img](../_static/pico_tutorial/basic_img/7img.png)    
 ![Img](../_static/pico_tutorial/basic_img/8img.png)    
 
-| <span style="color: rgb(255, 76, 65);">Note</span>|  
-|  :-- |
-|If you "save a file to the device" and give it the special name **main\.py**, then MicroPython starts running that script as soon as power is supplied to Raspberry Pi Pico in the future. |    
+```{note}  
+If you "save a file to the device" and give it the special name **main.py**, then MicroPython starts running that script as soon as power is supplied to Raspberry Pi Pico in the future. 
+
+```      
 
 **Code analysis:**                 
 Pins and GPIO: [Click me](https://docs.micropython.org/en/latest/rp2/quickref.html#pins-and-gpio)      
@@ -69,7 +74,7 @@ Code comments:
 Syntax:    
 code block      # Comment text
 
-In the sample code:    
+In the example code:    
 import time     # Importing the time class
 ```
 
@@ -78,7 +83,7 @@ import:
 Syntax:
 import modulename   
 
-In the sample code:    
+In the example code:    
 import time     # Importing the time class
 ```
 
@@ -87,7 +92,7 @@ from xxx import xxx:
 Syntax:
 from modelname import member     
 
-In the sample code: 
+In the example code: 
 from machine import Pin     # Import the Pin class from the machine module.    
 ```
 
@@ -110,7 +115,7 @@ while condition:
 Parameters:
 condition: Boolean expression whose result is true or false.   
 
-In the sample code:   
+In the example code:   
 while(1):                    # An infinite loop statement.
     button_value = Button.value()  # Read the key value
     if button_value == 1:          # Check whether the value of the key is 1, if so, turn off the LED.
@@ -135,7 +140,7 @@ while(1):                    # An infinite loop statement.
 ![Img](../_static/pico_tutorial/basic_img/9img.png)    
 
 **Open the example code: "button\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online.      
 
 **Example code phenomena:**         
@@ -210,7 +215,7 @@ dictionary variable:
 var = {'name': 'mosiwi','code':6734, 'dept': 'sales'}       
 
 
-In the sample code:
+In the example code:
 button_value = Button.value()  # Read the key value
 
 ```
@@ -229,7 +234,7 @@ else:
     conditional code
     ...   
 
-In the sample code: 
+In the example code: 
 if button_value == 1:          # Check whether the value of the key is 1, if so, turn off the LED.
     G_LED.off()                # Set pin to "off" (low: 0V) level
 else:                          # If the value of the key is not 1, the LED is turned on.
@@ -264,7 +269,7 @@ if a > 2:
 ![Img](../_static/pico_tutorial/basic_img/12img.png)    
 
 **Open the example code: "buzzer\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -282,7 +287,7 @@ Note: T = A + B
 See more: [PWM for Pico](https://docs.micropython.org/en/latest/rp2/quickref.html#pwm-pulse-width-modulation)     
 
 (2) What is buzzer?    
-See: [Buzzer](../Arduino_tutorial/Intermediate_tutorial.md#chapter5-buzzer)    
+See: [Buzzer](../Arduino_tutorial/intermediate_tutorial.md#chapter5-buzzer)    
 
 (3) What is MOS transistor?
 MOS, is MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) abbreviation.      
@@ -343,7 +348,7 @@ for <variable> in <sequence>:
 else:
     <statements>
 
-In the sample code:  
+In the example code:  
 for i in range(0, 65536):     # The loop executes the next two statements 65,536 times.
     time.sleep_us(50)         # Sleep for 50 microseconds
     buzzer.duty_u16(i)        # Set duty cycle of the PWM, 0 to 65535
@@ -364,7 +369,7 @@ for i in range(0, 65536):     # The loop executes the next two statements 65,536
 ![Img](../_static/pico_tutorial/basic_img/16img.png)    
 
 **Open the example code: "potentiometer\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
@@ -402,7 +407,7 @@ product: variable (result).
 operand1: variable or constant (multiplicand).
 operand2: variable or constant (multiplier).
 
-Sample code:
+example code:
 num = 2*5
 The result is 10.
 ```
@@ -417,13 +422,13 @@ result: variable (result).
 numerator: variable or constant (dividend).
 denominator: Variable or constant (divisor), which cannot be 0.
 
-Sample code:
+example code:
 num = 2/5
 The result is 2.5.   
 ```
 
 ```python
-In the sample code:
+In the example code:
 print("Voltage value: %.2fV" %((3.3/65536)*adc))      #  (3.3/65536)*adc
 ```
 
@@ -439,7 +444,7 @@ sum: variable (result).
 operand1: variable or constant (addition).
 operand2: variable or constant (addition).
 
-Sample code:
+example code:
 num = 10+1
 The result is 11.
 ```
@@ -454,7 +459,7 @@ difference: variable (result).
 operand1: variable or constant (subtraction).
 operand2: variable or constant (subtract).
 
-Sample code:
+example code:
 num = 10-1
 The result is 9.
 ```
@@ -469,7 +474,7 @@ remainder: variable (result).
 dividend: Variable or constant (dividend).
 divisor: Variable or constant (divisor) that cannot be 0.
 
-Sample code:
+example code:
 num = 2%5
 The result is 1. 
 ```
@@ -487,7 +492,7 @@ The result is 1.
 ![Img](../_static/pico_tutorial/basic_img/19img.png)    
 
 **Open the example code: "timer\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**            
@@ -509,7 +514,7 @@ To use a global variable in a function:
 Syntax:
 global  VariableName  
 
-In the sample code:
+In the example code:
 ledstate = 0;                # Define a global variable
 
 def mycallback(t):           # Timed interrupt function
@@ -526,7 +531,7 @@ Syntax:
 loop statement:    
     pass
 
-In the sample code:  
+In the example code:  
 while True:                  # Always empty loop
     pass
 ```
@@ -539,7 +544,7 @@ def functionname(parameters1, parameters2, ... ):
     code block
     return [expression]      #  When this statement is omitted, the function has no return value.
 
-In the sample code:   
+In the example code:   
 def mycallback(t):           # Timed interrupt function
     global ledstate          # Use the "global" keyword to declare that the variable is global, otherwise it is local.
     ledstate = 1 - ledstate  # The global variable ledstate is either 0 or 1. 
@@ -554,13 +559,16 @@ def mycallback(t):           # Timed interrupt function
 1. What is Watchdog?             
 
 **Open the example code: "wdt\.py"**     
-1. Open the sample code using the methods in **"[Basic_example](#basic-chapter-blink)"**.     
+1. Open the example code using the methods in **"[Basic_chapter](#basic-chapter-blink)"**.     
 2. Run the example code online. 
 
 **Example code phenomena:**         
 At the beginning of the program, let the LED on the Pico board blink once, and then set the dog feeding time of the watchdog to within 30 seconds, so that the program will always loop empty. Because the dog was not fed in time, the Pico reset every 30 seconds, and the LED on the Pico class flickered every time it was reset.             
-![Img](../_static/pico_tutorial/basic_img/5img.png)      
-<span style="color: rgb(255, 76, 65);">Note: When practicing, don't set the dog feed time so short that the Pico keeps resetting and can't communicate with Thonny. At this point you have to [re-burn the UF2 file](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html#using-micropython-in-thonny).</span>    
+![Img](../_static/pico_tutorial/basic_img/5img.png)    
+
+```{note}
+When practicing, don't set the dog feed time so short that the Pico keeps resetting and can't communicate with Thonny. At this point you have to [re-burn the UF2 file](https://docs.mosiwi.com/en/latest/raspberry/R1D0001_raspberry_pico/R1D0001_raspberry_pico.html#using-micropython-in-thonny).     
+```  
 
 **FQA:**   
 (1) What is Watchdog?    

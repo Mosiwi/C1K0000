@@ -9,6 +9,10 @@ Learn common programming syntax based on "UNO board + expansion board + peripher
 3. Learn about [**Basic learning shield**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html).  
 4. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.      
 
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.     
+```   
+
 ## Chapter1 RGB LED    
 -------------------
 **Curriculum question:** 
@@ -27,8 +31,11 @@ Learn common programming syntax based on "UNO board + expansion board + peripher
 
 **Open the example code: "2.0.0_RGB_led"**      
 ![Img](../_static/arduino_tutorial/intermediate_img/2img.png)    
-Upload the code to the UNO board.     
-<span style="color: rgb(255, 76, 65);">Note: All the sample code in the following sections is opened in the same way as in the figure above.</span>     
+Upload the code to the UNO board.   
+
+```{note}
+All the example code in the following sections is opened in the same way as in the figure above.    
+```        
 
 **Example code phenomena:**   
 ![Img](../_static/arduino_tutorial/intermediate_img/3img.png)    
@@ -92,10 +99,11 @@ Parameters:
 name: Constant name.
 val: Constant value.
 
-In the sample code:
+In the example code:
 #define T 500
 ```
-More information: <https://www.arduino.cc/reference/en/language/structure/further-syntax/define/>    
+More information:       
+<https://www.arduino.cc/reference/en/language/structure/further-syntax/define/>    
 
 ## Chapter2 waterfall light   
 ---------------------------
@@ -110,7 +118,7 @@ More information: <https://www.arduino.cc/reference/en/language/structure/furthe
 ![Img](../_static/arduino_tutorial/intermediate_img/5img.png)    
 
 **Open the example code: "2.1.0_Waterfall_light"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -141,7 +149,7 @@ Parameters:
 num: LED, allowed range: 0-7
 state: LED state, on or off; For example: 0, 1, On, Off
 
-In the sample code: 
+In the example code: 
 int i;
 for(i=0; i<=7; i++){
 SetLed(i, On);
@@ -166,7 +174,7 @@ delay(500);
 ![Img](../_static/arduino_tutorial/intermediate_img/8img.png)    
 
 **Open the example code: "2.1.1_Led_strip"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -187,7 +195,7 @@ fromHigh: The upper limit value of the current range.
 toLow: The lower limit value of the target range.
 toHigh: The upper limit value of the target range.
 
-In the sample code:
+In the example code:
 int analogValue = 0;
 byte ledNum = 0;
 ledNum = map(analogValue, 0, 1010, 0, 8);
@@ -222,7 +230,7 @@ Parameters:
 var: A variable used for comparison. Allowed data types: int, char.
 label1, label2: Constants. The data types are int and char.
 
-In the sample code:
+In the example code:
 byte ledNum = 0;
 switch (ledNum){
     case 0: SetLedBar(0b00000000); break;
@@ -263,7 +271,10 @@ Decimal number：2*2*2*2*2*2*2*1+0+0+0+0+0+0+1=129
 Binary number ：0b11111111
 Decimal number：2*2*2*2*2*2*2*1+64+32+16+8+4+2+1=255
 ```
-<span style="color: rgb(255, 76, 65);">Note: You do not need to write prefixes in Decimal numbers.</span>       
+
+```{note}
+You do not need to write prefixes in Decimal numbers.    
+```           
 
 **Decimal numbers and hexadecimal numbers:**   
 Each digit of A hexadecimal number ranges from 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F, corresponding to the following decimal values:    
@@ -320,7 +331,7 @@ Relationship between the LED state and the value of "**num**":
 ![Img](../_static/arduino_tutorial/intermediate_img/12img.png)    
 
 **Open the example code: "2.1.2_Bitwise_operation"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -415,25 +426,27 @@ Examples:
 ![Img](../_static/arduino_tutorial/intermediate_img/14img.png)    
 
 **Open the example code: "2.2.0_Buzzer"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
 The buzzer cycle produced 440 Hz and 880 Hz sounds.     
-![Img](../_static/arduino_tutorial/intermediate_img/15img.png)    
+![Img](../_static/arduino_tutorial/intermediate_img/15img.png)         
 <span style="color: rgb(255, 76, 65);">Note: A passive buzzer is used on the extension board.</span>        
 
 **FAQ:**
 (1) What is buzzer?    
-The piezoelectric buzzer consists of internal piezoelectric elements and has two pins, one for the power positive and the other for the negative.    
-![Img](../_static/arduino_tutorial/intermediate_img/16img.png)    
-When the buzzer is energized, an electric charge is applied to the ceramic disk of its internal piezoelectric element, resulting in vibration. The ceramic disc is attached to a vibrating disc, which vibrates along with it, producing an audible sound.    
-![Img](../_static/arduino_tutorial/intermediate_img/17img.png)    
+The piezoelectric buzzer consists of internal piezoelectric elements and has two pins, one for the power positive and the other for the negative.         
+<img src="../_static/arduino_tutorial/intermediate_img/16img.png" width=50% height=50%> 
+
+When the buzzer is energized, an electric charge is applied to the ceramic disk of its internal piezoelectric element, resulting in vibration. The ceramic disc is attached to a vibrating disc, which vibrates along with it, producing an audible sound.         
+<img src="../_static/arduino_tutorial/intermediate_img/17img.png" width=50% height=50%> 
 
 Passive buzzer VS active buzzer:   
 Active buzzers use DC power and buzzers emit sound at a fixed frequency.      
-As for the passive buzzer, additional drive circuits are required. The frequency of the sound will vary with the frequency of the square wave signal. If the frequency signal is not added, the passive buzzer does not sound.     
-![Img](../_static/arduino_tutorial/intermediate_img/18img.png)    
+As for the passive buzzer, additional drive circuits are required. The frequency of the sound will vary with the frequency of the square wave signal. If the frequency signal is not added, the passive buzzer does not sound.        
+<img src="../_static/arduino_tutorial/intermediate_img/18img.png" width=50% height=50%>   
+  
 The extension board integrates a patch passive buzzer that is controlled by the 9 pins of the UNO board when the extension board is directly inserted into the UNO board.    
 
 (2) How do you use the tone() and notone() functions?   
@@ -458,7 +471,7 @@ The set frequency must be greater than 31Hz.
 Using the tone() function affects the PWM output of pins 3 and 11 and affects the use of timer 2.
 Only one pin can use tone() at a time.If you want to use another pin, you need to close the active pin with the notone() function.
 
-In the sample code:
+In the example code:
 byte BuzzerPin = 9;
 tone(BuzzerPin, 440, 1000);
 ```
@@ -495,7 +508,7 @@ Buzzer and Slider resistor
 ![Img](../_static/arduino_tutorial/intermediate_img/22img.png)    
 
 **Open the example code: "2.2.1_Frequency_Tone"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -515,14 +528,14 @@ Various tones are produced by sounds of different frequencies. Because buzzers c
 2. How do you use sizeof()?    
 3. How to use the store statements: PROGMEM, pgm_read_word_near(), pgm_read_float_near()       
 
-**Schematic diagram:**           
+**Schematic diagram:**             
 ![Img](../_static/arduino_tutorial/intermediate_img/78img.png)            
 
-**Program flow diagram:** 
+**Program flow diagram:**       
 ![Img](../_static/arduino_tutorial/intermediate_img/25img.png)    
 
 **Open the example code: "2.2.2_Jingle_bells"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**    
@@ -559,7 +572,7 @@ variable: Any variable type or array (e.g. int, float, byte).
 Return value:
 The number of bytes in a variable or in an array. Data type :size_t
 ```
-More info <https://www.arduino.cc/reference/en/language/variables/utilities/sizeof/>    
+More info: <https://www.arduino.cc/reference/en/language/variables/utilities/sizeof/>    
 
 (3) How to use the store statements: PROGMEM, pgm_read_word_near(), pgm_read_float_near()       
 The PROGMEM keyword is a variable modifier that can only be used with data types defined in the "pgmspace.h" header file. It tells the compiler to "put this information in flash memory" instead of the usual SRAM.     
@@ -598,7 +611,7 @@ More info: <https://www.arduino.cc/reference/en/language/variables/utilities/pro
 ![Img](../_static/arduino_tutorial/intermediate_img/28img.png)    
 
 **Open the example code: "2.2.3_Buzzer_Timer"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -646,7 +659,7 @@ void loop() {
 ![Img](../_static/arduino_tutorial/intermediate_img/30img.png)    
 
 **Open the example code: "2.3.0_Microphone"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -657,8 +670,7 @@ When powered on, the microphone will always obtain the sound data of the current
 (1) What is a microphone?  
 Microphone is an energy conversion device that converts sound signals into electrical signals. It is classified as capacitive and electret. An electret microphone is used on the expansion board and a preamplifier circuit is integrated; when the expansion board is directly plugged into the UNO board, the A2 pin is used to receive the analog signal from the microphone.      
 ![Img](../_static/arduino_tutorial/intermediate_img/32img.png)    
-The microphone on the expansion board integrates a preamplifier circuit, which reads the analog voltage value of pin A2 as 2.5V when there is no sound, and fluctuates the voltage value on pin A2 up and down at 2.5V when there is sound.       
-![Img](../_static/arduino_tutorial/intermediate_img/33img.png)    
+The microphone on the expansion board integrates a preamplifier circuit, which reads the analog voltage value of pin A2 as 2.5V when there is no sound, and fluctuates the voltage value on pin A2 up and down at 2.5V when there is sound.          
 ![Img](../_static/arduino_tutorial/intermediate_img/34img.png)    
 
 An example of reading an analog value for a sound:      
@@ -683,11 +695,11 @@ LED strip
 ![Img](../_static/arduino_tutorial/intermediate_img/73img.png)            
 [74HC595 datasheet](../_static/pdf/74HC595.pdf)
 
-**Program flow diagram:** 
+**Program flow diagram:**        
 ![Img](../_static/arduino_tutorial/intermediate_img/35img.png)    
 
 **Open the example code: "2.3.1_Music_LED"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -704,7 +716,7 @@ operand1 && operand2 ...
 Parameters:
 operand1, operand2: Operands
 
-In the sample code: 
+In the example code: 
 if((up_512 <= voiceAnalogValue) && (voiceAnalogValue <= dow_1023)){
 ledNum = map(voiceAnalogValue, up_512, dow_1023, 0, 7);
 }
@@ -712,8 +724,8 @@ ledNum = map(voiceAnalogValue, up_512, dow_1023, 0, 7);
 More info: <https://www.arduino.cc/reference/en/language/structure/boolean-operators/logicaland/>     
 
 (2) What is a jump statement: goto   
-Jump the program flow to a marked point in the program.      
-![Img](../_static/arduino_tutorial/intermediate_img/37img.png)    
+Jump the program flow to a marked point in the program.         
+<img src="../_static/arduino_tutorial/intermediate_img/37img.png" width=50% height=50%>   
 
 ```c++ 
 Syntax:
@@ -782,11 +794,11 @@ More info: <https://www.arduino.cc/reference/en/language/functions/math/min/>
 **Schematic diagram:**       
 ![Img](../_static/arduino_tutorial/intermediate_img/80img.png)            
 
-**Program flow diagram:**          
-![Img](../_static/arduino_tutorial/intermediate_img/38img.png)    
+**Program flow diagram:**             
+<img src="../_static/arduino_tutorial/intermediate_img/38img.png" width=50% height=50%>     
 
 **Open the example code: "2.4.0_EEPROM_ReadWriteSkip"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -901,11 +913,11 @@ AHT20
 ![Img](../_static/arduino_tutorial/intermediate_img/77img.png)            
 [BC7278 datasheet](../_static/pdf/BC7278.pdf)  
 
-**Program flow diagram:**         
-![Img](../_static/arduino_tutorial/intermediate_img/42img.png)    
+**Program flow diagram:**           
+<img src="../_static/arduino_tutorial/intermediate_img/42img.png" width=50% height=50%>       
 
 **Open the example code: "2.5.0_Thermohygrometer"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -944,7 +956,7 @@ Parameters:
 var: The variable name
 val -The value assigned to the variable
 
-In the sample code:    
+In the example code:    
 unsigned long oldTime = 0;
 ```
 
@@ -990,7 +1002,7 @@ type: The data type, such as char, int, float, etc., or "void" when there are no
 function: The name of the function
 val1, val2... : parameter name; Empty when type is "void".
 
-In the sample code:  
+In the example code:  
 void displayHumidity(float H){
     int temp = int(H*10);
     //...
@@ -1006,12 +1018,11 @@ void displayHumidity(float H){
 **Schematic diagram:**       
 ![Img](../_static/arduino_tutorial/intermediate_img/82img.png)            
 
-**Program flow diagram:**      
-![Img](../_static/arduino_tutorial/intermediate_img/44img.png)    
-
+**Program flow diagram:**        
+<img src="../_static/arduino_tutorial/intermediate_img/44img.png" width=50% height=50%>     
 
 **Open the example code: "2.6.0_IRrecvDemo"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -1039,7 +1050,7 @@ Syntax:
 Parameters:
 timer: IR_USE_TIMER1 or IR_USE_TIMER2.
 
-In the sample code:
+In the example code:
 #define IR_USE_TIMER2
 ```
 
@@ -1063,7 +1074,7 @@ MswIR IR(pin);
 Parameters:
 pin: The pin number on the M328 PRO motherboard.
 
-In the sample code:
+In the example code:
 byte RECV_PIN = 4;
 MswIR IR(RECV_PIN);
 ```
@@ -1084,7 +1095,7 @@ var: The parameter name
 Return value:
 0 or 1. 0 is a failed decoding and 1 is a successful decoding.
 
-In the sample code:
+In the example code:
 if (IR.decode()) {  
   Serial.println(IR.value, HEX);
 }
@@ -1093,24 +1104,27 @@ if (IR.decode()) {
 Decoding result:  
 If the decoding is successful, the decoding result is stored in the "ir.value" member of the IR receiver object.   
 ```c++ 
-In the sample code:
+In the example code:
 Serial.println(IR.value, HEX);  
 ```
 
 **Extended chapter:**   
 1. How to realize infrared remote control?     
 
-**Program flow diagram:**        
-![Img](../_static/arduino_tutorial/intermediate_img/49img.png)    
+**Program flow diagram:**           
+<img src="../_static/arduino_tutorial/intermediate_img/49img.png" width=50% height=50%>     
 
 **Open the example code: "2.6.1_IRremote"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
 Use the [infrared remote control](https://docs.mosiwi.com/en/latest/outsourcing/nec_ir_remote_control/nec_ir_remote_control.html) to repeatedly press the "OK" key in front of the infrared receiver on the expansion board to turn on and off the red LED light on the expansion board.     
 ![Img](../_static/arduino_tutorial/intermediate_img/50img.png)    
-<span style="color: rgb(255, 76, 65);">Note: Button batteries must be installed when using the infrared remote control. If the infrared remote control has been allocated with button batteries, the separator at the bottom of the remote control must be pulled out.</span>      
+
+```{note}
+Button batteries must be installed when using the infrared remote control. If the infrared remote control has been allocated with button batteries, the separator at the bottom of the remote control must be pulled out.      
+```     
 
 See: [Ir-receiver module](https://docs.mosiwi.com/en/latest/common/C1S0001_ir_receiver/C1S0001_ir_receiver.html)       
 
@@ -1121,15 +1135,15 @@ For example, we can program the UNO board to turn on the LED when it receives th
 
 ## Chapter14 Ultrasonic   
 -----------------------
-**Curriculum question:** 
+**Curriculum question:**     
 1. What is Ultrasonic module?    
 2. What is pulse?     
 3. How do you use the pulseIn() function?     
 
-**Schematic diagram:**       
-![Img](../_static/arduino_tutorial/intermediate_img/83img.png)            
+**Schematic diagram:**          
+<img src="../_static/arduino_tutorial/intermediate_img/83img.png" width=50% height=50%>                
 
-**Wiring diagram**
+**Wiring diagram**     
 ![Img](../_static/arduino_tutorial/intermediate_img/51img.png)    
 | Ultrasonic module interface | Interface on the Extend board | Pins of UNO board|     
 | :--: | :--: | :--: |   
@@ -1138,11 +1152,11 @@ For example, we can program the UNO board to turn on the LED when it receives th
 | Echo | S2 | 6 |   
 | Gnd | GND | GND |  
 
-**Program flow diagram:**         
-![Img](../_static/arduino_tutorial/intermediate_img/52img.png)    
+**Program flow diagram:**               
+<img src="../_static/arduino_tutorial/intermediate_img/52img.png" width=50% height=50%>
 
 **Open the example code: "2.7.0_Ultrasonic"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**  
@@ -1183,8 +1197,8 @@ More info: <https://www.arduino.cc/reference/en/language/functions/advanced-io/p
 2. how to use the logic statements: ||       
 
 **Schematic diagram:**         
-Ultrasonic
-![Img](../_static/arduino_tutorial/intermediate_img/83img.png)            
+Ultrasonic              
+<img src="../_static/arduino_tutorial/intermediate_img/83img.png" width=50% height=50%> 
 
 4-bit digital tube
 ![Img](../_static/arduino_tutorial/intermediate_img/77img.png)            
@@ -1197,7 +1211,7 @@ Ultrasonic
 ![Img](../_static/arduino_tutorial/intermediate_img/60img.png)    
 
 **Open the example code: "2.7.1_Range-measurement"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**     
@@ -1231,7 +1245,7 @@ type: The data type, such as char, int, float, etc., or "void" when there are no
 function: The name of the function
 val1, val2... : parameter name; Empty when type is "void".
 
-In the sample code:
+In the example code:
 float distance;
 distance = Measuring_distance();
 ```
@@ -1245,14 +1259,15 @@ operand1 || operand2 ...
 Parameters:
 operand1, operand1: Operands
 
-In the sample code:
+In the example code:
 byte keyValue = 0;
 bool OnOff = false;
 if(keyValue == 8 || keyValue == 4 || keyValue == 2 || keyValue == 1){
     OnOff = ! OnOff;
 }
 ```
-More info: <https://www.arduino.cc/reference/en/language/structure/boolean-operators/logicalor/>    
+More info:      
+<https://www.arduino.cc/reference/en/language/structure/boolean-operators/logicalor/>    
 
 
 ## Chapter16 Fan-PWM              
@@ -1273,16 +1288,16 @@ More info: <https://www.arduino.cc/reference/en/language/structure/boolean-opera
 | INA | S2 | 6 |  
 | INB | S1 | 5 |     
 
-**Program flow diagram:**     
-![Img](../_static/arduino_tutorial/intermediate_img/63img.png)    
+**Program flow diagram:**       
+<img src="../_static/arduino_tutorial/intermediate_img/63img.png" width=50% height=50%>      
 
 **Open the example code: "2.8.0_Fan_PWM"**      
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**     
-After uploading the code, the fan speed will change from small to large forward rotation, and then from large to small reverse, and so on.    
-![Img](../_static/arduino_tutorial/intermediate_img/64img.png)    
+After uploading the code, the fan speed will change from small to large forward rotation, and then from large to small reverse, and so on.         
+<img src="../_static/arduino_tutorial/intermediate_img/64img.png" width=50% height=50%>     
 
 **FAQ:**             
 (1) What is a fan?    
@@ -1302,7 +1317,7 @@ Syntax:
 Parameters:
 timer: FAN_USE_TIMER1 or FAN_USE_TIMER2.
 
-In the sample code:
+In the example code:
 #define FAN_USE_TIMER1
 ```
 Include the fan header file:   
@@ -1321,7 +1336,7 @@ MswFan::direction(direction);
 Parameters:
 direction: Forward or reverse direction, CW or CCW (0 or 1).
 
-In the sample code:
+In the example code:
 MswFan::direction(CW);
 MswFan::direction(CCW);
 ```
@@ -1343,23 +1358,22 @@ MswFan::stop();
 ```
 
 **Open the example code: "2.8.1_Fan_timer"**        
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Extended chapter2:**     
 We also have an example of controlling a fan through a sliding resistor.    
 
-**Program flow diagram:**     
-![Img](../_static/arduino_tutorial/intermediate_img/66img.png)    
+**Program flow diagram:**            
+<img src="../_static/arduino_tutorial/intermediate_img/66img.png" width=50% height=50%>    
 
 **Open the example code: "2.8.1_Fan_timer"**        
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board. 
 
 **Example code phenomena:**      
-After power on, the more up push the potentiometer on the expansion board, the faster the fan turns, the more down push, the slower the fan turns.   
-![Img](../_static/arduino_tutorial/intermediate_img/67img.png)    
-
+After power on, the more up push the potentiometer on the expansion board, the faster the fan turns, the more down push, the slower the fan turns.        
+<img src="../_static/arduino_tutorial/intermediate_img/67img.png" width=50% height=50%> 
 
 ## Chapter17 Smart fan       
 ----------------------
@@ -1370,12 +1384,12 @@ After power on, the more up push the potentiometer on the expansion board, the f
 ![Img](../_static/arduino_tutorial/intermediate_img/68img.png)    
 
 **Open the example code: "2.8.3_Intelligent_fan"**        
-1. Open the sample code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
+1. Open the example code using the methods in **"[Chapter_1](#chapter-1-blink)"**.   
 2. Upload the code to the UNO board.
 
 **Example code phenomena:**     
-This is an intelligent fan with temperature control mode and remote control mode.    
-![Img](../_static/arduino_tutorial/intermediate_img/69img.png)    
+This is an intelligent fan with temperature control mode and remote control mode.       
+<img src="../_static/arduino_tutorial/intermediate_img/69img.png" width=50% height=50%>      
 
 Function of [infrared remote control](https://docs.mosiwi.com/en/latest/outsourcing/nec_ir_remote_control/nec_ir_remote_control.html) button:    
 1. 2: Turn on and off temperature control mode    
@@ -1401,6 +1415,6 @@ Special Notes:
 6. Do more programming projects, think more, and express your ideas in code.    
 7. Keep learning.
 
-
+--------
 **End!**      
 For more exciting tutorials, check out the [advance tutorial](./advanced_tutorial.md)!    

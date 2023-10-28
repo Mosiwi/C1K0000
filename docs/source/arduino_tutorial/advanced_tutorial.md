@@ -8,6 +8,10 @@ Learn communication protocol, driver programming and Arduino library development
 2. Basic operation of the [**Arduino UNO R3**](https://docs.mosiwi.com/en/latest/arduino/A1D0000_uno_r3/A1D0000_uno_r3.html) motherboard.       
 3. Install the [**Mosiwi basic learning kit**](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library) library.  
 
+```{tip}
+If you've already done some of the steps above, you don't need to go through the steps you've already done.    
+```    
+
 ## Chapter1 Arduino          
 -------------------
 The essence of the Arduino programming language is a combination of C and C++ programming languages, and there is only one main() function, and the initial program entry is also the main() function. In order to allow more people to use the Arduino platform to develop products, the Arduino team tried every means to lower the threshold of programming and hide the tedious details of program development. Open the "main.cpp" file under the Arduino IDE installation file as shown in the figure below, and you can intuitively analyze the above description.         
@@ -21,240 +25,7 @@ The definition of some other keywords and commonly used functions can also be fo
 
 ## Chapter2 Library files for Arduino             
 ------------------------------------- 
-A large part of the reason why Arduino is so popular with the public is that it has a huge open source library file. You only need to download the relevant library file according to the function, and then copy it to the relevant folder to program quickly. Because various functional functions have been integrated in the library file, the desired function can be realized by calling related functions as required.      
-
-**1. Learn about Arduino project:**     
-■ Catalog specification    
-When creating an empty project, press **Ctrl+s** on the keyboard to save it.     
-![Img](../_static/arduino_tutorial/advanced_img/4img.png)       
-
-At this time, a dialog box pops up, name the project. Suppose it is named **"LED_blink"** and saved in my own Arduino working directory **"E:\\Arduino_workspace\\"**. So the IDE will automatically help us create a folder under Arduino_workspace, and put the main file in it, and the main file has the same name as the folder.    
-```c++
- E:\Arduino_workspace\
-    LED_blink\
-      LED_blink.ino
-```
-![Img](../_static/arduino_tutorial/advanced_img/5img.png)       
-
-■ Rules for code in the main file
-Every Arduino program has a main file with the suffix .ino, which is the file where the program's setup function and loop function are located.    
-![Img](../_static/arduino_tutorial/advanced_img/6img.png)       
-
-Open the file, the framework is as follows:    
-![Img](../_static/arduino_tutorial/advanced_img/7img.png)       
-
-**2. Use multiple files in the project:**       
-Sometimes the bigger the program gets, the messier it gets. Multiple file management can solve this problem. Arduino programs can have multiple source code files, but only one main file, which is the.ino file that stores the **"setup()"** and **"loop()"** functions.       
-
-In order to make the code clearer, we let the main file is used to control the main logical part of the program, and the specific details are packaged into a single module, stored in other files, so that it is easy to manage.    
-
-■ Use files with no suffix (in fact, the suffix is also .ino, but the suffix will not be displayed in the IDE, but .ino will be displayed in the resource manager of the computer, hereinafter referred to as no suffix)     
-
-Click the button marked in the figure below, select the first option **[New Tab]**, and enter the file name.     
-![Img](../_static/arduino_tutorial/advanced_img/8img.png)       
-![Img](../_static/arduino_tutorial/advanced_img/9img.png)       
-
-So our project has 2 files, a **"LED_blink"** main file and a file named **"LED"**. Then write the program in the file, which is the simplest multi-file method. as follows:    
-![Img](../_static/arduino_tutorial/advanced_img/10img.png)       
-![Img](../_static/arduino_tutorial/advanced_img/11img.png)       
-
-I do not recommend using this method. This is for noobs who have no C/C++ programming experience. They don't understand that functions must be declared before they can be used after they are defined, and they don't understand the inclusion of header files. These are all done for them by the Arduino IDE. The specific processing of the IDE is in the early stage of compilation. Arduino IDE will merge the file without suffix and the main file into one file, the effect is like writing in the main file. And add **#include "Arduino.h"** in the first line of the main file (**Arduino.h** is the core header file of the Arduino program), then, the IDE scans the function definitions of the merged file and adds function declarations to the defined functions. (This is why the function we defined can be compiled even if it is not declared in the main file)      
-
-But the official made it clear that this mechanism for automatically inserting function declarations is not perfect! So I also suggest that you develop the habit of manually declaring functions.     
-```
-Also, this generation isn't perfect: 
-it won't create prototypes for functions that have default argument values, 
-or which are declared within a namespace or class.  
-```
-
-■ Use traditional C/C++ separate files      
-In this way, for a code module, we need a pair of files: source file and header file, ie: **x.c** and **x.h** or **x.cpp** and **x.h** . The former is C language style, and the latter is C++ style. The official seems to recommend that we use C++ to write Arduino code. Whether it is the Arduino standard library or the tutorial, there is a strong C++ atmosphere. So I will use C++ style as an example below.    
-
-For example, we want to package the LED control into a module. We need to create 2 files: LED.h, LED.cpp   
-![Img](../_static/arduino_tutorial/advanced_img/12img.png)       
-![Img](../_static/arduino_tutorial/advanced_img/13img.png)       
-![Img](../_static/arduino_tutorial/advanced_img/14img.png)       
-
-First we think about how to control the LED, then we first write the content of the header file, then write the function implementation in the source file, and finally use this module in the main file. Include the header file using the **#include "LED.h"** preprocessing directive in the main file.       
-```c++
-/*******************
-LED.h
-*******************/
-#ifndef _LED_H__                              // Prevents header files from being repeatedly included when used.
-#define _LED_H__
-
-#include"Arduino.h"                           // Import Arduino core headers 
-class LED {
-    private:
-        byte pin;                             // Store the pin that control the led
-     
-    public:
-        LED(byte p , bool state=LOW );        // Constructor function
-        ~LED();                               // Destructor function
-
-        void on();                            // Turn on the LED
-        void off();                           // Turn off the LED
-        bool getState();                      // Getting the LED statu
-        void disattach();                     // Release pin
-};
-
-#endif
-```
-```c++
-/*****************
-LED.cpp
-******************/
-#include"LED.h"
-#include"Arduino.h"
-
-LED::LED(byte p,bool state):pin(p){
-   pinMode(pin,OUTPUT);
-   digitalWrite(pin,state);
-}
-LED::~LED(){
-    disattach();
-} 
-void LED::on(){
-    digitalWrite(pin,HIGH);
-}
-void LED::off(){
-   digitalWrite(pin,LOW);
-}
-bool LED::getState(){
-    return digitalRead(pin);
-}
-void LED::disattach() {     
-    digitalWrite(pin,LOW);
-    pinMode(pin,INPUT);
-}
-```
-```c++
-/**********************
-LED_blink：
-Instantiate an LED object, control it with pin 10, let it flash 10 times, 
-and print its status in the serial port, release and recover the pin after 10 times.
-**********************/
-#include"LED.h"
-
-LED led(10);
-byte count =0;
-void setup() {
-   Serial.begin(9600);
-}
-
-void loop() {
-   if(count<10){
-     led.on();
-     delay(300);
-     Serial.print("LED state:");
-     Serial.println(led.getState(),DEC);
-     
-     led.off();
-     delay(300);
-     Serial.print("LED state:");
-     Serial.println(led.getState(),DEC);
-     
-     ++count;
-     if(count==10)
-        led.disattach();
-   }
-}
-```
-Note: If the header file and the main file are in the same folder, use double quotation marks **"xx.h"** to include the library file into the main file, as follows:
-```c++
-#include"LED.h"
-```
-
-**3. Make it a standard library!**          
-If the above library works well for you and you use it often, you can set it up as a standard Arduino library file, and then you can include it in the Arduino IDE and use it.     
-
-Arduino's extension libraries can be placed under the libraries directory:     
-![Img](../_static/arduino_tutorial/advanced_img/15img.png)       
-The usual default path: **C:\\Users\\Administrator\\Documents\\Arduino**    
-
-We need to create a folder in this directory. For example, the above example is LED control, so I created a folder named "LED", and then created 2 empty folders ( examples and src ) and 2 Empty files ( keywords.txt and library.properties ):    
-![Img](../_static/arduino_tutorial/advanced_img/16img.png)       
-
-Then copy the written ".cpp" and ".h" files into the src file. Create a new folder named "LED_blink" in the examples folder, and copy the "LED_blink.ino" file into it, as follows:     
-![Img](../_static/arduino_tutorial/advanced_img/18img.png)       
-
-In this way, our main file becomes a sample program in the library file. In the sample, we need to use angle brackets **< >** to include standard files, as follows:       
-```c++
-#include<LED.h>    
-LED led(10);
-byte count =0;
-
-void setup() {
-   Serial.begin(9600);
-}
-
-void loop() {
-    if(count<10){
-        led.on();
-        delay(300);
-        Serial.println(led.getState(),DEC);
-     
-        led.off();
-        delay(300);
-        Serial.println(led.getState(),DEC);
-     
-        ++count;
-        if(count==10)
-            led.disattach();
-    }
-}
-```
-
-Note: Since the LED control module is already a standard library, use angle brackets **< >** to include library files, as follows:    
-```c++
-#include<LED.h>
-```
-There is a "keywords.txt" file in the LED folder, which is used to configure syntax highlighting for custom libraries. If not configured, the Arduino IDE cannot render highlighted colors.      
-![Img](../_static/arduino_tutorial/advanced_img/19img.png)       
-
-The following is the analysis of keywords.txt:     
-```c++
-Format: word Tab Description
-
-Word: It is the keyword you want to highlight.
-Tab: the tab key on the keyboard.
-
-Possible values for DESCRIPTION:
-KEYWORD1 --> highlight class name
-KEYWORD2 --> Highlight method name
-KEYWORD3 --> highlight library file name
-LITERAL1 --> highlight constant name
-```
-The beginning of "#" is a comment and can be omitted.     
-```c++
-# Library (KEYWORD3)
-LED  KEYWORD3
-
-# Methods and Functions (KEYWORD2)
-on  KEYWORD2
-off  KEYWORD2
-getState  KEYWORD2
-disattach  KEYWORD2
-```
-There is also a library.properties file in the "LED" folder, which is a configuration library that can display the library name in the Arduino IDE. The contents are as follows:     
-```c++
-name=LED
-version=*
-author=*
-maintainer=*
-sentence=*
-paragraph=*
-category=*
-url=*
-architectures=*
-depends=*
-```
-You can change the * symbol to the required content according to your personal needs, please refer to the following link settings:     
-<https://arduino.github.io/arduino-cli/0.24/library-specification/#library-metadata>   
-
-After configuration, you can find the standard library named "LED" and the sample code of the library in the Arduino IDE menu "File" --> "examples".     
-![Img](../_static/arduino_tutorial/advanced_img/20img.png)       
-More info: <https://docs.arduino.cc/learn/contributions/arduino-creating-library-guide>      
+Make an arduino library: [Click me](https://docs.mosiwi.com/en/latest/arduino/resources/make_an_arduino_library/make_an_arduino_library.html)
 
 
 ## Chapter3 Serial port        
@@ -270,7 +41,7 @@ USB port of PC can not communicate with TTL serial port of Mega328 chip directly
 **6. Software serial port**      
 In this example, we use the way of software simulation to realize a TTL serial port function, the data format of the serial port is XXx-8-N-1 (xxx: variable rate, 8-bit data, no parity check bit, 1 stop bit), the advantage of this way is that any two pins on the UNO board can be defined as a serial port.    
 
-■ Open the "3.0.0_Soft_serial" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+■ Open the "3.0.0_Soft_serial" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
 ■ Open the serial port, adjust the baud rate of the serial port monitor to 9600, fill in "hello mosiwi" in the transmission frame, and then click send, UNO board will receive the data from the new back to the serial port monitor.     
 ![Img](../_static/arduino_tutorial/advanced_img/48img.png)       
@@ -400,16 +171,16 @@ More info: [Wire](https://www.arduino.cc/reference/en/language/functions/communi
 SPI communication protocol: [Click me](https://docs.mosiwi.com/en/latest/various_resources/spi/spi.html)      
 
 **Software SPI**      
-This example is based on BC7278 quad digital tube and button chip. If you need specifications, please download from this link: [BC7278](https://docs.mosiwi.com/en/latest/_downloads/fba25a2f4f02090261e8f8799360e4d1/BC7278.pdf)      
+This example is based on BC7278 quad digital tube and button chip. If you need specifications, please download from this link: [BC7278](../_static/pdf/BC7278.pdf)      
 
 Because the BC7278 chip does not have SPI chip selection pin (CS), the chip is in the enabled state after power on. So the UNO board (master device) only needs 3 roots to communicate with the BC7278 chip (slave device).     
 
 BC7278 example code:       
-■ Open the "3.2.0_BC7278_spi_soft" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+■ Open the "3.2.0_BC7278_spi_soft" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 
 **Hardware SPI port**     
 BC7278 example code:    
-■ Open the "3.2.1_BC7278_spi" example in the "[Mosiwi_Basic_Learning_Kit](../../../arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.md#integration-library)" library file, then select the board type and port, and then upload the code.    
+■ Open the "3.2.1_BC7278_spi" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
 More info: [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/)        
 
 ## Chapter6 3-wire communication             
@@ -508,6 +279,6 @@ Figure 3
 **1. Example code**         
 Open the "3.5.0_EEPROM_1wire_soft" example in the "[Mosiwi_Basic_Learning_Kit](https://docs.mosiwi.com/en/latest/arduino/A1E0000_basic_learning_shield/A1E0000_basic_learning_shield.html#integration-library)" library file, then select the board type and port, and then upload the code.    
  
-Datasheet of EEPROM: [EEPROM](https://docs.mosiwi.com/en/latest/_downloads/3efa18a7de39b4e6eafecc338d4b2e22/DS2431.pdf)   
+Datasheet of EEPROM: [EEPROM](../_static/pdf/DS2431.pdf)   
 
 **End!**      

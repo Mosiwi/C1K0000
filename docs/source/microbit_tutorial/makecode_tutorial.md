@@ -18,7 +18,8 @@ Open the link to create a new online project: <https://makecode.microbit.org>
 -------------------------
 ![Img](../_static/microbit_tutorial/img/3img.png)  
 
-Fill in the link to the right of the chain and search for: <https://github.com/Mosiwi/Mosiwi-basic-learning-kit-for-microbit>     
+Fill in the link to the right of the chain and search for:    
+<https://github.com/Mosiwi/Mosiwi-basic-learning-kit-for-microbit>     
 ![Img](../_static/microbit_tutorial/img/4img.png)         
 Wait for the loading of the library. After the loading is successful, the following figure is shown:   
 ![Img](../_static/microbit_tutorial/img/5img.png)       
@@ -26,24 +27,24 @@ Wait for the loading of the library. After the loading is successful, the follow
 ## Block code parsing        
 ---------------------
 ▶ 1: ![Img](../_static/microbit_tutorial/img/6img.png)     
-The module returns a value that is the numeric input value for P11. When the keyboard on the expansion board is clicked, a low level is returned, indicating that the keyboard value on the expansion board can be read.        
+The module returns a value that is the numeric input value for P11. When the keyboard on the sheild is clicked, a low level is returned, indicating that the keyboard value on the sheild can be read.        
 ![Img](../_static/microbit_tutorial/img/7img.jpg)     
 Usage:      
-Press any keyboard on the expansion board, the microbit dot matrix displays 0, otherwise displays 1.    
+Press any keyboard on the sheild, the microbit dot matrix displays 0, otherwise displays 1.    
 ![Img](../_static/microbit_tutorial/img/8img.png)   
-Because the P11 is also mapped to the microbit Buttom B, the keyboard value of the expansion board can also be read through the microbit Buttom B.     
+Because the P11 is also mapped to the microbit Buttom B, the keyboard value of the sheild can also be read through the microbit Buttom B.     
 ![Img](../_static/microbit_tutorial/img/9img.png)       
 
 
 ▶ 2: ![Img](../_static/microbit_tutorial/img/10img.png)      
-Read the keyboard values on the expansion board.     
+Read the keyboard values on the sheild.     
 Usage:   
-Press any key on the expansion board, and the microbit dot matrix displays the key value.       
+Press any key on the sheild, and the microbit dot matrix displays the key value.       
 ![Img](../_static/microbit_tutorial/img/11img.png)      
 Key value: U = 16, D = 8, L = 4, R = 2, OK = 1   
 
 ▶ 3: ![Img](../_static/microbit_tutorial/img/12img.png)     
-Clear the display on the 4-digit nixtube of the expansion board.   
+Clear the display on the 4-digit nixtube of the sheild.   
 
 ▶ 4: ![Img](../_static/microbit_tutorial/img/13img.png)   
 4-digit nixie tube displays numeric values.   
@@ -82,7 +83,7 @@ Usage:
 ![Img](../_static/microbit_tutorial/img/23img.png)       
 
 ▶ 10: ![Img](../_static/microbit_tutorial/img/24img.png)    
-Controls the brightness of the RGB LED on the expansion board.    
+Controls the brightness of the RGB LED on the sheild.    
 Parameter 1: Red LED, green LED, blue LED.     
 Parameter 2: 0 to 1023, brightness.   
 
@@ -99,17 +100,17 @@ Usage:
 ![Img](../_static/microbit_tutorial/img/28img.png)     
 
 ▶ 14: ![Img](../_static/microbit_tutorial/img/29img.png)   
-When the ultrasonic module is connected to the Sensor interface of the expansion board, the measurement distance value of the ultrasonic module can be read. The unit is centimeter.           
+When the ultrasonic module is connected to the Sensor interface of the sheild, the measurement distance value of the ultrasonic module can be read. The unit is centimeter.           
 ![Img](../_static/microbit_tutorial/img/30img.jpg)     
 
 Usage:     
 ![Img](../_static/microbit_tutorial/img/31img.png)   
 
 ▶ 15: ![Img](../_static/microbit_tutorial/img/32img.png)     
-The value of the infrared receiver, microphone or sliding resistor on the expansion board is read through the [I2C protocol](../../C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.md#io-expand).        
+The value of the infrared receiver, microphone or sliding resistor on the sheild is read through the [I2C protocol](https://docs.mosiwi.com/en/latest/common/C1E0000_3in1_basic_learning_shield/C1E0000_3in1_basic_learning_shield.html#io-expand).        
 
 Usage:   
-Infrared receiver ([NEC](https://docs.mosiwi.com/en/latest/resource/nec/nec.html))   
+Infrared receiver ([NEC](https://docs.mosiwi.com/en/latest/various_resources/nec/nec.html))   
 ![Img](../_static/microbit_tutorial/img/33img.png)    
 ![Img](../_static/microbit_tutorial/img/34img.jpg)     
 ![Img](../_static/microbit_tutorial/img/40img.png)     
@@ -121,21 +122,21 @@ Sliding resistor
 ![Img](../_static/microbit_tutorial/img/36img.png)    
 
 ▶ 16: ![Img](../_static/microbit_tutorial/img/44img.png)      
-When the fan module is connected to the fan port on the expansion board, it is used to control the steering and speed of the fan module.    
+When the fan module is connected to the fan port on the sheild, it is used to control the steering and speed of the fan module.    
 ![Img](../_static/microbit_tutorial/img/45img.jpg)     
 Parameter 1: CW = clockwise rotation.     
 Parameter 2: CCW = counterclockwise rotation.    
 
 ▶ 17: ![Img](../_static/microbit_tutorial/img/37img.png)     
-Read the key value on the expansion board, return 0 when the key is pressed, otherwise return 1. This key is connected to the P5 pin of the microbit.   
+Read the key value on the sheild, return 0 when the key is pressed, otherwise return 1. This key is connected to the P5 pin of the microbit.   
 ![Img](../_static/microbit_tutorial/img/38img.jpg)     
 
 ▶ 18: ![Img](../_static/microbit_tutorial/img/41img.png)      
-Reads a byte of data from the memory of the expansion board.    
+Reads a byte of data from the memory of the sheild.    
 Parameter: 0 to 16, Address of the memory.     
 
 ▶ 19: ![Img](../_static/microbit_tutorial/img/42img.png)    
-Write a byte of data to the memory of the expansion board.   
+Write a byte of data to the memory of the sheild.   
 Parameter 1: 0 to 16, Address of the memory.      
 Parameter 2: 0 to 255, Data to be stored in memory.  
 
